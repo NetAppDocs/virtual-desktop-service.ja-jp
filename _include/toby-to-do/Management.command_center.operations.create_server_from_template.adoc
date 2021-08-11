@@ -1,0 +1,20 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.create_server_from_template-83e84.png[Management.command center.operation.create server from template 83e84]
+
+image::Management.command_center.operations.create_server_from_template-82622.png[Management.command center.operation.create サーバをテンプレート 82622 から作成します]
+
+image::Management.command_center.operations.create_server_from_template-83e84.png[Management.command center.operation.create server from template 83e84]
+
+image::Management.command_center.operations.create_server_from_template-211d7.png[Management.command center.operation.create server from template 211d7.]
+
+image::Management.command_center.operations.create_server_from_template-644c1.png[Management.command center.operation.create サーバをテンプレート 644c1 から作成します]
+
+image::Management.command_center.operations.create_server_from_template-4a22f.png[Management.command center.operation.create server from template 4a22f]
+
+image::Management.command_center.operations.create_server_from_template-70fa8.png[Management.command center.operation.create サーバをテンプレート 70fa8 から作成します]

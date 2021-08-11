@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: video_azure_AVDRDS_deploy_54.html 
+summary: NetApp VDS v5.4 で、 AVD または RDS を Azure に導入します 
+keywords:  
+---
+= NetApp VDS v5.4 で、 AVD または RDS を Azure に導入します
+
+
+
+
+== 概要
+
+video::Gp2DzWBc0Go[youtube, ]

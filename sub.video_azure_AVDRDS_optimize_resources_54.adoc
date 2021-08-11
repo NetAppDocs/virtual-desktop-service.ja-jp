@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: video_azure_AVDRDS_optimize_resources_54.html 
+summary: VDS 5.4 で Azure のリソース消費を最適化 
+keywords:  
+---
+= VDS 5.4 で Azure リソース消費を最適化します
+
+
+
+
+== 概要
+
+video::IABgjxLCWkI[youtube, ]
+=

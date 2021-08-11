@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: Management.Deployments.provisioning_collections.html 
+summary: プロビジョニングコレクションのサマリ 
+keywords:  
+---
+= プロビジョニングコレクション
+
+
+
+
+== 概要
+
+Provisioning Collections （コレクションのプロビジョニング）は、 VM イメージの作成と管理に関連する VDS の機能です。
+
+.Provisioning Collection ワークフローの概要は、次のとおりです。
+. 一時的な VM （例 「 CWT1 」）は、既存のイメージ（ストックイメージまたは以前に保存した Provisioning Collection ）に基づいて構築されます。
+. VDS 管理者は、を使用して、要件に合わせて一時 VM をカスタマイズします link:Management.Scripted_Events.scripted_events.html["スクリプト化されたイベント"]、  および / またはサードパーティの管理ツール。
+. カスタマイズが完了したら 'VDS 管理者は *Validation* をクリックし ' イメージの確定を自動化し 'Sysprep を実行し ' 一時的な VM を削除し 'VDS 全体でイメージを展開できるようにする検証プロセスを開始します
+
+
+
+
+=== ビデオデモ - VDI セッションホスト用の VM イメージの管理
+
+video::rRDPnDzVBTw[youtube, ]
+
+
+=== Provisioning Collection タイプ
+
+特定のユースケースを含む 2 種類のコレクションがあります。 * _Shared_ * と * _VDI_ * です。
+
+
+
+==== 共有
+
+*_Shared_ * タイプは、複数の異なる VM イメージと VM の役割を持つ環境全体を導入するように設計された VM イメージの集合です。
+
+
+
+==== VDI
+
+*_VDI_ * タイプは、 1 つの VM イメージで、複数の同一 VM を導入するために使用および再利用されます。これは、通常、ユーザセッションのホストに使用されます。すべてのタイプの AVD セッションホストについて、 VM ごとに複数のセッションを実行するホストであっても、 _VDI_type を選択する必要があります。
+
+
+
+=== 新しい Provisioning Collection を作成します
+
+Provisioning Collections （プロビジョニングコレクション）は、各導入環境内の VDS インタフェースの *_Provisioning Collections_ * サブタブにあります。
+
+image:Management.Deployments.provisioning_collections1.png["幅 = 75%"]
+
+.新しいコレクションを作成します
+. [*_+ コレクションの追加 *] ボタンをクリックします。
+. 次のフィールドを設定します。
++
+.. * 名前 *
+.. * 説明 * （オプション）
+.. * タイプ * - 共有または VDI
+.. * オペレーティング・システム * ：
+.. * ドライブの共有 * - この VM をユーザー・プロファイルまたは企業共有データのホストに使用する場合は ' ホストされるドライブ文字を選択しますそうでない場合は、「 C 」のままにします。
+.. * 最小キャッシュ *- インスタント導入用に保持する VM を作成するための VDS を使用する場合は、保持するキャッシュ VM の最小数を指定します。ハイパーバイザーによる VM の構築が完了するまで、新しい VM の導入を待機できる場合は、この値を「 0 」に設定することでコストを削減できます。
+.. * サーバの追加 *
++
+... * 役割 * （「共有」タイプが選択されている場合）
++
+.... *TS* - この VM は、セッションホストとしてのみ機能します
+.... * データ * - この VM はユーザセッションをホストしません
+.... * TSData * - この VM は、セッションホストとストレージホストの両方になります（最大：ワークスペースあたり 1 つの TSData ）。
+
+
+... * VM Template * - 使用可能なリストから選択します。ストックハイパーバイザーイメージと以前に保存したプロビジョニングコレクションの両方が選択可能です。
++
+.... 注： Azure Marketplace からの Windows 7 イメージでは、 PowerShell Remoting は有効になっていません。Windows 7 イメージを使用するには、 PowerShell Remoting を有効にして、共有イメージギャラリーにカスタムイメージを提供する必要があります。
+.... 注：既存の Provisioning Collection を使用すると、計画されたイメージアップグレードプロセスの一環として、既存のイメージを更新して再展開できます。
+
+
+... * ストレージタイプ * - コストとパフォーマンスを考慮した OS ディスクの速度を選択します
+... * データドライブ * - オプションで、このイメージに接続されている 2 番目のディスクを有効にします。通常は、 2 e.e で上記のデータストレージレイヤーに対して有効にします
++
+.... * データドライブタイプ * - コストとパフォーマンスを考慮して、 2 台目の（データ）ディスクの速度を選択します
+.... * データドライブサイズ (GB) * - 容量、コスト、パフォーマンスを考慮した第 2 の ( データ ) ディスクのサイズを定義します
+
+
+
+
+.. * アプリケーションの追加 * - このイメージにインストールされるアプリケーションライブラリからアプリケーションを選択し、（ 1 ） VDS アプリケーションエンタイトルメントによって管理されるアプリケーションを選択します。（ RDS 展開にのみ適用されます。AVD ワークスペースの場合は空のままにします）
+
+
+
+
+
+
+=== Temporary VM のカスタマイズ
+
+VDS には、 VDS Web インターフェイスから VM アクセスを削除する機能が含まれています。デフォルトでは、ローカルの Windows 管理者アカウントはローテーションパスワードを使用して作成され、そのアカウントを VM に渡します。これにより、ローカルの管理者クレデンシャルを知らなくても VDS 管理者ローカルにアクセスできます。
+
+
+NOTE: サーバへの接続機能には、代わりに VDS 管理者が各接続の資格情報を入力するように要求される設定があります。VDS の「管理」セクションで VDS 管理者アカウントを編集することで、この設定を有効または無効にできます。この機能は _Tech Account_ と呼ばれ、 [ サーバーに接続 ] を使用する場合は、このチェックボックスをオンにすると、接続ごとにローカル Windows 管理者資格情報を自動挿入できます。
+
+VDS 管理者は、 Connect to Server または別のプロセスを使用して一時的な VM に接続し、要件を満たすために必要な変更を行うだけです。
+
+
+
+=== コレクションを検証しています
+
+カスタマイズが完了したら 'VDS 管理者はアクションアイコンから * 検証 * をクリックして ' イメージを閉じて Sysprep できます
+
+image::Management.Deployments.provisioning_collections-ed97e.png[Management.Deployments.provisioning コレクション ed97e]
+
+
+
+=== コレクションの使用
+
+検証が完了すると、 Provisioning Collection のステータスが * Available * に変わります。Provisioning Collection 内から 'VDS 管理者は 'VDS 全体でこのプロビジョニングコレクションを識別するために使用される *VM テンプレート *name を識別できます
+
+image::Management.Deployments.provisioning_collections-f5a49.png[Management.Deployments.provisioning コレクション f5a49]
+
+
+
+==== 新しいサーバ
+
+[Workspace] > [Servers] ページから新しいサーバを作成でき、ダイアログボックスに VM テンプレートの入力を求めるプロンプトが表示されます。上記のテンプレート名は、次のリストにあります。
+
+image:Management.Deployments.provisioning_collections-fc8ad.png["幅 = 75%"]
+
+
+TIP: VDS では、 Provisioning Collections 機能と * Add Server * 機能を使用して、 RDS 環境でセッションホストを簡単に更新できます。このプロセスは、エンドユーザーに影響を与えずに実行でき、後続のイメージの更新で繰り返し実行され、以前のイメージのイテレーションに基づいて作成されます。このプロセスの詳細なワークフローについては、を参照してください link:#rds-session-host-update-process["* RDS セッションホストアップデートプロセス *"] セクションを参照してください。
+
+
+
+==== 新しい AVD ホストプール
+
+[Workspace] > [AVD] > [Host Pools] ページで、 [*+Add Host Pool] をクリックすると新しい AVD ホストプールを作成でき、 [VM Template] ダイアログボックスが表示されます。上記のテンプレート名は、次のリストにあります。
+
+image::Management.Deployments.provisioning_collections-ba2f5.png[Management.Deployments.provisioning コレクション ba2f5]
+
+
+
+==== 新しい AVD セッションホスト
+
+[Workspace] > [AVD] > [Host Pool] > [Session Hosts] ページで、 [*+Add Session Host*] をクリックすると新しい AVD セッションホストを作成できます。この場合、ダイアログボックスに VM テンプレートの入力を求めるプロンプトが表示されます。上記のテンプレート名は、次のリストにあります。
+
+image::Management.Deployments.provisioning_collections-ba5e9.png[Management.Deployments.provisioning コレクション ba5e9]
+
+
+TIP: VDS では、プロビジョニングコレクションと * セッションホストの追加 * 機能を使用して、 AVD ホストプール内のセッションホストを簡単に更新できます。このプロセスは、エンドユーザーに影響を与えずに実行でき、後続のイメージの更新で繰り返し実行され、以前のイメージのイテレーションに基づいて作成されます。このプロセスの詳細なワークフローについては、を参照してください link:#AVD-session-host-update-process["* AVD セッションホストの更新プロセス *"] セクションを参照してください。
+
+
+
+==== 新しいワークスペース
+
+[ ワークスペース ] ページで、 *+ [ 新しいワークスペース ] をクリックすると新しいワークスペースが作成され、ダイアログボックスにプロビジョニングコレクションの入力が求められます。共有プロビジョニングコレクション名がこのリストに表示されます。
+
+image::Management.Deployments.provisioning_collections-5c941.png[Management.Deployments.provisioning コレクション 5c941]
+
+
+
+==== 新しいプロビジョニングコレクション
+
+［ 展開 ］ > ［ プロビジョニングコレクション ］ ページで、 ［ * + コレクションの追加 * ］ をクリックすると、新しいプロビジョニングコレクションを作成できます。このコレクションにサーバを追加すると、 VM テンプレートの入力を求めるダイアログボックスが表示されます。上記のテンプレート名は、次のリストにあります。
+
+image::Management.Deployments.provisioning_collections-9eac4.png[Management.Deployments.provisioning コレクション 9eac4]
+
+
+
+== 付録 1 - RDS セッションホスト
+
+
+
+=== RDS セッションホストの更新プロセス
+
+VDS では、 Provisioning Collections 機能と * Add Server * 機能を使用して、 RDS 環境でセッションホストを簡単に更新できます。このプロセスは、エンドユーザーに影響を与えずに実行でき、後続のイメージの更新で繰り返し実行され、以前のイメージのイテレーションに基づいて作成されます。
+
+.RDS セッションホストの更新プロセスは次のとおりです。
+. 新しい VDI Provisioning Collection を構築し、前述の手順に従ってコレクションをカスタマイズして検証します。
++
+.. 通常、この Provisioning Collection は以前の VM テンプレートを基に構築され、「 Open 、 Save As 」プロセスをエミュレートします。
+
+
+. Provisioning Collection が検証されたら、 _Workspace > Servers_page に移動し、 * + Add Server * をクリックします
++
+image::Management.Deployments.provisioning_collections.rds_session_hosts-e8204.png[Management.Deployments.provisioning コレクション。 RDS セッションは e8204 をホストします]
+
+. サーバーの役割 * として * TS* を選択します
+. 最新の * VM テンプレート * を選択します。必要に応じて、適切な * マシン・サイズ * と * ストレージ・タイプ * を選択します。Data Drive * のチェックを外したままにします。
+. 環境に必要なセッションホストの総数についても、この手順を繰り返します。
+. [Add Server* （サーバの追加） ] をクリックすると、選択した VM テンプレートに基づいてセッションホストが構築され、 10 ～ 15 分後にオンラインになります（ハイパーバイザーによって異なります）。
++
+.. これらの新しいホストがオンラインになると ' 環境内に現在あるセッション・ホストは最終的に廃棄されることに注意してくださいこの環境のワークロード全体をサポートできるだけの十分な数の新しいホストを構築するように計画します。
+
+
+. 新しいホストがオンラインになると、デフォルト設定は「 * 新しいセッションを許可しない * 」のままになります。セッションホストごとに、新しいセッションを受信できるホストを管理するために、 [ 新しいセッションを許可する *] トグルを使用できます。この設定にアクセスするには、各セッションホストサーバの設定を編集します。十分な数の新しいホストが構築され、機能が確認されると、この設定を新しいホストと古いホストの両方で管理して、すべての新しいセッションを新しいホストにルーティングできます。Allow New Sessions * が *disabled* に設定されている古いホストは、引き続き実行し、既存のユーザセッションをホストできます。
++
+image::Management.Deployments.provisioning_collections.rds_session_hosts-726d1.png[Management.Deployments.provisioning コレクション。 RDS セッションは 726d1 をホストします]
+
+. ユーザーが古いホストからログオフし、新しいユーザー・セッションが古いホストに参加しない場合、 * Actions * アイコンをクリックして * DELETE * を選択することにより、 * Sessions = 0 * になっている古いホストを削除できます。
++
+image::Management.Deployments.provisioning_collections.rds_session_hosts-45d32.png[Management.Deployments.provisioning コレクション。 RDS セッションは 45d32 をホストします]
+
+
+
+
+
+== 付録 2 - AVD セッションホスト
+
+
+
+=== AVD セッションホストの更新プロセス
+
+VDS では、プロビジョニングコレクションと * セッションホストの追加 * 機能を使用して、 AVD ホストプール内のセッションホストを簡単に更新できます。このプロセスは、エンドユーザーに影響を与えずに実行でき、後続のイメージの更新で繰り返し実行され、以前のイメージのイテレーションに基づいて作成されます。
+
+.AVD セッションホストの更新プロセスは次のとおりです。
+. 新しい VDI Provisioning Collection を構築し、前述の手順に従ってコレクションをカスタマイズして検証します。
++
+.. 通常、この Provisioning Collection は以前の VM テンプレートを基に構築され、「 Open 、 Save As 」プロセスをエミュレートします。
+
+
+. Provisioning Collection が検証されたら、 _Workspace > AVD > Host Pools_page に移動して、ホストプールの名前をクリックします
+. ［ _Host Pool ］ ＞ ［ Session Hosts_page ］ で ' ［ * + セッションホストの追加 * ］ をクリックします
++
+image::Management.Deployments.provisioning_collections-9ed95.png[Management.Deployments.provisioning コレクション 9ed95]
+
+. 最新の * VM テンプレート * を選択します。必要に応じて、適切な * マシン・サイズ * と * ストレージ・タイプ * を選択します。
+. 必要なセッションホストの総数に相当する * インスタンス数 * を入力します。通常は、現在ホストプールにあるのと同じ数になりますが、任意の数を指定できます。
++
+.. ホスト・プールに現在あるセッション・ホストは ' これらの新しいホストがオンラインになると ' 最終的に廃棄されることに注意してくださいこのホストプールのワークロード全体をサポートするのに十分な数のインスタンス * を入力してください。
+
+
+. [Save] をクリックすると、選択した VM テンプレートに基づいてセッションホストが構築され、 10 ～ 15 分後にオンラインになります（ハイパーバイザーによって異なります）。
+. 新しいホストがオンラインになると、デフォルト設定は「 * 新しいセッションを許可しない * 」のままになります。セッションホストごとに、新しいセッションを受信できるホストを管理するために、 [ 新しいセッションを許可する *] トグルを使用できます。十分な数の新しいホストが構築され、機能が確認されると、この設定を新しいホストと古いホストの両方で管理して、すべての新しいセッションを新しいホストにルーティングできます。Allow New Sessions * が *disabled* に設定されている古いホストは、引き続き実行し、既存のユーザセッションをホストできます。
++
+image::Management.Deployments.provisioning_collections-be47e.png[Management.Deployments.provisioning コレクション be47e]
+
+. ユーザーが古いホストからログオフし、新しいユーザー・セッションが古いホストに参加しない場合、 * Actions * アイコンをクリックして * DELETE * を選択することにより、 * Sessions = 0 * になっている古いホストを削除できます。
++
+image::Management.Deployments.provisioning_collections-cefb9.png[Management.Deployments.provisioning コレクション cefb9.]
+
+

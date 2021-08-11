@@ -1,0 +1,36 @@
+= RDS セッションホストの更新プロセス
+
+
+
+
+=== RDS セッションホストの更新プロセス
+
+VDS では、 Provisioning Collections 機能と * Add Server * 機能を使用して、 RDS 環境でセッションホストを簡単に更新できます。このプロセスは、エンドユーザーに影響を与えずに実行でき、後続のイメージの更新で繰り返し実行され、以前のイメージのイテレーションに基づいて作成されます。
+
+.RDS セッションホストの更新プロセスは次のとおりです。
+. 新しい VDI Provisioning Collection を構築し、前述の手順に従ってコレクションをカスタマイズして検証します。
++
+.. 通常、この Provisioning Collection は以前の VM テンプレートを基に構築され、「 Open 、 Save As 」プロセスをエミュレートします。
+
+
+. Provisioning Collection が検証されたら、 _Workspace > Servers_page に移動し、 * + Add Server * をクリックします
++
+image::Management.Deployments.provisioning_collections.rds_session_hosts-e8204.png[Management.Deployments.provisioning コレクション。 RDS セッションは e8204 をホストします]
+
+. サーバーの役割 * として * TS* を選択します
+. 最新の * VM テンプレート * を選択します。必要に応じて、適切な * マシン・サイズ * と * ストレージ・タイプ * を選択します。Data Drive * のチェックを外したままにします。
+. 環境に必要なセッションホストの総数についても、この手順を繰り返します。
+. [Add Server* （サーバの追加） ] をクリックすると、選択した VM テンプレートに基づいてセッションホストが構築され、 10 ～ 15 分後にオンラインになります（ハイパーバイザーによって異なります）。
++
+.. これらの新しいホストがオンラインになると ' 環境内に現在あるセッション・ホストは最終的に廃棄されることに注意してくださいこの環境のワークロード全体をサポートできるだけの十分な数の新しいホストを構築するように計画します。
+
+
+. 新しいホストがオンラインになると、デフォルト設定は「 * 新しいセッションを許可しない * 」のままになります。セッションホストごとに、新しいセッションを受信できるホストを管理するために、 [ 新しいセッションを許可する *] トグルを使用できます。この設定にアクセスするには、各セッションホストサーバの設定を編集します。十分な数の新しいホストが構築され、機能が確認されると、この設定を新しいホストと古いホストの両方で管理して、すべての新しいセッションを新しいホストにルーティングできます。Allow New Sessions * が *disabled* に設定されている古いホストは、引き続き実行し、既存のユーザセッションをホストできます。
++
+image::Management.Deployments.provisioning_collections.rds_session_hosts-726d1.png[Management.Deployments.provisioning コレクション。 RDS セッションは 726d1 をホストします]
+
+. ユーザーが古いホストからログオフし、新しいユーザー・セッションが古いホストに参加しない場合、 * Actions * アイコンをクリックして * DELETE * を選択することにより、 * Sessions = 0 * になっている古いホストを削除できます。
++
+image::Management.Deployments.provisioning_collections.rds_session_hosts-45d32.png[Management.Deployments.provisioning コレクション。 RDS セッションは 45d32 をホストします]
+
+

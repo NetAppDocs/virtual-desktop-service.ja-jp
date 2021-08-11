@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: index.html 
+summary: Virtual Desktop Service のドキュメントポータルへようこそ。 
+keywords:  
+---
+= Virtual Desktop Service のマニュアル
+
+
+
+
+== 概要
+
+ネットアップの Virtual Desktop Service （ VDS ；仮想デスクトップサービス）は、パブリッククラウドでの仮想デスクトップの導入と管理の複雑さを解消し、仮想デスクトップインフラ（ VDI ）を管理するための柔軟なソフトウェアサービスとして、またはフルマネージド VDI サービスプラットフォームとして提供します。仮想デスクトップサービスを使用すると、クラウドにデスクトップを導入する際の複雑さが軽減され、数時間で数百のタスクを導入するのに 2~3 日かかっていたことになります。
+
+
+
+=== Virtual Desktop Service の利点：
+
+* * インフラストラクチャコストの削減 *
++
+カスタマイズ可能なリソーススケジューリングシステムにより、インフラストラクチャのコストを最大 50% 削減できます。
+
+* * リスクの軽減 *
++
+クラウドのベストプラクティスに従って、 Microsoft のベストプラクティス標準である Azure Virtual Desktop （ AVD ）などの論理ワークフローにデスクトップを導入する。
+
+* * カスタム自動化 *
++
+イベント駆動型の自動化とオーケストレーションエンジンにより、現在のスクリプトを活用して、管理を簡易化し、一般的な IT 管理者がクラウドデスクトップを管理できます。
+
+* * マルチクラウド *
++
+単一のグラフィカルユーザインターフェイスで、 AWS 、 Azure 、 Google の複数のテナントを制御できます。
+
+* * フレキシブルコントロール *
++
+単一のポータルでビジネスの柔軟性を最大限に高め、テクノロジスタックのすべてのレイヤを制御できます。
+
+
+
+詳細はこちら。 https://cloud.netapp.com/virtual-desktop-service[]
+
+
+
+== サポートの利用
+
+E メールサポート： VDSsupport@netapp.com
+
+電話サポート :844.645.6789
+
+link:https://cloudjumper.zendesk.com["VDS サポートポータル"]
+
+通常のサポート営業時間：月曜日から金曜日、午前 7 時から午後 7 時まで中央時間。
+
+* 営業時間外（オンコール）のサポートは、電話でのみご利用いただけます。
+
+
+
+
+== その他のリソース
+
+
+
+=== コスト計算ツール
+
+
+
+==== Azure
+
+* https://manage.vds.netapp.com/azure-cost-estimator[]
+
+
+
+
+==== Google Cloud
+
+* https://manage.vds.netapp.com/google-cost-estimator[]
+
+
+
+
+=== ダウンロード
+
+
+
+==== リモートデスクトップサービス（ RDS ）クライアント
+
+* link:https://bin.vdsclient.app/v5client/cwc-win-setup.exe["Windows 用 VDS RDS クライアント"]
+* link:https://login.cloudworkspace.com/["VDS Web クライアント"]
+* link:https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients["Microsoft RD Client"]
+
+
+
+
+==== Azure Virtual Desktop （ AVD ）クライアント
+
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-10["Microsoft AVD for Windows クライアント"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-web["Microsoft AVD Web Client を参照してください"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-android["Microsoft AVD for Android クライアント"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos["Microsoft AVD for macOS クライアント"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-ios["iOS クライアント用 Microsoft AVD"]
+
+
+
+
+==== その他のダウンロード
+
+* link:https://cloudjumper.com/wp-content/uploads/2019/12/RemoteScanEnterpriseUser.zip["RemoteScan クライアント"]
+* link:https://bin.vdsclient.app/v5client/cwc-designer-win-setup.exe["VDS RDS Windows クライアントデザイナ"]
+

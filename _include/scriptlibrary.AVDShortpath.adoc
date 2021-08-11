@@ -1,0 +1,18 @@
+= AVD Shortpath を有効にします
+
+
+
+
+== AVD Shortpath を有効にします
+
+このスクリプトパッケージでは、 PowerShell で（関連する）コマンドを実行することで、ネイティブ AVD feature_RDP Shortpath_ を有効または無効にします。
+
+-- 有効にします
+
+「 HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services 」 /V fEnableScreenCaptureProtection/t REG_DRE/d 1 を追加します
+
+- 無効にします
+
+「 HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services 」 /v fEnableScreenCaptureProtection/f を削除します
+
+この AVD 機能に関する Microsoft のマニュアルは、次の URL から入手できます。https://docs.microsoft.com/en-us/azure/virtual-desktop/shortpath[]

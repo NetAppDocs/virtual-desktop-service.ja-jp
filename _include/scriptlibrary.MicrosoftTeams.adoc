@@ -1,0 +1,17 @@
+= Microsoft チームの概要
+
+
+
+
+== Microsoft チームの概要
+
+このスクリプトパッケージでは、 chocolatey パッケージマネージャを使用して Microsoft Teams_を インストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+WARNING: この Microsoft チームインストールは、 RDS 環境への導入用に特別に構成されています。 link:scriptlibrary.MicrosoftTeamsAVD.html["別の Microsoft Teams スクリプト"] AVD 展開用に提供されています。
+
+
+
+=== デフォルトのショートカットパス
+
+このアプリケーションのデフォルトのショートカットパスは ' 以下のとおりですショートカットは '\\shortcut\Microsoft Teams\lnk' です

@@ -1,0 +1,20 @@
+= Google Chrome の概要
+
+
+
+
+== Google Chrome の概要
+
+このスクリプトパッケージは、 chocolatey パッケージマネージャを使用して、 _Google Chrome_を インストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+
+=== デフォルトのショートカットパス
+
+このアプリケーションのデフォルトのショートカットパスは、以下のように入力されます。ショートカットは、「 \\shortcuts\Google Chrome.lnk` 」です
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallGoogleChrome.png[scriptlibrary.activity.InstallGoogleChrome]

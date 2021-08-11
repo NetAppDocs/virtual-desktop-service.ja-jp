@@ -1,0 +1,20 @@
+= Ezeep Print App の概要
+
+
+
+
+== Ezeep Print App の概要
+
+このスクリプトパッケージは、 chocolatey パッケージマネージャを使用して、 _Ezeep Print App_ をインストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+
+=== デフォルトのショートカットパス
+
+このアプリケーションのデフォルトのショートカットパスは以下のようになります。ショートカットは「 \\shortcuts\Printer Self Service.lnk` 」です
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallEzeepPrintApp.png[scriptlibrary.activity.InstallEzeepPrintApp]

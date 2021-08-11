@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: Management.Applications.AVD_application_entitlement_workflow.html 
+summary: VDS でエンドユーザーにアプリケーションを展開する手順を説明します 
+keywords:  
+---
+= AVD のアプリケーションエンタイトルメントワークフロー
+
+
+
+
+== 概要
+
+Azure Virtual Desktop （ AVD ）環境では、アプリケーションアクセスはアプリケーショングループメンバーシップによって管理されます。
+
+
+NOTE: このワークフローでは、環境 AVD 配置のみが使用されます。RDS アプリケーションの使用権に関するドキュメントについては、を参照してください link:Management.Applications.application_entitlement_workflow.html["RDS のアプリケーションエンタイトルメントワークフロー"]
+
+
+TIP: AVD は文書化されたサービスで、多くのサービスがあります link:https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups["パブリックリソースを参照してください"]。VDS は、 AVD の標準的な動作方法をスーパーシードしません。代わりに ' この記事では 'VDS がすべての AVD 展開で使用されている標準概念にどのようにアプローチするかを説明します
+
+
+TIP: を確認します link:Management.Deployments.logical_hierarchy_overview.html["VDS 論理階層の概要"] 記事はこの記事を検討する前にまたは間有用であるかもしれない。
+
+
+
+=== エンドユーザービュー
+
+Azure Virtual Desktop では、各エンドユーザに AVD 管理者によって RemoteApp または Desktop へのアクセス権が割り当てられます。これは VDS のアプリケーショングループ割り当てで行います。
+
+* RemoteApp * とは、セッションホスト上でリモートで実行され、デスクトップコンテキストなしでローカルデバイス上で表示されるアプリケーションです。「ストリーミングアプリ」とも呼ばれるこのアプリケーションは、ローカルデバイス上のローカルアプリケーションのように見えますが、セキュリティコンテキストで実行され、セッションホストのストレージレイヤとコンピューティングレイヤで実行されます。
+
+* デスクトップ * とは、セッションホストで実行され、ローカルデバイスで表示される Windows の完全な操作を指します。通常は、全画面表示ウィンドウです。「リモートデスクトップ」と呼ばれる一般的なデスクトップ自体には、そのセッションホストにインストールされているアプリケーションが含まれます。このアプリケーションは、ユーザーがデスクトップセッションウィンドウ内から起動できます。
+
+ログインすると、エンドユーザには管理者によって割り当てられたリソースが表示されます。以下は、エンドユーザーが AVD クライアントでログインしたときに表示されるビューの例です。これはより複雑な例です。エンドユーザーは、シングルデスクトップまたは RemoteApp のみを割り当てることがよくあります。エンドユーザは、これらのリソースのいずれかをダブルクリックすると、そのアプリケーション / デスクトップを起動できます。
+
+image::Management.Deployments.vds_sites-0e49c.png[management.Deployments.VDS サイト 0e49c]
+
+このより複雑な例では、このユーザは 2 つの異なるデスクトップセッションと 4 つの異なるストリーミングアプリケーションにアクセスできます。
+
+* * 使用可能なデスクトップ *
++
+** NVIDIA GPU デスクトップ
+** 共有 AVD プールデスクトップ
+** 操作 2 ：プールデスクトップ
+
+
+* * 使用可能な RemoteApp*
++
+** AutoCAD 2021
+** Revit 2021
+** Microsoft Edge の場合
+** メモ帳
+
+
+
+
+このようなアプリケーションとデスクトップは、さまざまなセッションホスト、 AVD ワークスペースでホストされており、異なる Azure リージョンでホストされている可能性もあります。
+
+次の図は、これらの各リソースがホストされている場所と、これらのリソースがこのエンドユーザにどのように割り当てられているかを示しています。
+
+image::Management.Deployments.vds_sites-0e880.png[management.Deployment.VDS サイト 0e880]
+
+上に示すように、このエンドユーザーが利用できるさまざまなリソースは、異なるセッションホストでホストされ、異なるホストプールでホストされています。また、異なる AVD ワークスペースの異なる IT 組織によって管理される可能性もあります。この例では示していませんが、 VDS サイト機能を使用して、これらのリソースを異なる Azure リージョンやサブスクリプションでホストすることもできます。
+
+
+
+=== デスクトップアクセスの提供
+
+デフォルトでは、すべてのホストプールは 1 つのアプリケーショングループから始まり、 Windows デスクトップエクスペリエンスへのアクセスの割り当てに使用されます。これらのセッションホストにインストールされているすべてのアプリケーションは、このアプリケーショングループに割り当てられているエンドユーザーにアクセスできます。
+
+.VDS のユーザーに対してデスクトップリソースを有効にするには：
+. ワークスペース > AVD > ホストプール > アプリケーショングループページに移動し、「デスクトップ」リソースのアプリケーショングループをクリックします。
++
+image::Management.Applications.AVD_application_entitlement_workflow-349fe.png[management.Applications.AVD アプリケーションエンタイトルメントワークフロー 349fe]
+
+. アプリケーショングループ内に移動したら、 [ 編集 ] をクリックします
++
+image::Management.Applications.AVD_application_entitlement_workflow-3bcfc.png[management.Applications.AVD アプリケーションエンタイトルメントワークフロー 3bcfc]
+
+. 編集ダイアログでは、ユーザーまたはグループごとにこのアプリケーショングループにユーザーを追加または削除できます。
++
+image::Management.Applications.AVD_application_entitlement_workflow-07ff0.png[management.Applications.AVD アプリケーションエンタイトルメントワークフロー 07ff0]
+
+
+
+
+
+=== RemoteApp Access を提供しています
+
+RemoteApp へのアクセスをプロビジョニングするには、ホストプール内に新しいアプリケーショングループを作成する必要があります。作成したアプリケーションは、このアプリケーショングループに割り当てる必要があります。
+
+
+NOTE: これらのセッションホスト上のアプリケーションは、このホストプールの「デスクトップ」 AppGroup に割り当てられたすべてのユーザーがすでに使用できます。アプリケーションへのアクセスを提供するだけで、 RemoteApp グループを介してアクセスをプロビジョニングする必要もありません。RemoteApp グループは、ストリーミングアプリとしてローカルデバイス上で AS IF を実行するアプリへのアクセスを有効にするためにのみ必要です。
+
+
+
+==== 新しいアプリケーショングループを作成します
+
+. [ ワークスペース ] > [AVD] > [ ホストプール ] > [ アプリケーショングループ ] ページに移動し、 [+] [ アプリケーショングループの追加 ] ボタンをクリックします
++
+image::Management.Applications.AVD_application_entitlement_workflow-d33da.png[management.Applications.AVD アプリケーションエンタイトルメントワークフロー d33da]
+
+. このアプリグループの名前、ワークスペース、フレンドリ名を入力します。割り当てるユーザーまたはグループを選択し、 _Save_( 保存 ) をクリックします
++
+image::Management.Applications.AVD_application_entitlement_workflow-242eb.png[management.Applications.AVD アプリケーションエンタイトルメントワークフロー 242eb]
+
+
+
+
+
+==== アプリケーションをアプリケーショングループに追加します
+
+. ワークスペース > AVD > ホストプール > アプリケーショングループページに移動し、「 RemoteApp 」リソースのアプリケーショングループをクリックします。
++
+image::Management.Applications.AVD_application_entitlement_workflow-3dcde.png[管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 3dcde]
+
+. アプリケーショングループ内に移動したら、 [ 編集 ] をクリックします
++
+image::Management.Applications.AVD_application_entitlement_workflow-27a41.png[管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 27a41]
+
+. 下にスクロールして「リモートアプリ」セクションに移動します。このセクションでは、 VDS が直接セッションホストに照会して、ストリーミングに使用可能なアプリケーションを表示するために、データを入力する時間がかかる場合があります。
++
+image::Management.Applications.AVD_application_entitlement_workflow-1e9f2.png[管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 1e9f2]
+
+. このアプリケーショングループのユーザーが RemoteApp リソースとしてアクセスできるアプリケーションを検索して選択します。
+

@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.load_virtual_machines-da7e2.png[Management.command center.operation.load 仮想マシン da7e2]

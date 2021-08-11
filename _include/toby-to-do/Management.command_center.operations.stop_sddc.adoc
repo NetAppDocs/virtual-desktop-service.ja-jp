@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.stop_sddc-ce267.png[Management.command center.operations] SDDC ce267 を停止します]

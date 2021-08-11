@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.start_server_for_wake_on_demand-d8436.png[Management.command center.operation.start server for wake on demand d8436]

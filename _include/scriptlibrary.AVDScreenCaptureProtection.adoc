@@ -1,0 +1,24 @@
+= AVD 画面キャプチャ保護の概要
+
+
+
+
+== AVD 画面キャプチャ保護の概要
+
+このスクリプトパッケージは、 PowerShell で（関連する）コマンドを実行することにより、ネイティブの AVD feature_screen capture protection_を 有効または無効にします。
+
+-- 有効にします
+
+「 HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services 」 /V fEnableScreenCaptureProtection/t REG_DRE/d 1 を追加します
+
+- 無効にします
+
+「 HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services 」 /v fEnableScreenCaptureProtection/f を削除します
+
+この AVD 機能に関する Microsoft のマニュアルは、次の URL から入手できます。https://docs.microsoft.com/en-us/azure/virtual-desktop/security-guide#session-host-security-best-practices[]
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.AVDScreenCaptureProtection-216a6.png[scriptlibrary.AVDScreenCaptureProtection 216a6]

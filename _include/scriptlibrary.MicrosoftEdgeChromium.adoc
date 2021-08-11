@@ -1,0 +1,20 @@
+= Microsoft Edge Chromium の概要
+
+
+
+
+== Microsoft Edge Chromium の概要
+
+このスクリプトパッケージでは、 chocolatey パッケージマネージャを使用して Microsoft Edge Chromium_ をインストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+
+=== デフォルトのショートカットパス
+
+デフォルトのショートカットパスは以下のように入力されます。このアプリケーションのショートカットは、「 \\shortcuts\Microsoft Edge.lnk` 」です
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallMicrosoftEdgeChromium.png[scriptlibrary.activity.InstallMicrosoftEdgeChromium]

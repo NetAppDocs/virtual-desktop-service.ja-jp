@@ -1,0 +1,10 @@
+= Microsoft Edge Chromium の最適化
+
+
+
+
+== Microsoft Edge Chromium の最適化
+
+Microsoft Edge Chromium 89 では、 Microsoft Edge Chromium ブラウザタブのリソース消費を制限する機能が追加されました。このグローバルスクリプトは、設定を適用してバックグラウンドタブをタイムアウトに制限し、 15 分後にリソースの消費を停止します。オーディオを再生している背景タブは影響を受けません。
+
+詳細については、を参照してください link:https://blogs.windows.com/msedgedev/2021/03/04/edge-89-performance/["こちらをご覧ください"]。

@@ -1,0 +1,33 @@
+= 概要
+
+
+
+
+== 概要
+
+導入が完了すると、 E メールで通知を受け取るとともに、成功とエラーに関するレポートを大量に E メールで受け取る必要があります。これらの電子メールに関する情報と、配信オプションの変更方法については、次のページを参照してください。 link:Unlisted.Whats_with_all_these_emails.html["これらのメールの内容は何ですか？"]
+
+完全なドキュメントは、にあります https://docs.netapp.com/us-en/virtual-desktop-service/[] ただし、以下の項目を選択すると、次の項目を開始するのに適した場所になります。
+
+
+
+== クイックスタート
+
+* link:https://www.youtube.com/playlist?list=PLQ1wYDzid2pRl74Y4SnFVvTHL7kbN9GQZ["VDS はじめに YouTube のビデオプレイリスト"]
+* link:Management.User_Administration.manage_user_accounts.html["ユーザの管理"]
+* link:Management.Applications.application_entitlement_workflow.html["アプリケーションの管理"]
+* link:Management.User_Administration.manage_folders_and_permissions.html["データと権限の管理"]
+* link:Reference.end_user_access.html["Cloud Workspace のシステム要件：エンドユーザーの概要"]
+
+
+
+
+== 導入を改良する–ヒントとコツ
+
+* link:Management.User_Administration.multi-factor_authentication.html["MFA によるセキュリティの強化"]
+* link:Management.System_Administration.configure_backup.html["Azure バックアップを設定"]
+* link:Management.System_Administration.configure_antivirus.html["Anti-Virus を設定します"]
+* link:Management.Cost_Optimization.workload_schedule.html["サーバコストの最適化"]
+* link:Management.Scripted_Events.scripted_events.html["スクリプト化されたイベントで自動化を展開します"]
+* link:Architectual.migrate_data_into_vds.html["データ移行"]
+

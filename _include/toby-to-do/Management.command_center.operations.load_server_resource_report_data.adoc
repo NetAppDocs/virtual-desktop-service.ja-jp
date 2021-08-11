@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.load_server_resource_report_data-7c205.png[Management.command center.operation.load サーバーリソースレポートデータ 7c205]

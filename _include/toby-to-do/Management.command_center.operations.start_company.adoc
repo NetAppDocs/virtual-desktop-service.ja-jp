@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.start_company-063ef.png[Management.command center.operation.start company 063ef を実行します]

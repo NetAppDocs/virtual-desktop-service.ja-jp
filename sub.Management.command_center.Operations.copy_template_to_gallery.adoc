@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: Management.command_center.operations.copy_template_to_gallery.html 
+summary: VDS コマンドセンター機能「 Gallery へのテンプレートのコピー」の概要 
+keywords:  
+---
+= コマンドセンターコマンド：テンプレートを Gallery にコピー
+
+
+
+
+== コマンドセンター警告
+
+
+CAUTION: Command Center は、展開内の CWMGR1 プラットフォームサーバ上で動作するアプリケーションです。このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。詳細については、を参照してください link:Management.command_center.overview.html["コマンドセンターの概要"] 記事。
+
+
+
+== テンプレートを Gallery Overview にコピーします
+
+image::Management.command_center.operations.copy_template_to_gallery-67ea4.png[Management.command center.operation.copy テンプレートを gallery 67ea4 にコピーします]
+
+VDI プロビジョニングコレクションが確定すると、イメージは Azure にイメージとして格納され、同じ VDS サイトに導入できます。同じサブスクリプション内の別の Azure リージョンにイメージを導入できるようにするには、「テンプレートを Gallery にコピー」機能を使用します。この操作により、 VM イメージが共有ギャラリーにコピーされ、選択したすべての領域にレプリケートされます。
+
+image::Management.command_center.operations.copy_template_to_gallery-ed821.png[Management.command center.operation.copy テンプレートを gallery ed821 にコピーします]
+
+
+
+== VDS ドロップダウンでの VM テンプレートの可用性
+
+レプリケーションが完了すると、新しい VM の導入時に VM テンプレートを選択するためのドロップダウンの VDS にイメージが表示されます。共有イメージは、コピー時に選択された任意の領域への展開に使用できます。
+
+image::Management.command_center.operations.copy_template_to_gallery-04bd8.png[Management.command center.operation.copy テンプレートを gallery 04bd8 にコピーします]
+
+共有ギャラリーに格納されている VM イメージには、「 x.x.x.x 」形式のバージョンが追加されます。このバージョンは Azure ポータル内のイメージのバージョンと一致しています。
+
+image::Management.command_center.operations.copy_template_to_gallery-ee598.png[Management.command center.operationes.copy テンプレートを gallery ee598 にコピーします]
+
+
+NOTE: イメージのレプリケーションには時間がかかる場合があり（イメージのサイズによって異なります）、バージョンをクリックするとステータスが表示されます（例 #1.0.0# ）をクリックします。
+
+
+
+== 地域別の可用性
+
+配置は、イメージが複製されたリージョンにのみ実行できます。このチェックボックスをオンにするには、 Azure ポータルで「 1.x 」をクリックし、次に示すように「 On_Update Replication_ 」をクリックします。
+
+image::Management.command_center.operations.copy_template_to_gallery-9b63a.png[Management.command center.operation.copy テンプレートをギャラリー 9b63a にコピーします]

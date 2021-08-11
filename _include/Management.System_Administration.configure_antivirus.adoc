@@ -1,0 +1,37 @@
+= 概要
+
+
+
+
+== 概要
+
+Virtual Desktop Service （ VDS ）の管理者は、プラットフォームインフラストラクチャ（ CWMGR1 以上で構成）とその他のすべてのインフラストラクチャおよび仮想マシン（ VM ）の両方を監視する責任があります。ほとんどの場合、管理者はインフラ（ハイパーバイザーや SAN ）の監視をデータセンターや IaaS プロバイダと直接調整します。管理者は、ターミナルサーバとデータサーバの監視を担当します。通常は、 Remote Management and Monitoring （ RMM ）解決策を適切に導入します。
+
+ウイルス対策は、管理者の責任です（プラットフォームインフラストラクチャおよびターミナル / データサーバ VM の両方）。このプロセスを合理化するため、 Azure サーバ用の VDS では、デフォルトで Windows Defender が適用されています。
+
+
+NOTE: サードパーティ製ソリューションをインストールする場合は、ファイアウォールや VDS の自動化を妨げる可能性のあるその他のコンポーネントを含めないようにしてください。
+
+特に、非常に特定のアンチウイルスポリシーがデフォルトで設定されている場合、これらのアンチウイルスエージェントが仮想デスクトップサービスによって管理されるサーバーにインストールされていると、悪影響を及ぼす可能性があります。
+
+全般的なガイダンスとしては、 VDS プラットフォームの自動化は一般にアンチウイルス製品やアンチマルウェア製品の影響を受けませんが、すべてのプラットフォームサーバ（ CWMGR1 、 RDGateways 、 HTML5Gateway 、 FTP など）で次のプロセスの例外 / 除外を追加することをお勧めします。
+
+....
+*\paexec.exe
+*\paexec_1_25.exe
+C:\Program Files\CloudWorkspace\CwAgent\CwAgent.exe
+C:\Program Files\CloudWorkspace\CW Automation Service\cw.automation.service.exe
+C:\Program Files\CloudWorkspace\CwVmAutomationService\CwVmAutomationService.exe
+C:\Program Files (x86)\Myrtille\bin\Myrtille.Printer.exe
+C:\Program Files (x86)\Myrtille\bin\Myrtille.Services.exe
+....
+さらに、クライアントサーバ上の次のプロセスを安全にリストすることをお勧めします。
+
+....
+C:\Program Files\CloudWorkspace\CwAgent\paexec.exe
+C:\Program Files\CloudWorkspace\CwAgent\CwAgent.exe
+C:\Program Files\CloudWorkspace\CwRemoteApps\cwra.exe
+C:\Program Files\CloudWorkspace\Pen\Pen.exe
+C:\Program Files\CloudWorkspace\MfaAgent\MFAAgent.exe
+C:\Program Files\CloudWorkspace\MfaAgent\MFAAgentMonitor.exe
+....

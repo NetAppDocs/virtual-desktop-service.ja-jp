@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.test_hypervisor_connection-fcfa3.png[Management.command center.operation.fcfa3 ハイパーバイザー接続のテスト]

@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.move_servers_to_company-cec7b.png[Management.command centers.operation.move servers to company cec7b （サーバーを企業 cec7b に移動]

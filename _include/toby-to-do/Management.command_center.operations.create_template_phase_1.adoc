@@ -1,0 +1,10 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.create_template_phase_1-87b71.png[Management.command center.operation.create テンプレートフェーズ 1 87b71]
+
+image::Management.command_center.operations.create_template_phase_1-25559.png[Management.command center.operation.create テンプレートフェーズ 1 25559]

@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.add_cloud_workspace_to_company-5c011.png[Management.command center.operations .add cloud workspace to company 5c011]

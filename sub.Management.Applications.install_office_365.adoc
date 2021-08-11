@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: Management.Applications.install_office_365.html 
+summary: Office 365 インストールガイド 
+keywords:  
+---
+= Microsoft Office 365 をインストールします
+
+
+
+
+== 手動手順の概要
+
+管理者が Microsoft Office をダウンロードして、共有ターミナルサーバにインストールし、複数のユーザーが期待どおりに機能するようにすることは、ライセンス規則によって禁止されています。代わりに、管理者は、共有コンピュータのアクティベーションフラグを有効にして Office Pro Plus をインストールする特定のプロセスに従う必要があります。
+
+
+
+=== プロセスステップの概要
+
+. まず、から Office 展開ツールをダウンロードします https://www.microsoft.com/en-us/download/details.aspx?id=49117[]
+. Office 構成ツールに移動します。 https://config.office.com/deploymentsettings[]。
+
+
+
+NOTE: このガイドでは、最小限必要な共有コンピュータのアクティベーション以外のオプションは省略します。その他のオプションが必要な場合は、 Microsoft の次のガイドを参照してください。 https://docs.microsoft.com/en-us/deployoffice/deploy-office-365-proplus-from-the-cloud)[]
+
+. 導入に適したアーキテクチャを選択します。 32 ビットを使用する理由がない限り、 64 ビットを推奨します（ 32 ビットバージョンの Office を必要とする古い Office プラグインなど）。
++
+image:office1.png[""]
+
+. 目的の Office アプリとバージョンを選択します。注：共有コンピューターのアクティベーションでは、 Office Pro Plus のみがサポートされています。お使いの Office のバージョンに関係なく、 Office 365 Pro Plus 、 Office 365 E3 を使用できます。Office 365 E5 、 Microsoft 365 Business 、 Microsoft 365 E3 、 Microsoft 365 E5 ） Office 365 Pro Plus は、ここでもインストールできます。
++
+image:office2.png[""]
+
+. 目的の言語を選択し、 [ 次へ ] をクリックして次に進みます。
++
+image:office3.png[""]
+
+. [ インストールオプション ] で、 [ タスクバーにアイコンを固定する ] の選択を解除することをお勧めします。
++
+image:office4.png[""]
+
+. これは、「製品のアクティベーション」を「共有コンピュータ」に設定するための最も重要なステップです。管理者は、必要に応じて、ユーザエクスペリエンスのメリットを得るために EULA に自動的に同意するトグルをクリックできます。
++
+image:office5.png[""]
+
+. ページの上部に戻り、 [ エクスポート ] をクリックします。
++
+image:office6.png[""]
+
+. [ 現在の設定を保持 ] を選択し、 [OK] をクリックして続行します。
++
+image:office7.png[""]
+
+. 契約条件に同意し、インストールファイルの名前を保持または変更してから、 [ エクスポート ] をクリックして続行します。このマニュアルでは、デフォルトの「 Configuration 」名を使用することを前提としています。
++
+image:office8.png[""]
+
+. 「 Export 」をクリックすると、「 Configuration.xml 」のダウンロードが開始されます。
+. 以前にダウンロードした officedeploymenttool EXE/ 自己解凍ファイル（ officedeploymenttool_11901-20022.exe はこの書き込み時のファイルのバージョン）を実行し、新しいフォルダに解凍します（この例では "C:\Office" が使用されていると仮定します）。 と同じディレクトリに configuration.xml ファイルをコピーします（すでに抽出されたサンプルを上書きします）。
+. 次に、管理者としてコマンドプロンプトを開き、ディレクトリを「 C:\Office 」に変更します（「 cd \Office 」を実行）。
+. 次に、「 setup.exe /download Configuration.xml 」（手順 10 でエクスポートした XML ファイルに一致するように「 Configuration.xml 」を変更）を実行します。何も起きていないように思われる場合は、この手順に時間がかかることがあります。
+. 最後に、「 setup.exe /configure Configuration.xml 」を実行します（ファイルに合わせて XML ファイル名を調整します）。
+
+
+
+
+== サポートされない自動導入です
+
+
+WARNING: この自動化プロセスは、カスタム PS1 と事前に構築された XML に依存します。ネットアップが保証していないのは、対象のマシンが正常に動作するか、影響があるという意味ではサポートされていません。PS1 はネットアップがホストしているため、いつでも変更や削除が可能です。この方法は、独自の自動プロセスを構築してホストするためのテンプレートとして使用することをお勧めします。このプロセスは、 Windows Server 2016 Datacenter 10.0.14393 および Windows 10 Enterprise for Virtual Desktop 10.0.18362 （ Azure 上、 2019 年 8 月 30 日）で検証済みです。
+
+
+
+=== プロセスステップの概要
+
+. hosted .ps1 をダウンロードして実行するためのコマンドを実行する
+. PS1 は、ホストされている Office 展開設定 .xml をダウンロードします（この XML に使用される Office 構成ツール設定のスクリーンショットはこちら）。
+. PS1 は、 .xml を参照して ProPlus インストールを実行します
+. PS1 は、 Microsoft Office のショートカットを、アプリケーションの公開目的で 1 つのフォルダにコピーします
+
+
+
+
+=== カスタマイズ手順
+
+. でホストされている PS1 をダウンロードして編集します http://getAVD.com/proplus_minus_onedrive.ps1[]
++
+.. 独自の XML ファイル（上記を参照）を作成し、独自の URL にアップロードします
+.. 「 $download 」変数を編集して、独自の設定 XML ファイルの URL を指定します
+.. $officeapps 変数を編集して、設定 XML ファイルによってインストールされたすべてのショートカットを含めます
++
+image:office9.png[""]
+
+
+
+. 編集した PS1 ファイルを、独自のホスト URL にアップロードします
+. スクリプトイベントスクリプトを編集して ' カスタマイズされた自己ホスト型 PS1 ( 手順 3.1.下。
+
+
+
+
+=== スクリプト化されたイベントステップ
+
+これは、通常のアプリケーションインストールスクリプトイベントと同じワークフローに従います。これらの手順では、アプリケーション管理計画の手順に従って、チョコレートがすでにインストールされていることを前提としています。Office 365 ProPlus 自動インストールとチョコレート
+
+O365 ProPlus をインストールするには、次の設定で新しいスクリプトを作成します。
+
+. スクリプトファイルがありません
+. powershell.exe で実行します
+. 引数（オプション）： Set-ExecutionPolicy Bypass-Scope Process-Force ； iex （ New - Object System.Net.WebClient).DownloadString(‘http://getAVD.com/proplus_minus_onedrive.ps1’ ）
+. を編集します http://getAVD.com/proplus_minus_onedrive.ps1[] とは、これを、自身がホストしている PS1 ファイルの URL に置き換えます。
++
+image:office10.png[""]
+
+
+
+スクリプトが保存されたら、次の手順でそのスクリプトをトリガーに関連付けます。この場合 'VDS でアプリケーションのインストールが要求されたときにスクリプトをトリガします詳細については、『アプリケーション管理ガイド』を参照してください。

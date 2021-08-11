@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.generate_reports-9332f.png[Management.command center.operation.generate レポート 9332f]

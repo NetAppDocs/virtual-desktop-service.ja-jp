@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: Management.System_Administration.create_domain_admin_account.html 
+summary: レベル 3 管理者アカウントを作成する方法 
+keywords:  
+---
+= ドメイン管理者（「レベル 3 」）アカウントを作成します
+
+
+
+
+== 概要
+
+場合によっては 'VDS 管理者は環境を管理するためにドメインレベルの資格情報を必要としますVDS では、「レベル 3 」または「 .tech 」アカウントと呼ばれます。
+
+ここでは、適切な権限を使用してこれらのアカウントを作成する方法について説明します。
+
+
+
+=== Windows Server ドメインコントローラ
+
+内部でホストされているドメインコントローラ（または VPN/Express ルート経由で Azure にリンクされているローカル DC ）を実行している場合、 .tech アカウントは Active Directory Manager で直接実行できます。
+
+. ドメイン管理（ .tech ）アカウントを使用して、ドメインコントローラ（ CWMGR1 、 DC01 、または既存の VM ）に接続します。
+. 必要に応じて、新しいユーザを作成します。
+. 「 Level3 Technician 」セキュリティグループにユーザを追加します
++
+image::Management.System_Administration.create_domain_admin_account-9ee17.png[management.System Administre.create domain admin アカウント 9ee17]
+
++
+.. 「 Level3 Technician 」セキュリティグループが見つからない場合は、グループを作成して「 CW インフラストラクチャ」セキュリティグループのメンバーにしてください。
++
+image::Management.System_Administration.create_domain_admin_account-0fc27.png[management.System Administration.create domain admin アカウント 0fc27]
+
+
+
+
+
+
+NOTE: 管理者アカウントとエンドユーザアカウントを区別するためには、ユーザ名の最後に「 .tech 」を追加することをお勧めします。
+
+
+
+=== Azure AD ドメインサービス
+
+Azure AD ドメインサービスで実行されている場合、または Azure AD のユーザを管理している場合は、通常の Azure AD ユーザとして Azure Management Portal でこれらのアカウントを管理（パスワードの変更など）できます。
+
+新しいアカウントを作成し、次のロールに追加することで、必要な権限が付与されます。
+
+. AAD DC 管理者
+. ClientDHPAccess
+. ディレクトリ内のグローバル管理者。
+
+
+
+NOTE: 管理者アカウントとエンドユーザアカウントを区別するためには、ユーザ名の最後に「 .tech 」を追加することをお勧めします。
+
+image:l33.png[""]

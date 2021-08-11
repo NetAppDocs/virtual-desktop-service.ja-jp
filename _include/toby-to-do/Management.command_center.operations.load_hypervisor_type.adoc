@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.load_hypervisor_type-e9558.png[Management.command center.operation.load ハイパーバイザータイプ e9558 です]

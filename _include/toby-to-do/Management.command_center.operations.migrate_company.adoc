@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.migrate_company-778d7.png[Management.command center.operations 。会社 778d7 を移行します]

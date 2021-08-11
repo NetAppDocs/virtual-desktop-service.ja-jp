@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: Management.command_center.overview.html 
+summary: VDS コマンドセンターの概要 
+keywords:  
+---
+= コマンドセンターコマンド：概要
+
+
+
+
+== 概要
+
+Command Center は、展開内の CWMGR1 プラットフォームサーバ上で実行される実行可能ファイルです。CWMGR1 VM に接続し、その VM 上でローカルに実行することによってアクセスします。
+
+このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。
+
+
+
+== コマンドセンターを実行しています
+
+.Command Center アプリケーションを実行するには、次の手順に従います。
+. VDS > Deployment > Platform Servers_page からサーバに接続し、 _Actions_ アイコンをクリックして、「 Connect 」を選択します。
++
+image::Management.command_center_overview-68087.png[Management.command センターの概要 68087]
+
+. クレデンシャルの入力を求められたら、 domain admin クレデンシャルを入力
++
+.. ユーザーは、「 CW インフラストラクチャ」セキュリティグループのメンバーである必要があります。一貫性を保つため、このメンバーシップを追加することをお勧めします。そのためには、ユーザーを _AD のレベル 3 テクニシャングループ > クラウドワークスペース > クラウドワークスペーステクニカルユーザー > グループ _ のメンバーにすることをお勧めします
++
+image::Management.command_center_overview-1c42d.png[Management.command センターの概要 1c42d]
+
+
+
+. _ Command Center_ のデスクトップアイコンを探して実行します
++
+image::Management.command_center_overview-3c860.png[Management.command センターの概要 3c860]
+
++
+.. 詳細タブを有効にするには、「 -showadvancedtab 」スイッチを使用してアプリケーションを起動します。
+
+
+
+
+
+
+=== [ 操作（ Operations ） ] タブ
+
+image::Management.command_center_overview-b614e.png[Management.command センターの概要 b614e]
+
+コマンド * メニューから、アクションのリストから選択できます（下記のリストを参照）。
+
+コマンドを選択すると、「 * データのロード * 」ボタンから配置データを入力できます。[Load Data] ボタンは、以前に選択したデータ（例 ドロップダウンから特定の VM を選択した後、使用可能なバックアップ日のリストをロードする）
+
+image::Management.command_center_overview-85417.png[Management.command センターの概要 85417]
+
+コマンドを選択した後、 [* コマンドを実行（ Execute Command * ） ] をクリックすると、選択したプロセスが実行されます。
+
+ログを確認するには、 * すべてのログを表示 * ボタンをクリックします。RAW テキストファイルが開き、最新のエントリが下に表示されます。
+
+
+
+==== コマンドリスト
+
+* link:Management.command_center.operations.copy_template_to_gallery.html["テンプレートを Gallery にコピー"]
+

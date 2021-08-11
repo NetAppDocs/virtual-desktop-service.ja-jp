@@ -1,0 +1,23 @@
+= Microsoft Office 365 の概要
+
+
+
+
+== Microsoft Office 365 の概要
+
+このスクリプトパッケージは、 chocolatey パッケージマネージャを使用して Microsoft Office _ をインストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+WARNING: この Microsoft Office 365 インストールスクリプトには、 Microsoft チームや Microsoft One Drive は含まれていません。これらはスタンドアロンの自動スクリプトとして含まれており、一部の環境ではこれらのアプリケーションが不要なため、柔軟性が向上します。この配置は、コピーおよび編集して含めることができます（または、他の配置を変更することもできます） link:https://docs.microsoft.com/en-us/deployoffice/overview-office-deployment-tool["Office 展開ツール"] 設定） VDS からスクリプトをクローニングし、 InstallMicrosoftOffice365.ps1 を編集して、 XML 設定ファイルに異なる値を入力する。
+
+
+
+=== デフォルトのショートカットパス
+
+このアプリケーションのデフォルトのショートカットパスは、以下のように入力されます。ショートカットは「 \\folders\Microsoft Office' 」です
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallMicrosoftOffice365.png[scriptlibrary.activity.InstallMicrosoftOffice365]

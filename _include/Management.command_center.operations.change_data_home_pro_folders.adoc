@@ -1,0 +1,28 @@
+= <strong> データの変更 /Pro/Home フォルダ </strong> 概要
+
+
+
+
+== 「データ /Pro/Home フォルダの概要」を変更します
+
+image::Management.command_center.operations.change_data_home_pro_folders-678cd.png[Management.command center.operations.change data home pro フォルダ 678cd]
+
+データ、プロファイル、およびユーザーのホームフォルダの保存場所は、 Active Directory によって管理されます。コマンドセンターでは、これらの場所を変更する処理を実行できます。
+
+image::Management.command_center.operations.copy_template_to_gallery-ed821.png[Management.command center.operation.copy テンプレートを gallery ed821 にコピーします]
+
+
+
+== リソースプールを選択しています
+
+リソースプールの選択が空白の場合、設定はグローバルに適用されます。
+
+特定のリソースプール（ホストプール）を選択すると、そのリソースプールに対してユーザーのプロファイルパスを個別に定義できます
+
+image::Management.command_center.operations.change_data_home_pro_folders-3ac43.png[] []
+
+
+
+== は Windows Server です
+
+ストレージサービス（例 Azure NetApp Files ）がストレージの場所として選択されます。

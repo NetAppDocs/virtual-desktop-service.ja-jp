@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: video_VDS_day_in_the_life.html 
+summary: RDS と AVD の日々の管理に NetApp VDS v5.4 を使用 
+keywords:  
+---
+= RDS と AVD の日々の管理に NetApp VDS v5.4 を使用
+
+
+
+
+== 概要
+
+video::uGEgA3hFdM4[youtube, ]

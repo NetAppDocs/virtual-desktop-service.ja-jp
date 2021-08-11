@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: Reference.vds_change_environments.html 
+summary: NetApp VDS 環境の変更 
+keywords:  
+---
+= VDS 環境の変更
+
+
+
+
+== 概要
+
+NetApp Virtual Desktop Service を使用すると、以前のリリースでの導入管理、将来のリリースのプレビュー、 1 つ前のバージョンで実行されている環境の管理が可能になります（ N -1 方式）。
+
+
+
+=== Virtual Desktop Service の URL
+
+Virtual Desktop Service は、管理者が VDS の導入を継続的に管理するために使用できる管理コンソールです。
+
+[cols="20,20,20,20,20"]
+|===
+| 環境 | 説明 | URL | コードベース | API のドキュメント 
+
+
+| プレビュー（ Preview ） | 今後のリリースのプレビュー版です | https://preview.manage.cloudworksace.com/[] | 5.4 | https://api.cloudworkspace.com/5.4/swagger/ui/index[] 
+
+
+| * 電流 * | * 現在のリリース * | * https://manage.vds.netapp.com/* | * 6.0 * | * https://api.cloudworkspace.com/6.0/swagger/ui/index* 
+
+
+| 前へ | 以前のリリース | https://manage.cloudworkspace.com/[] | 5.4 | https://api.cloudworkspace.com/5.4/swagger/ui/index[] 
+|===
+
+
+=== 仮想デスクトップサービスの導入
+
+VDS では、ウィザードベースの導入プロセスが提供されます。このプロセスにより、管理者は AVD や仮想デスクトップ環境のプロビジョニングプロセスを大幅に合理化できます。
+
+管理者は、既存の環境またはプレビュー環境にのみ導入をプロビジョニングできません。
+
+[cols="20,20,20,20,20"]
+|===
+| 環境 | 説明 | URL | コードベース | 導入ガイド 
+
+
+| * 電流 * | * 現在のリリース * | * https://manage.vds.netapp.com/deployments/add* | *5.4* | *link:Deploying.Azure.AVD.Deploying_AVD_in_Azure_v6.html["VDS v6.0 導入ガイド"]* 
+
+
+| 前へ | 以前のリリース | https://cwasetup.cloudworkspace.com[] | 5.4 | サポートにお問い合わせください 
+|===
+
+
+=== VDS コスト見積もりツール
+
+VDS コスト試算ツールは、 Azure または Google Cloud でパブリッククラウドのコストを見積もることができる、目的に合わせて構築された付加価値ツールです。このツールには、予算を変更して最適化し、組織の予算内で必要な解決策を提供する方法が含まれています。
+
+[cols="33,33,33"]
+|===
+| 環境 | 説明 | URL 
+
+
+| 検証 | 今後のリリースのプレビュー | https://val.manage.vds.netapp.com/cost-estimator[] 
+
+
+| * 電流 * | * 現在のリリース * | * https://manage.vds.netapp.com/cost-estimator* 
+|===

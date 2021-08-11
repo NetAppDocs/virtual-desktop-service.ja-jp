@@ -1,0 +1,186 @@
+---
+sidebar: sidebar 
+permalink: Architectural.AVD_teardown_guide.html 
+summary: AVD から VDS を削除するためのステップバイステップガイド 
+keywords:  
+---
+= AVD イヤダウンガイド
+
+
+
+
+== 概要
+
+この記事では、 AVD エンドユーザのアクセスを維持しながら VDS と NetApp コントロールを削除する方法について説明します。今後の管理には、 Azure / Windows の標準管理ツールを使用します。このプロセスが完了したら、ネットアップがバックエンドシステムと請求システムをクリーンアップできるように、 VDSsupport@netapp.com に問い合わせることを推奨します。
+
+
+
+== 初期状態
+
+* AVD の導入
+* TDS1 は FS Logix FileShare です
+* TS1 はセッションホストです
+* ユーザがログインし、 FS Logix ディスクが次の場所に作成されました。
++
+....
+\\****TSD1\****-Pro$\ProfileContainers (**** = Unique Company Code)
+....
+
+
+
+
+== CW エージェントサービスを削除します
+
+CW Agent は、環境内のすべてのマシンで実行されます。このプロセスを開始するサービスは、環境内のすべての VM について次のコマンドを使用してアンインストールする必要があります。CWMGR1 は、ほとんどの場合、 VM がシャットダウンされ、最終的に削除されるため、スキップできます。このアクションはスクリプト化された自動化を介して実行するのが理想的です。次のビデオは、手動で実行した操作を示しています。
+
+....
+C:\Program files\CloudWorkspace\CwAgent\CwAgent.exe -u
+....
+
+
+=== CW エージェントサービスビデオを削除します
+
+video::l9ASmM5aap0[youtube, ]
+
+
+== CW エージェントディレクトリを削除します
+
+前回のアンインストールでは、 CW Agent を起動するサービスは削除されましたが、ファイルは削除されたままです。ディレクトリを削除します。
+
+....
+"C:\Program Files\CloudWorkspace"
+....
+
+
+=== CW Agent ディレクトリビデオを削除します
+
+video::hMM_z4K2-iI[youtube, ]
+
+
+== スタートアップショートカットを削除します
+
+startup items ディレクトリには、前の手順で削除したファイルへのショートカットが 2 つあります。エンドユーザのエラーメッセージが表示されないようにするには、これらのファイルを削除する必要があります。
+
+....
+"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\Pen.lnk"
+"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\CwRemoteApps.lnk"
+....
+
+
+=== スタートアップショートカットの削除に関するビデオ
+
+video::U0YLZ3Qfu9w[youtube, ]
+
+
+== 「ユーザー」と「会社」の GPO のリンクを解除します
+
+VDS で実装された GPO は 3 つあります。2 つのリンクを解除し、 3 つ目のコンテンツを確認することをお勧めします。
+
+リンク解除：
+
+* AADDC ユーザー > クラウドワークスペース企業
+* AADDC Users > Cloud Workspace Users の順にクリックします
+
+
+レビュー
+
+* AADDC Computers > Cloud Workspace Computers の順にクリックします
+
+
+
+
+=== 「ユーザー」と「会社」の GPO ビデオのリンクを解除します
+
+video::cb68ri3HKUw[youtube, ]
+
+
+== CWMGR1 をシャットダウンします
+
+GPO の変更が適用された状態で、 CWMGR1 VM をシャットダウンできるようになりました。継続した AVD 機能が確認されると、この VM は永続的に削除できます。
+
+別のサーバの役割（など）が実行されている場合、この VM を維持する必要が生じることはきわめてまれです DC 、 FTP サーバなど）。この場合、 3 つのサービスをディセーブルにして CWMGR1 の VDS 機能をディセーブルにできます。
+
+* CW エージェント（上記を参照）
+* CW オートメーションサービス
+* CW VM オートメーション
+
+
+
+
+=== CWMGR1 ビデオをシャットダウンします
+
+video::avk9HyIiC_s[youtube, ]
+
+
+== NetApp VDS サービスアカウントを削除します
+
+VDS で使用される Azure AD サービスアカウントを削除することができます。Azure Management Portal にログインし、ユーザを削除します。
+
+* CloudWorkspaceSVC
+* CloudWorkspaceCASVC
+
+
+他のユーザアカウントを保持できます。
+
+* エンドユーザ
+* Azure 管理者
+* .tech ドメイン管理者
+
+
+
+
+=== Delete NetApp VDS service accounts （ NetApp VDS サービスアカウントの削除）ビデオ
+
+video::_VToVNp49cg[youtube, ]
+
+
+== アプリ登録を削除します
+
+VDS の導入時に 2 つのアプリケーション登録が行われます。これらは削除できます。
+
+* Cloud Workspace API
+* Cloud Workspace AVD のようになります
+
+
+
+
+=== アプリ登録のビデオを削除します
+
+video::iARz2nw1Oks[youtube, ]
+
+
+== エンタープライズアプリケーションを削除します
+
+VDS を導入するときに、 2 つのエンタープライズアプリケーションが導入されます。これらは削除できます。
+
+* クラウドワークスペース
+* Cloud Workspace Management API の略
+
+
+
+
+=== エンタープライズアプリケーションの削除のビデオ
+
+video::3eQzTPdilWk[youtube, ]
+
+
+== CWMGR1 が停止していることを確認します
+
+エンドユーザがまだ接続できることをテストする前に、 CWMGR1 が現実的なテストのために停止されていることを確認します。
+
+
+
+=== CWMGR1 がビデオを停止していることを確認します
+
+video::Ux9nkDk5lU4[youtube, ]
+
+
+== ログインおよびエンド・ユーザ
+
+成功を確認するには、エンドユーザとしてログインし、機能が維持されていることを確認します。
+
+
+
+=== ログインとエンドユーザビデオ
+
+video::SuS-OTHJz7Y[youtube, ]

@@ -1,0 +1,14 @@
+= AMD Radeon Instinct ドライバの概要
+
+
+
+
+== AMD Radeon Instinct ドライバの概要
+
+このスクリプトパッケージは、 chocolatey パッケージマネージャを使用して、 _AMD Radeon Instinct Drivers_ をインストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallAMDRadeonInstinctDrivers.png[scriptlibrary.activity.InstallAMDRadeonInstinctDrivers]

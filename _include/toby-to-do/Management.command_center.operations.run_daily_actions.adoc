@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.run_daily_actions-4a3cd.png[Management.command center.operations.ru n 日次アクション 4a3cd]

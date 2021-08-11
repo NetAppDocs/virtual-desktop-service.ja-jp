@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: Management.System_Administration.azure_key_vault.html 
+summary: AZ で VDS クレデンシャルにアクセスする 
+keywords:  
+---
+= Azure Key Vault で VDS クレデンシャルにアクセスする
+
+
+
+
+== 概要
+
+CWASetup 5.4 は、以前の Azure 導入方法からの出発点です。構成と検証のプロセスが合理化され、導入を開始するために必要な情報量が削減されます。削除されたプロンプトの多くは、ローカル VM 管理者、 SMTP アカウント、テクニカルアカウント、 SQL SA などのアカウントのクレデンシャルまたはアカウントです。これらのアカウントは、自動的に生成されて Azure Key Vault に格納されるようになりました。デフォルトでは、これらの自動生成されたアカウントにアクセスするには、次の手順を実行する必要があります。
+
+* 「キーボールト」リソースを検索し、そのリソースをクリックします。
++
+image:Management.System_Administration.azure_key_vault-4d897.png["幅 = 75%"]
+
+* [ 設定 ] で、 [ タレット ] をクリックします。次の項目を表示する権限がないことを示すメッセージが表示されます。
++
+image:Management.System_Administration.azure_key_vault-0f7b9.png["幅 = 75%"]
+
+* 「アクセスポリシー」を追加して、 Azure AD アカウント（グローバル管理者やシステム管理者など）にこれらの重要なキーへのアクセスを許可します。
++
+image:Management.System_Administration.azure_key_vault-fe473.png["幅 = 75%"]
+
+* この例では、グローバル管理者が使用されています。プリンシパルを選択したら、 [ 選択 ] 、 [ 追加 ] の順にクリックします。
++
+image:Management.System_Administration.azure_key_vault-3ae42.png["幅 = 75%"]
+
+* [Save （保存） ] をクリックします。
++
+image:Management.System_Administration.azure_key_vault-15c03.png["幅 = 75%"]
+
+* アクセスポリシーが追加されました：
++
+image:Management.System_Administration.azure_key_vault-770dd.png["幅 = 75%"]
+
+* 「小塔」を再訪問して、アカウントが導入アカウントにアクセスできることを確認します。
++
+image:Management.System_Administration.azure_key_vault-e277a.png["幅 = 75%"]
+
+* たとえば、 CWMGR1 にログインしてグループポリシーを更新するためにドメイン管理者の資格情報が必要な場合は、各エントリをクリックして、 cjDomainAdministratorName および cjDomainAdministratorPassword の文字列を確認します。
++
+image:Management.System_Administration.azure_key_vault-69e35.png["幅 = 75%"]
+
++
+image:Management.System_Administration.azure_key_vault-83926.png["幅 = 75%"]
+
+* 値の表示またはコピー：
++
+image:Management.System_Administration.azure_key_vault-c9405.png["幅 = 75%"]
+
+

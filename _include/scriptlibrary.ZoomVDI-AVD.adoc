@@ -1,0 +1,23 @@
+= VDI/AVD の概要を拡大します
+
+
+
+
+== VDI/AVD の概要を拡大します
+
+このスクリプトパッケージは、 PowerShell を使用して導入を実行するために、 _Zoom VDI-AVD_A をインストールまたはアンインストールします。
+
+
+NOTE: VDI/AVD 環境でオーディオリダイレクトも有効になっていると、ズームパフォーマンスが向上します。
+
+
+
+=== デフォルトのショートカットパス
+
+このアプリケーションのデフォルトのショートカットパスは以下のとおりですショートカットは '\\shortcuts\Zoom VDI.lnk' です
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallZoomVDI-AVD.png[scriptlibrary.activity.InstallZoomVDI AVD]

@@ -1,0 +1,20 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.create_server_from_backup-cac47.png[Management.command center.operations.create サーバをバックアップ cac47 から作成します]
+
+image::Management.command_center.operations.create_server_from_backup-eabc4.png[Management.command center.operation.create サーバをバックアップ eabc4 から作成します]
+
+image::Management.command_center.operations.create_server_from_backup-14061.png[Management.command center.operations. バックアップ 14061 からサーバを作成します]
+
+image::Management.command_center.operations.create_server_from_backup-c7d6b.png[Management.command center.operations.d6b バックアップからサーバを作成します]
+
+image::Management.command_center.operations.create_server_from_backup-a487e.png[Management.command center.operation.create サーバをバックアップ a487e から作成します]
+
+image::Management.command_center.operations.create_server_from_backup-51ac2.png[Management.command center.operation.2 バックアップ 51ac2 からサーバを作成します]
+
+image::Management.command_center.operations.create_server_from_backup-b0fa0.png[Management.command center.operation.create サーバをバックアップ b0fa0 から作成します]

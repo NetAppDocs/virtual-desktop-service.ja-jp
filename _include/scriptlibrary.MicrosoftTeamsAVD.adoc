@@ -1,0 +1,23 @@
+= Microsoft Teams for AVD の概要
+
+
+
+
+== Microsoft Teams for AVD の概要
+
+このスクリプトパッケージでは、 chocolatey パッケージマネージャを使用して、 Microsoft チーム AVD_Ad をインストール / アンインストールします (https://chocolatey.org/)[] をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。
+
+
+WARNING: この Microsoft チームは、 AVD 環境への導入用に特別に構成されており、 Azure の AVD に固有のカスタマイズとコンポーネントが含まれています。 link:scriptlibrary.MicrosoftTeams.html["別の Microsoft Teams スクリプト"] RDS 展開用に用意されています。
+
+
+
+=== デフォルトのショートカットパス
+
+このアプリケーションのデフォルトのショートカットパスは以下のとおりですショートカットは '\\shortcut\Microsoft Teams AVD.lnk' です
+
+
+
+=== [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
+
+image::scriptlibrary.activity.InstallMicrosoftTeamsAVD.png[scriptlibrary.activity.InstallMicrosoftTeamsAVD]

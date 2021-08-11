@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.delete_template-83488.png[Management.command center.operations.delete テンプレート 83488]

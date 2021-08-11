@@ -1,0 +1,392 @@
+= 概要
+
+
+
+
+== 概要
+
+DCConfig は、多数の展開全体の設定を設定および変更するために使用される CWMGER1 VM 上の設定ユーティリティです。
+
+. CWMGER1 VM に管理者として接続します
+. デスクトップのショートカットからアプリケーションを実行します
+
+
+アプリケーションには、構成、詳細、ヘルプの 3 つの主要なセクションがあります。
+
+
+
+=== 設定
+
+起動時に [ 構成（ Configurations ） ] ウィンドウが開き、いくつかのサブセクションがあります
+
+
+
+==== データセンター
+
+image::images/Management.dcconfig.dcconfig.overview-61c8f.png[management.dcconfig.dcconfig.overview 61c8f]
+
+
+
+==== アカウント
+
+image::images/Management.dcconfig.dcconfig.overview-f34a2.png[management.dcconfig.dcconfig.overviewf34a2]
+
+
+
+==== E メール
+
+image::images/Management.dcconfig.dcconfig.overview-4b3be.png[management.dcconfig.dcconfig.overview4b3be]
+
+
+
+==== データベース接続
+
+image::images/Management.dcconfig.dcconfig.overview-80da7.png[management.dcconfig.dcconfig.overview80da7.]
+
+
+
+==== 除外する
+
+image::images/Management.dcconfig.dcconfig.overview-0f30e.png[management.dcconfig.dcconfig.overview0f30e]
+
+
+
+==== データセンターサイト
+
+image::images/Management.dcconfig.dcconfig.overview-95b21.png[management.dcconfig.dcconfig.overview95b21]
+
+
+
+==== プロダクトキー
+
+image::images/Management.dcconfig.dcconfig.overview-298a0.png[management.dcconfig.dcconfig.overview298a0]
+
+
+
+==== 静的 IP アドレス
+
+image::images/Management.dcconfig.dcconfig.overview-7e4a4.png[management.dcconfig.dcconfig.overview 7e4a4]
+
+
+
+==== ドライブのマッピング
+
+image::images/Management.dcconfig.dcconfig.overview-60fd2.png[management.dcconfig.dcconfig.overview60fd2]
+
+
+
+=== 詳細設定
+
+[ 詳細設定 ] ウィンドウには、このインターフェイス内から編集できる値のリストが表示されます。
+
+[cols="33,33,33"]
+|===
+| グループ名 | FriendlyName の略 | 価値 
+
+
+| グループ名 | FriendlyName の略 | 価値 
+
+
+| サーバの作成 | UpdateVMNameWhenRemovedFromCache | 正しい / 間違っている 
+
+
+| サーバの作成 | UpdateFirewallRules | 正しい / 間違っている 
+
+
+| サーバの作成 | WaitAfterRebootMin | <# 分 > 
+
+
+| サーバの作成 | WaitAfterHypervisorCreatMin | <# 分 > 
+
+
+| サーバの作成 | WaitAfterSysPrepMin | <# 分 > 
+
+
+| サーバの作成 | WaitAfterSysPrepFor2008ServerMin | <# 分 > 
+
+
+| サーバの作成 | GFI エージェントパス |  
+
+
+| サーバの作成 | 自動クローニングが有効になりました | 正しい / 間違っている 
+
+
+| サーバの作成 | CompanyOU | <String-Companines OU Name> 
+
+
+| サーバの作成 | ThinPrint v11 をインストールします | 正しい / 間違っている 
+
+
+| サーバの作成 | サーバ OU | <String - サーバー OU 名 > 
+
+
+| サーバの作成 | FsLogix をインストール | 正しい / 間違っている 
+
+
+| サーバの作成 | デフォルト OU を使用します | 正しい / 間違っている 
+
+
+| サーバの作成 | 最大スレッド数 | <#> 
+
+
+| サーバの作成 | DNS が更新されるまで待ちます | <# 分 > 
+
+
+| VDC Tools のバージョンを確認します | X 分ごとに実行します | <# 分 > 
+
+
+| 毎日のアクション | 有効 | 正しい / 間違っている 
+
+
+| 毎日のアクション | 起動時に実行します | 正しい / 間違っている 
+
+
+| レポートを生成します | 時刻 | < 時間 00 ： 00> 
+
+
+| 毎日のメンテナンス | 有効 | 正しい / 間違っている 
+
+
+| 毎日のメンテナンス | 時刻 | < 時間 00 ： 00> 
+
+
+| 週次メンテナンス | 有効 | 正しい / 間違っている 
+
+
+| 週次メンテナンス | 時刻 | < 時間 00 ： 00> 
+
+
+| 週次メンテナンス | 日 | < 曜日 > 
+
+
+| AutomaticResourceAllocation | 有効 | 正しい / 間違っている 
+
+
+| リソースの割り当て | データセンターのデフォルト設定を使用します | 正しい / 間違っている 
+
+
+| E メールレポート | 電子メール添付ファイルを含めます | 正しい / 間違っている 
+
+
+| サーバハートビート | 間隔 - 分 | <# 分 > 
+
+
+| AutoPro データをダウンロードします | 間隔 - 分 | <# 分 > 
+
+
+| データセンターハートビート | 間隔 - 分 | <# 分 > 
+
+
+| サーバがリブートします | 有効 | 正しい / 間違っている 
+
+
+| サーバがリブートします | リブートの間隔（分 | <# 分 > 
+
+
+| FreeSpaceReport の 2 つのレポートが | MinFreeSpaceGB の説明を参照してください | <# GB 最小しきい値 > 
+
+
+| MaxRebootTimeSpanHours | ClientServers | <# 再起動が必要な時間 > 
+
+
+| MaxRebootTimeSpanHours | インフラサーバ | <# 再起動が必要な時間 > 
+
+
+| VDC ツールを自動的に更新します | 有効 | 正しい / 間違っている 
+
+
+| ActivateOffice | 有効 | 正しい / 間違っている 
+
+
+| ActivateWindows | 有効 | 正しい / 間違っている 
+
+
+| 監視 | 最大保持日数 | <# 日 > 
+
+
+| ログ | 最大保持日数 | <# 日 > 
+
+
+| レポートデータ | 最大保持日数 | <# 日 > 
+
+
+| ファイル監査 | 最大保持日数 | <# 日 > 
+
+
+| ファイル監査 | 詳細ログ | 正しい / 間違っている 
+
+
+| FileAuditFolders のように作成され | フォルダ数（ NumFolders ） | 2. 
+
+
+| FileAuditFolder1 | パス | [DataDrive] ： \ データ 
+
+
+| FileAuditFolder1 | 除外する | * サム s.db 
+
+
+| FileAuditFolder1 | 除外する | *.tmp 
+
+
+| FileAuditFolder1 | 除外する | * ~$ * 。 doc 
+
+
+| FileAuditFolder1 | 除外する | * ~$ * 。 docx 
+
+
+| FileAuditFolder2. | パス | [DataDrive] ： \ ホーム 
+
+
+| FileAuditFolder2. | 除外する | sOs.db 
+
+
+| CwVmAutomationService の略 | サービスコマンドライン引数 |  
+
+
+| FtpReleaaeAddress のように入力します | URL | <ftp URL> 
+
+
+| ワークロードスケジュール | X 分ごとに実行します | <# 分 > 
+
+
+| ワークロードスケジュール | キャッシュ会社をオフにします | 正しい / 間違っている 
+
+
+| バックアップを作成します | 有効 | 正しい / 間違っている 
+
+
+| バックアップを作成します | X 分ごとに実行します | <# 分 > 
+
+
+| アプリケーションを監視する | 有効 | 正しい / 間違っている 
+
+
+| ペン | InitialSleepSeconds ( 初期スリープ秒 | <# 秒 > 
+
+
+| ペン | MustChangePasswordDay のように入力します | <# 強制 PW リセットの有効期限が切れる前の日数 > 
+
+
+|  |  | < パスワードリセットテキスト文字列 > 
+
+
+| ペン | ロゴ | <local.png ロゴパス > 
+
+
+| ペン | 通知日数 | <# 日 > 
+
+
+| ペン | NotificationDay1 | < 通知の有効期限が切れるまでの日数 > 
+
+
+| ペン | NotificationDay2 のように通知されます | < 通知の有効期限が切れるまでの日数 > 
+
+
+| ペン | NotificationDay3 | < 通知の有効期限が切れるまでの日数 > 
+
+
+| ペン | NotificationDay4 のように通知されます | < 通知の有効期限が切れるまでの日数 > 
+
+
+| ペン | NotificationDay5 | < 通知の有効期限が切れるまでの日数 > 
+
+
+| ペン | NotificationDay6 | < 通知の有効期限が切れるまでの日数 > 
+
+
+| 監視 | 有効 | 正しい / 間違っている 
+
+
+| 監視 | E メールアラートを送信 | 正しい / 間違っている 
+
+
+| 監視 | アラートサーバが分間ダウンします | <# 分 > 
+
+
+| 監視 | RAM のアラートが数分間高くなります | <# 分 > 
+
+
+| 監視 | RAM 上限 % | < RAM % しきい値 > 
+
+
+| 監視 | CPU High に分間アラートを送信します | <# 分 > 
+
+
+| 監視 | CPU 使用率が高い | <CPU しきい値 > 
+
+
+| 監視 | ドライブ容量が低い | < ディスク領域の空き容量しきい値 > 
+
+
+| クライアント遅延の削除 | 分 | <# 分 > 
+
+
+| ドライブを自動的に展開します | 有効 | 正しい / 間違っている 
+
+
+| セキュリティの強化 | 有効 | 正しい / 間違っている 
+
+
+| CwAgent を Domain Admin として実行します | 有効 | 正しい / 間違っている 
+
+
+| サーバを監視します | SolarWinds の使用 | 正しい / 間違っている 
+
+
+| H5 ポータルを自動的に更新します | 有効 | 正しい / 間違っている 
+
+
+| ワイルドカード証明書をインストールします | インフラストラクチャサーバー | 正しい / 間違っている 
+
+
+| 会社の作成 | 固有のサイト内 | 正しい / 間違っている 
+
+
+| ライブスケーリング | 遅延パワーオフ最小 | <# 分 > 
+
+
+| サーバリソースレポート | DNS を確認します | 正しい / 間違っている 
+
+
+| ハイパーバイザー | キャッシュテンプレート | 正しい / 間違っている 
+
+
+| 詳細ログ | ライブスケーリング | 正しい / 間違っている 
+
+
+| 詳細ログ | Live Scaling - サーバーステータスを表示します | 正しい / 間違っている 
+
+
+| 詳細ログ | ワークロードのスケジューリング | 正しい / 間違っている 
+
+
+| 詳細ログ | テンプレートからサーバを作成します | 正しい / 間違っている 
+
+
+| 詳細ログ | Template Timing からサーバを作成します | 正しい / 間違っている 
+
+
+| 詳細ログ | バックアップからサーバを作成します | 正しい / 間違っている 
+
+
+| 詳細ログ | クローンからサーバを作成します | 正しい / 間違っている 
+
+
+| 詳細ログ | テンプレートを作成します | 正しい / 間違っている 
+
+
+| 詳細ログ | 他のサービスと通信する | 正しい / 間違っている 
+
+
+| テンプレートを作成します | 手動での RunSysPrep | 正しい / 間違っている 
+
+
+| Domain Controller の略 | 名前 | cwmgr1.< domain.com ★■次の分節と要調整■ 
+|===
+image::images/Management.dcconfig.dcconfig.overview-9c7ac.png[management.dcconfig.dcconfig.overview9c7ac]
+
+
+
+=== ヘルプ
+
+ローカルヘルプファイルを開きます。

@@ -1,0 +1,178 @@
+= 概要
+
+
+
+
+== 概要
+
+仮想デスクトップサービスの導入テクノロジを使用すると、基盤となるインフラに応じてさまざまなストレージオプションを選択できます。このガイドでは、 Azure Files の導入後の使用方法を変更する方法について説明します。
+
+
+
+=== 前提条件
+
+* AD Connect がインストールされ、設定されている
+* Azure グローバル管理者アカウント
+* AZFilesHybrid PowerShell モジュールです https://github.com/Azure-Samples/azure-files-samples/releases[]
+* AZ PowerShell モジュール
+* ActiveDirectory PowerShell モジュール
+
+
+
+
+=== 新しいストレージレイヤを作成します
+
+. グローバル管理者アカウントで Azure にログインします
+. ワークスペースと同じ場所に新しいストレージアカウントを作成し、リソースグループを作成します
++
+image:Architectural.ChangeDataLayer.AzureFiles1.png[""]
+
+. ストレージアカウントの下に、データ共有、ホームファイル、およびプロファイル共有を作成します
++
+image:Architectural.ChangeDataLayer.AzureFiles2.png[""]
+
+
+
+
+
+=== Active Directory をセットアップします
+
+. Cloud Workspace > Cloud Worksapce Service Accounts OU の下に、「 "`S storage Account" 」という名前の新しい組織ユニットを作成します
++
+image:Architectural.ChangeDataLayer.AzureFiles3.png[""]
+
+. AD DS 認証を有効にする（ PowerShell を使用して実行する必要があります） https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable[]
++
+.. DomainAccountType は「 `S erviceLogonAccount` 」にする必要があります。
+.. OraganizationalUnitDistinguishedName は、前の手順で作成した OU の識別名です（「 OU = ストレージアカウント、 OU = クラウドワークスペース、 OU = クラウドワークスペース、 DC = TrainingKrisG 、 DC = onmicrosoft 、 DC = com` 」など）。
+
+
+
+
+
+
+=== 共有の役割を設定します
+
+. Azure ポータルで、 CloudWorkspaceSVC および Level3 テクニシャンに「ストレージファイルデータ SMB 共有昇格寄与者」の役割を付与します
++
+image:Architectural.ChangeDataLayer.AzureFiles4.png[""]
+
+. 「 Storage File Data SMB Share Contributor 」ロールを「 <company code> - All Users 」グループに割り当てます
++
+image:Architectural.ChangeDataLayer.AzureFiles5.png[""]
+
+
+
+
+
+=== ディレクトリを作成します
+
+. 会社コードを名前として使用して、各共有内にディレクトリを作成します（この例では、会社コードは「 "kift" 」です）。
++
+image:Architectural.ChangeDataLayer.AzureFiles6.png[""]
+
+. Pro 共有の < 会社コード > ディレクトリに「 ProfileContainers 」ディレクトリを作成します
++
+image:Architectural.ChangeDataLayer.AzureFiles7.png[""]
+
+
+
+
+
+=== NTFS 権限を設定します
+
+. 共有に接続します
++
+.. Azure ポータルのストレージアカウントの下にある共有に移動し、 3 つのドットをクリックして、 [ 接続 ] をクリックします
++
+image:Architectural.ChangeDataLayer.AzureFiles8.png[""]
+
+.. 認証方法として Active Directory を選択し、コードの右下隅にあるクリップボードにコピーアイコンをクリックします
++
+image:Architectural.ChangeDataLayer.AzureFiles9.png[""]
+
+.. Level3 Technician グループのメンバーであるアカウントを使用して、 CWMGR1 サーバにログインします
+.. PowerShell で、コピーしたコードを実行してドライブをマッピングします
+.. 共有ごとに同じドライブレターを選択し、共有ごとに同じドライブレターを設定します
+
+
+. <company code> ディレクトリの継承を無効にします
+. システムおよび AD グループの ClientDHPAccess では、 <company code> ディレクトリへのフルコントロールが必要です
+. ドメインコンピュータは、 Pro 共有内の < 会社コード > ディレクトリ、および内の ProfileContainers ディレクトリに対するフルコントロールを持っている必要があります
+. <company code> -all users AD グループには、ホーム共有および Pro 共有内の <company code> ディレクトリへの List フォルダ / read データアクセス権が必要です
+. <company code> - すべてのユーザー AD グループは、データ共有内のディレクトリに対する以下の特別な権限を持っている必要があります
++
+image:Architectural.ChangeDataLayer.AzureFiles10.png[""]
+
+. <company code> - すべてのユーザ AD グループは、 ProfileContainers ディレクトリの Modify 権限を持っている必要があります
+
+
+
+
+=== グループポリシーオブジェクトを更新します
+
+. Cloud Workspace > Cloud Workspace Companies > < 会社コード >><company code> - デスクトップユーザーの下にある GPO < 会社コード > ユーザーを更新します
++
+.. 新しいホーム共有を指すようにホームドライブマッピングを変更します
++
+image:Architectural.ChangeDataLayer.AzureFiles11.png[""]
+
+.. デスクトップとドキュメントのホーム共有を指すようにフォルダリダイレクトを変更します
++
+image:Architectural.ChangeDataLayer.AzureFiles12.png[""]
+
++
+image:Architectural.ChangeDataLayer.AzureFiles13.png[""]
+
+
+
+
+
+
+
+=== Active Directory のユーザとコンピュータで共有を更新します
+
+. クラシック AD またはハイブリッド AD では、会社コード OU 内の共有を新しい場所に更新する必要があります
++
+image:Architectural.ChangeDataLayer.AzureFiles14.png[""]
+
+
+
+
+
+=== VDS でデータ / ホーム /Pro パスを更新します
+
+. Level3 Technician グループのアカウントで CWMGR1 にログインし、コマンドセンターを起動します
+. [ コマンド ] ドロップダウンで、 [ データ / ホーム /Pro フォルダの変更 ] を選択します
+. [Load Data] ボタンをクリックし、ドロップダウンから適切な会社コードが選択されていることを確認します
+. データ、ホーム、およびプロの場所の新しいパターンを入力します
+. [Is Windows Server] ボックスをオフにします
+. コマンドを実行ボタンをクリックします
++
+image:Architectural.ChangeDataLayer.AzureFiles15.png[""]
+
+
+
+
+
+=== FSLogix プロファイルパスを更新します
+
+. セッションホストでレジストリ一時的に開きます
+. HKLM\SOFTWARE\FSLogix\Profiles の VHDLocations エントリを編集して、新しい ProfileContainers ディレクトリへの UNC パスにします
++
+image:Architectural.ChangeDataLayer.AzureFiles16.png[""]
+
+
+
+
+
+=== バックアップを設定します
+
+. 新しい共有のバックアップポリシーを設定して設定することを推奨します
+. 同じリソースグループに新しいリカバリサービスボールトを作成します
+. ボルトに移動し、はじめに（ Getting Started ）でバックアップ（ Backup ）を選択します
+. ワークロードが実行されている Azure を選択し、バックアップ対象の Azure ファイル共有を選択して、 Backukp をクリックします
+. 共有の作成に使用するストレージアカウントを選択します
+. バックアップする共有を追加します
+. ニーズに合わせてバックアップポリシーを編集、作成できます
+

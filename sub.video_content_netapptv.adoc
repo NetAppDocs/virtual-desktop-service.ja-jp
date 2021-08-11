@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: video_content_netapptv.html 
+summary: NetApp TV のビデオコンテンツ 
+keywords:  
+---
+= VDS コンテンツを NetApp TV に表示
+
+
+
+
+== VDS 、 GFC 、 ANF - グローバルに導入されたクラウドデスクトップ向けの解決策
+
+Azure NetApp Files はハイパフォーマンスストレージをホストしますが、仮想デスクトップサービスとグローバルファイルキャッシュは、グローバルに導入されているクラウドデスクトップ用の単一のコントロールパネルからワークスペースとサイト領域を管理します。
+
+image:netapptv1.png["リンク : https://tv.netapp.com/detail/video/6182654694001"]
+
+link:https://tv.netapp.com/detail/video/6182654694001[""]

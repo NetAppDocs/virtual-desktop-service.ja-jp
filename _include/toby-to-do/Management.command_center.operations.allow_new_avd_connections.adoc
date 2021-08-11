@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.allow_new_AVD_connections-74385.png[Management.command center.operations 新しい AVD 接続 74385 を許可します]

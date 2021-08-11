@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.load_storage_types-e47d0.png[Management.command center.operations. ストレージタイプ e47d0 をロードします]

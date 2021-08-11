@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.created_company-da1a3.png[Management.command center.operation.created company da1a3]

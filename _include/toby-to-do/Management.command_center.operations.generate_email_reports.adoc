@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.generate_email_reports-72145.png[Management.command center.operation.generate email reports 72145]

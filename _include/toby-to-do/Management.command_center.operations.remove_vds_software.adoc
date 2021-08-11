@@ -1,0 +1,8 @@
+= 概要
+
+
+
+
+== 概要
+
+image::Management.command_center.operations.remove_vds_software-204f4.png[Management.command center.operations .vds ソフトウェア 204f4 を削除します]
