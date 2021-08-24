@@ -85,9 +85,7 @@ image:mapped7.png[""]
 
 . 次に、グループポリシー管理エディタでドライブマップを編集します。Azure AD ドメインサービスの場合、マッピングは次の場所にあります。
 +
-....
-“Cloud Workspace Users > User Configuration > Preferences > Windows Settings> Drive Maps”
-....
+ “Cloud Workspace Users > User Configuration > Preferences > Windows Settings> Drive Maps”
 +
 image:mapped8.png[""]
 

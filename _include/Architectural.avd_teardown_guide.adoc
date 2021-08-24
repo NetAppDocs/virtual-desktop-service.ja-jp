@@ -16,9 +16,7 @@
 * TS1 はセッションホストです
 * ユーザがログインし、 FS Logix ディスクが次の場所に作成されました。
 +
-....
-\\****TSD1\****-Pro$\ProfileContainers (**** = Unique Company Code)
-....
+ \\****TSD1\****-Pro$\ProfileContainers (**** = Unique Company Code)
 
 
 
@@ -27,9 +25,7 @@
 
 CW Agent は、環境内のすべてのマシンで実行されます。このプロセスを開始するサービスは、環境内のすべての VM について次のコマンドを使用してアンインストールする必要があります。CWMGR1 は、ほとんどの場合、 VM がシャットダウンされ、最終的に削除されるため、スキップできます。このアクションはスクリプト化された自動化を介して実行するのが理想的です。次のビデオは、手動で実行した操作を示しています。
 
-....
-C:\Program files\CloudWorkspace\CwAgent\CwAgent.exe -u
-....
+ C:\Program files\CloudWorkspace\CwAgent\CwAgent.exe -u
 
 
 === CW エージェントサービスビデオを削除します
@@ -41,9 +37,7 @@ video::l9ASmM5aap0[youtube, ]
 
 前回のアンインストールでは、 CW Agent を起動するサービスは削除されましたが、ファイルは削除されたままです。ディレクトリを削除します。
 
-....
-"C:\Program Files\CloudWorkspace"
-....
+ "C:\Program Files\CloudWorkspace"
 
 
 === CW Agent ディレクトリビデオを削除します

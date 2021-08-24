@@ -586,6 +586,4 @@ Web インターフェイスコンポーネントをリリースして、上記�
 
 === 5.2 REST API
 
-....
-Release API to production to enable the features found in the overview above
-....
+ Release API to production to enable the features found in the overview above

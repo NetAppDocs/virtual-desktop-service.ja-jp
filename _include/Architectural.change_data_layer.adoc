@@ -46,9 +46,7 @@ image:storage2.png[""]
 
 ディレクトリ、データ、ファイル、およびセキュリティ設定は、さまざまな方法で移動できます。次の Robocopy 構文は、必要な変更を達成します。パスは環境に合わせて変更する必要があります。
 
-....
-robocopy c:\data\zucd \\uyy-1c37.deskapps.mobi\zucd-data /xd ~snapshot /MIR /CopyAll /R:1 /W:1 /tee /log:C:\temp\roboitD.txt
-....
+ robocopy c:\data\zucd \\uyy-1c37.deskapps.mobi\zucd-data /xd ~snapshot /MIR /CopyAll /R:1 /W:1 /tee /log:C:\temp\roboitD.txt
 
 
 === カットオーバー時の SMB パスのリダイレクト

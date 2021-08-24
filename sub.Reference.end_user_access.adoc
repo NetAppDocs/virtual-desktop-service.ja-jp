@@ -115,9 +115,7 @@ VDS に移動します (https://manage.cloudworkspace.com)[]
 . VDI サーバのアドレスを確認しますimage:manual_client4.png[""]
 . この VDI ユーザのサーバアドレスは、サーバアドレス： dvy.ADA.cloudworkspace.app ですが、企業コード（ dvy など）で VDI サーバの値（例：）に置き換えられます DVYTS1 ）…
 +
-....
-e.g. DVYTS1.ada.cloudworkspace.app
-....
+ e.g. DVYTS1.ada.cloudworkspace.app
 
 
 

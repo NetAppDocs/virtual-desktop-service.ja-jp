@@ -4684,4 +4684,7 @@
   <block id="40b4efb37895d327a4e6134b05f98845" category="sidebar">リソースの管理とコストの最小化</block>
   <block id="b0e9038d535164893f7c6af3eac68b19" category="sidebar">AVD と RDS のアプリケーション管理を自動化します</block>
   <block id="160a4c43add4282278f715aef7950d51" category="sidebar">v1 AVD ホストプールを v2 にアップグレードします</block>
+  <block id="e843f35dfdebff58f200188ad0e61f0f" category="section-title">VDS V6 リリース： 2021 年 8 月 26 日木曜日</block>
+  <block id="656b3efb7c44dbbb5309d95823a49700" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 8 月 26 日（木）午後 10 時 ~ 午後 11 時にイースタン _ インパクト： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="eed4bb6e8e1ea5ed9c8b43e3bad1dbad" category="list-text">VDS 管理 UI へのアクセスが許可された場合は、ユーザのデスクトップに配置された URL に更新します</block>
 </blocks>
