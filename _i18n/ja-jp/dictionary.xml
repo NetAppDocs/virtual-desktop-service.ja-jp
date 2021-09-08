@@ -574,10 +574,6 @@
   <block id="197edaf4c7851f674ab9badf7bca0731" category="list-text">CRA ツールを使用して、 AVD ユーザデータを VDS ユーザセクションにインポートする必要があります。このプロセスは 'VDS コントロールプレーンに各ユーザーのメタデータを挿入し 'AVD アプリケーショングループのメンバーシップとセッション情報を VDS で管理できるようにします</block>
   <block id="03bdce188592d893432d2293af68dc41" category="section-title">付録 A ： VDS コントロールプレーンの URL と IP アドレス</block>
   <block id="90d94494594130e7bedd83cf775cefba" category="paragraph">Azure サブスクリプション内の VDS コンポーネントは、 VDS Web アプリケーションや VDS API エンドポイントなどの VDS グローバルコントロールプレーンコンポーネントと通信します。アクセスするには、次のベース URI アドレスを、ポート 443 で双方向アクセスのためにセーフリストに登録する必要があります。</block>
-  <block id="2ed8671be67b9008de01c18248d10cee" category="paragraph"><block ref="9db87c7641c1ab1472d905e82b4d0277" category="inline-link-macro-rx"></block>
-<block ref="6836ae331c6c887eaa655f521729766d" category="inline-link-macro-rx"></block>
-<block ref="86996d491c217bbf2b6aa038a142ee00" category="inline-link-macro-rx"></block>
-<block ref="6547dcd392389b74866a17f59d0802c2" category="inline-link-macro-rx"></block></block>
   <block id="352becec85a3b6bfc016dface359723b" category="paragraph">アクセス制御デバイスが IP アドレスによるセーフリストのみを許可する場合、次の IP アドレスリストはセーフリストに登録する必要があります。VDS は Azure Traffic Manager サービスを使用するため、このリストは時間の経過とともに変更される場合があります。</block>
   <block id="a9fdbd2f1ab0e439672fcbb7e548db1e" category="paragraph">13.67.190.243 13.67.215.62 13.89.50.122 13.67.227.115 13.67.227.230 13.67.227.67.227.9227.227.9227.92.239.1519.157 40.78.132.16.2.132.132.132.132.112.142.142.118.114.82.118.118.114.82.148.114.82.113.142.132.132.132.132.132.132.132.132.132.132.132.132.132.142.142.132.142.142.142.132.132.132.142.132.132.132.142.142.142.142.142.132.142.132.132.132.132.142.142.</block>
   <block id="3da0c831636bd4cd813ea3ba925c3ff0" category="section-title">付録 B ： Microsoft AVD の要件</block>
@@ -4687,4 +4683,14 @@
   <block id="e843f35dfdebff58f200188ad0e61f0f" category="section-title">VDS V6 リリース： 2021 年 8 月 26 日木曜日</block>
   <block id="656b3efb7c44dbbb5309d95823a49700" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 8 月 26 日（木）午後 10 時 ~ 午後 11 時にイースタン _ インパクト： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="eed4bb6e8e1ea5ed9c8b43e3bad1dbad" category="list-text">VDS 管理 UI へのアクセスが許可された場合は、ユーザのデスクトップに配置された URL に更新します</block>
+  <block id="d07ca50f8f4f48dd15f7c42702b0bc60" category="paragraph"><block ref="9db87c7641c1ab1472d905e82b4d0277" category="inline-link-macro-rx"></block>
+<block ref="6836ae331c6c887eaa655f521729766d" category="inline-link-macro-rx"></block>
+<block ref="86996d491c217bbf2b6aa038a142ee00" category="inline-link-macro-rx"></block>
+<block ref="6547dcd392389b74866a17f59d0802c2" category="inline-link-macro-rx"></block>
+<block ref="918cdd039be74c39ce34f51b683ccec9" category="inline-link-macro-rx"></block></block>
+  <block id="7f8e326b72c37ef1d6ebeacf5ffd2aa9" category="paragraph"><block ref="9db87c7641c1ab1472d905e82b4d0277" category="inline-link-macro-rx"></block>
+<block ref="6836ae331c6c887eaa655f521729766d" category="inline-link-macro-rx"></block>
+<block ref="e0073e63660235d8984c4a2d7e6f19b7" category="inline-link-macro-rx"></block>
+<block ref="6547dcd392389b74866a17f59d0802c2" category="inline-link-macro-rx"></block>
+<block ref="918cdd039be74c39ce34f51b683ccec9" category="inline-link-macro-rx"></block></block>
 </blocks>

@@ -298,6 +298,7 @@ link:api.cloudworkspace.com[""]
 
 
 
+link:https://cjdownload3.file.core.windows.net/media[]
 
 アクセス制御デバイスが IP アドレスによるセーフリストのみを許可する場合、次の IP アドレスリストはセーフリストに登録する必要があります。VDS は Azure Traffic Manager サービスを使用するため、このリストは時間の経過とともに変更される場合があります。
 
