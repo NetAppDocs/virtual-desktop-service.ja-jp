@@ -4693,4 +4693,6 @@
 <block ref="e0073e63660235d8984c4a2d7e6f19b7" category="inline-link-macro-rx"></block>
 <block ref="6547dcd392389b74866a17f59d0802c2" category="inline-link-macro-rx"></block>
 <block ref="918cdd039be74c39ce34f51b683ccec9" category="inline-link-macro-rx"></block></block>
+  <block id="a06eca35a4a303d1a5917ec7a8c5f662" category="section-title">VDS V6 リリース： 2021 年 9 月 9 日木曜日</block>
+  <block id="57f65434986188deb735c763ff106134" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 9 月 9 日（木）午後 10 時 ~ 午後 11 時にイースタン _ インパクト： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
 </blocks>
