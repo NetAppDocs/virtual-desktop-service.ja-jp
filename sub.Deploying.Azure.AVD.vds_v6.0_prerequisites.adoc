@@ -70,22 +70,25 @@ IMPORTANT: Azure Virtual Desktop は、現在、 Windows ストアからのリ�
 | 住所 | アウトバウンド TCP ポート | 目的 | クライアント 
 
 
-| * .AVD.microsoft.com | 443 | サービストラフィック | すべて 
+| * .wvd.microsoft.com | 443 | サービストラフィック | すべて 
 
 
-| * .servicebus.windows.net 443 トラブルシューティングデータ | すべて | go.microsoft.com | 443 
+| * .servicebus.windows.net | 443 | トラブルシューティングデータ | すべて 
 
 
-| Microsoft FWLinks | すべて | aak.ms | 443 
+| go.microsoft.com | 443 | Microsoft FWLinks | すべて 
 
 
-| Microsoft URL の短縮 | すべて | docs.microsoft.com | 443 
+| aak.ms | 443 | Microsoft URL の短縮 | すべて 
 
 
-| ドキュメント | すべて | privacy.microsoft.com | 443 
+| docs.microsoft.com | 443 | ドキュメント | すべて 
 
 
-| プライバシーに関する声明 | すべて | query.prod.cms.rt.microsoft.com | 443 
+| privacy.microsoft.com | 443 | プライバシーに関する声明 | すべて 
+
+
+| query.prod.cms.rt.microsoft.com | 443 | クライアントの更新 | Windows デスクトップ 
 |===
 
 NOTE: 信頼性の高いクライアントエクスペリエンスを実現するには、これらの URL を開くことが不可欠です。これらの URL へのアクセスをブロックすることはサポートされていないため、サービス機能に影響します。これらの URL はクライアントサイトとリソースにのみ対応しており、 Azure Active Directory などの他のサービスの URL は含まれていません。
