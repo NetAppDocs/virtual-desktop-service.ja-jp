@@ -1,0 +1,192 @@
+---
+sidebar:
+  entries:
+  - title: Virtual Desktop Service のマニュアル
+    url: "/index.html"
+  - title: VDS を使用した導入
+    entries:
+    - title: Azure
+      entries:
+      - title: Azure Virtual Desktop の 1 つです
+        entries:
+        - title: Azure への AVD の導入
+          url: "/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html"
+        - title: 補足 - 既存の AD を使用した AVD
+          url: "/Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html"
+        - title: VDS v5.4 コンポーネントとアクセス権 (AVD)
+          url: "/Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html"
+        - title: VDS v5.4 前提条件 (AVD)
+          url: "/Deploying.Azure.AVD.vds_v5.4_prerequisites.html"
+        - title: VDS v6.0 の前提条件 (AVD)
+          url: "/Deploying.Azure.AVD.vds_v6.0_prerequisites.html"
+    - title: Google
+      entries:
+      - title: Google で RDS を展開する
+        url: "/Deploying.GCP.RDS.deploying_rds_in_gcp.html"
+      - title: VDS v5.4 の前提条件（ RDS+ GCP ）
+        url: "/Deploying.GCP.vds_v5.4_prerequisites.html"
+  - title: アーキテクチャ
+    entries:
+    - title: データ層を変更します
+      url: "/Architectural.change_data_layer.html"
+      entries:
+      - title: Azure Files の特長
+        url: "/Architectural.change_data_layer.Azure_Files.html"
+    - title: データを VDS に移行します
+      url: "/Architectual.migrate_data_into_vds.html"
+    - title: AVD v1 を v2 にアップグレードします
+      url: Architectual.upgrade_AVD_v1_to_v2.html
+    - title: SSL 証明書を更新してください
+      url: "/Architectural.Wildcard_SSL_certificate_renewal_process.html"
+    - title: VDS ティアダウンガイド
+      url: "/Architectural.AVD_teardown_guide.html"
+  - title: 管理
+    entries:
+    - title: 導入
+      entries:
+      - title: プロビジョニングコレクション
+        url: "/Management.Deployments.provisioning_collections.html"
+      - title: VDS 論理階層の概要
+        url: "/Management.Deployments.logical_hierarchy_overview.html"
+    - title: アプリケーション
+      entries:
+      - title: RDS のアプリケーションエンタイトルメント
+        url: "/Management.Applications.application_entitlement_workflow.html"
+      - title: AVD のアプリケーションエンタイトルメント
+        url: "/Management.Applications.AVD_application_entitlement_workflow.html"
+    - title: スクリプト化されたイベント
+      entries:
+      - title: スクリプドイベントの概要
+        url: "/Management.Scripted_Events.scripted_events.html"
+    - title: コマンドセンター
+      entries:
+      - title: Management Command Center の概要
+        url: "/Management.command_center.overview.html"
+      - title: 処理
+        entries:
+        - title: テンプレートを Gallery にコピー
+          url: "/Management.command_center.operations.copy_template_to_gallery.html"
+    - title: コスト最適化を構成します
+      url: "/Management.Cost_Optimization.workload_schedule.html"
+    - title: ユーザー管理
+      entries:
+      - title: ユーザアカウントを管理する
+        url: "/Management.User_Administration.manage_user_accounts.html"
+      - title: フォルダとアクセス権の管理
+        url: "/Management.User_Administration.manage_folders_and_permissions.html"
+      - title: アプリケーションアクセスの管理
+        url: "/Management.Applications.application_entitlement_workflow.html"
+      - title: ユーザパスワードをリセットします
+        url: "/Management.User_Administration.reset_user_password.html"
+      - title: MFA を設定します
+        url: "/Management.User_Administration.multi-factor_authentication.html"
+    - title: システム管理
+      entries:
+      - title: ドメイン管理者アカウントを作成します
+        url: "/Management.System_Administration.create_domain_admin_account.html"
+      - title: サードパーティのアクセスを提供します
+        url: "/Management.System_Administration.provide_3rd_party_access.html"
+      - title: バックアップを設定します
+        url: "/Management.System_Administration.configure_backup.html"
+      - title: 仮想マシンのクローンを作成
+        url: "/Management.System_Administration.clone_virtual_machines.html"
+      - title: ディスクスペースの自動追加
+        url: "/Management.System_Administration.auto_add_disk_space.html"
+      - title: Azure キーバックアップ
+        url: "/Management.System_Administration.azure_key_vault.html"
+      - title: アンチウイルスを構成します
+        url: "/Management.System_Administration.configure_antivirus.html"
+      - title: マッピングされたドライブの追加と移動
+        url: "/Management.System_Administration.adding_moving_mapped_drives.html"
+  - title: トラブルシューティング
+    entries:
+    - title: VDS ログの確認
+      url: "/Troubleshooting.reviewing_vds_logs.html"
+    - title: インターネット接続品質
+      url: "/Troubleshooting.internet_connection_quality.html"
+    - title: ユーザの壁紙を有効にする
+      url: "/Troubleshooting.enable_user_wallpaper.html"
+    - title: 印刷の問題
+      url: "/Troubleshooting.printing_issues.html"
+    - title: Azure vCPU コアクォータ
+      url: "/Troubleshooting.azure_vcpu_core_quota.html"
+    - title: ユーザアカウントのロックを解除します
+      url: "/Troubleshooting.unlocking_user_accounts.html"
+    - title: 一般的な VM のパフォーマンス
+      url: "/Troubleshooting.general_vm_performance.html"
+    - title: Azure の DNS 転送で SSO が追加されています
+      url: "/Troubleshooting.dns_forwarding_for_azure_aadds_sso.html"
+    - title: アプリケーションの問題
+      url: "/Troubleshooting.application_issues.html"
+  - title: 参照
+    entries:
+    - title: リリースノート
+      entries:
+      - title: VDS v6.0 リリースノート
+        url: "/Reference.Release_Notes.vds_v6.0_release_notes.html"
+      - title: VDS v5.4 リリースノート
+        url: "/Reference.Release_Notes.vds_v5.4_release_notes.html"
+      - title: VDS Windows クライアントのリリースノート
+        url: "/Reference.Release_Notes.vds_windows_client_release_notes.html"
+      - title: 以前のバージョン
+        entries:
+        - title: VDS v5.3 リリースノート
+          url: "/Reference.Release_Notes.vds_v5.3_release_notes.html"
+        - title: CWMS v5.2 リリースノート
+          url: "/Reference.Release_Notes.cwms_v5.2_release_notes.html"
+        - title: CWS v5.1 リリースノート
+          url: "/Reference.Release_Notes.cws_v5.1_release_notes.html"
+        - title: CWS v5.0 リリースノート
+          url: "/Reference.Release_Notes.cws_v5.0_release_notes.html"
+    - title: エンドユーザアクセス
+      url: "/Reference.end_user_access.html"
+    - title: VDS 変更環境
+      url: "/Reference.vds_change_environments.html"
+    - title: スクリプトライブラリのドキュメント
+      entries:
+      - title: Adobe Reader DC
+        url: "/scriptlibrary.AdobeReader.html"
+      - title: AMD Radeon Instinct ドライバ
+        url: "/scriptlibrary.AMDRadeonInstinctDrivers.html"
+      - title: ezeep Print アプリ
+        url: "/scriptlibrary.EzeepPrintApp.html"
+      - title: Google Chrome
+        url: "/scriptlibrary.GoogleChrome.html"
+      - title: Microsoft Edge Chromium
+        url: "/scriptlibrary.MicrosoftEdgeChromium.html"
+      - title: Microsoft Office 365 の場合
+        url: "/scriptlibrary.MicrosoftOffice365.html"
+      - title: Microsoft One Drive
+        url: "/scriptlibrary.MicrosoftOneDrive.html"
+      - title: Microsoft チーム
+        url: "/scriptlibrary.MicrosoftTeams.html"
+      - title: AVD の Microsoft チーム
+        url: "/scriptlibrary.MicrosoftTeamsAVD.html"
+      - title: NVIDIA Cuda ドライバ
+        url: "/scriptlibrary.NvidiaCudaDrivers.html"
+      - title: NVIDIA Grid ドライバ
+        url: "/scriptlibrary.NvidiaGridDrivers.html"
+      - title: AVD 画面キャプチャ保護
+        url: "/scriptlibrary.AVDScreenCaptureProtection.html"
+      - title: AVD のズーム
+        url: "/scriptlibrary.ZoomVDI-AVD.html"
+    - title: 詳細設定
+      entries:
+      - title: FSLogix プロファイルの縮小
+        url: "/Advanced.fslogix_profile_shrink.html"
+  - title: ネットアップ VDS v5.4 のビデオ
+    entries:
+    - title: NetApp TV のコンテンツ
+      url: "/video_content_netapptv.html"
+    - title: AVD または RDS を展開する
+      url: "/video_azure_AVDRDS_deploy_54.html"
+    - title: Azure に AVD ホストプールを追加します
+      url: "/video_azure_AVD_hostpool_54.html"
+    - title: AVD ユーザーとアプリケーショングループを管理します
+      url: "/video_azure_AVD_users_appgroups_54.html"
+    - title: リソースの管理とコストの最小化
+      url: "/video_azure_AVDRDS_optimize_resources_54.html"
+    - title: AVD と RDS のアプリケーション管理を自動化します
+      url: "/video_VDS_day_in_the_life.html"
+    - title: v1 AVD ホストプールを v2 にアップグレードします
+      url: "/Architectual.upgrade_AVD_v1_to_v2.html"
