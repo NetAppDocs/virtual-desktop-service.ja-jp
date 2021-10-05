@@ -4703,4 +4703,7 @@
   <block id="abf22eb7cec06c7b842b0289626014d6" category="list-text">PAM にアップデートして AADDS ベースの展開と統合します</block>
   <block id="19337faa70eb68a5c71e82ea2627b281" category="list-text">AVD 以外の展開では、 Workspace モジュールに RemoteApp URL を表示します</block>
   <block id="b98f0201c72cb7aeb2c258e76a423024" category="list-text">エンドユーザを特定のオンプレミス Active Directory 構成の管理者にするシナリオのバグ修正</block>
+  <block id="c4dee9bb16767ce36fb36087c44ede20" category="section-title">VDS V6 リリース： 2021 年 10 月 7 日木曜日</block>
+  <block id="66163011d7a14225448be644c405ec99" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 10 月 7 日（木）午後 10 時 ~ 午後 11 時（ Eastern _Impact ）： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="43c7c4d6a4664828ff7e567ce4741eaf" category="list-text">特定のプロビジョニングコレクション構成が正しく保存されなかったシナリオのバグ修正</block>
 </blocks>
