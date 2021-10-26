@@ -4706,4 +4706,9 @@
   <block id="c4dee9bb16767ce36fb36087c44ede20" category="section-title">VDS V6 リリース： 2021 年 10 月 7 日木曜日</block>
   <block id="66163011d7a14225448be644c405ec99" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 10 月 7 日（木）午後 10 時 ~ 午後 11 時（ Eastern _Impact ）： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="43c7c4d6a4664828ff7e567ce4741eaf" category="list-text">特定のプロビジョニングコレクション構成が正しく保存されなかったシナリオのバグ修正</block>
+  <block id="3cf9ceda9bbdfc151a0c9626a9cb8b32" category="section-title">VDS V6 リリース： 2021 年 10 月 21 日木曜日</block>
+  <block id="23f65eafb0e711038b4b23b8e6db3e1b" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時間： 2021 年 10 月 21 日（木）午後 10 時 ~ 午後 11 時にイースタン _ インパクト： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="2eae6dfa076cf992837f747ec270df54" category="list-text">FSLogix プロファイルの自動縮小を無効にする Command Center オプションを導入します</block>
+  <block id="6b12d7bd8f5b63f582e624ba202e35e1" category="list-text">FSLogix プロファイルがマウントされている場所を示す夜間レポートの改善</block>
+  <block id="cb8cd4f84533c86225f410f35dda1714" category="list-text">Azure US South Central リージョンの CWMGR1 （プラットフォーム VM ）に使用されているデフォルトの VM シリーズ / サイズを D2S v4 に更新します</block>
 </blocks>
