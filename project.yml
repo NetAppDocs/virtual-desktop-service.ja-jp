@@ -1,12 +1,5 @@
 ---
-settings:
-  name: Virtual Desktop Service
-  internal:
-    pdf_enabled: true
-  prod:
-    pdf_enabled: true
-    harmony_enabled: true
-    langs: ja-jp,us-en,zh-cn
+settings: {}
 sidebar:
   entries:
   - title: Virtual Desktop Service のマニュアル

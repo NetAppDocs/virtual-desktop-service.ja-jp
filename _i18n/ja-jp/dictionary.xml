@@ -4711,4 +4711,8 @@
   <block id="2eae6dfa076cf992837f747ec270df54" category="list-text">FSLogix プロファイルの自動縮小を無効にする Command Center オプションを導入します</block>
   <block id="6b12d7bd8f5b63f582e624ba202e35e1" category="list-text">FSLogix プロファイルがマウントされている場所を示す夜間レポートの改善</block>
   <block id="cb8cd4f84533c86225f410f35dda1714" category="list-text">Azure US South Central リージョンの CWMGR1 （プラットフォーム VM ）に使用されているデフォルトの VM シリーズ / サイズを D2S v4 に更新します</block>
+  <block id="bc34110048106096f312b8dbea545c3a" category="section-title">VDS V6 リリース： 2021 年 11 月 7 日（日</block>
+  <block id="65c960fc290381a75c639fcb69a9e5ed" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： _ 2021 年 11 月 7 日（日曜日）午後 10 時 ~ 午後 11 時にイースタン _ インパクト： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="78a318ee196a4d3b2938fb875b7cddc2" category="list-text">導入環境で Azure Active Directory Domain Services （ AADDS ）を利用している場合の PAM のバグ修正</block>
+  <block id="f2c5f4ad1f7dcbe830da1db224021dd3" category="list-text">様々な地域で利用可能な最新のサービス</block>
 </blocks>
