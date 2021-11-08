@@ -15,7 +15,7 @@ _ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時�
 
 
 
-== Virtual Desktop Service の略
+=== Virtual Desktop Service の略
 
 * すべてのユーザーの VDS UI でチャットボックスを有効にします
 * バグ修正を使用して、展開の選択を一意に組み合わせます
