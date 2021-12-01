@@ -4719,10 +4719,9 @@
   <block id="2a6729c210918051ec468ef1ad5ad1fc" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時間： 2021 年 11 月 8 日（月）午後 10 時から午後 11 時までの東部影響： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="ca2049c3d984599d427c3ccbf2e16e9f" category="list-text">すべてのユーザーの VDS UI でチャットボックスを有効にします</block>
   <block id="6c440504598232d62be667e9d2f7a3c4" category="list-text">バグ修正を使用して、展開の選択を一意に組み合わせます</block>
-  <block id="d58c5328f9566308ad9d43a3e87014ae" category="doc">VDS V6 リリース： 2021 年 12 月 2 日木曜日</block>
-  <block id="c4a27f4770502025e564e83d6d195c06" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 12 月 2 日（木）午後 10 時から午後 11 時まで： _ 影響： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
-  <block id="f2021ab4d846a6f7bb90792103cc97db" category="list-text">プライマリ SMS プロバイダが中断した場合に、 SMS の冗長性を追加します</block>
   <block id="d0df9a4239bde0b32d586dd901c86e80" category="section-title">VDS V6 ホットフィックス： 2021 年 11 月 18 日木曜日</block>
   <block id="2bc297d9693967d15152013b2afa0350" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 実行時： 2021 年 11 月 18 日（木）午後 10 時から午後 11 時まで： _ 影響： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="4c19aa496505fde321909908b037b50a" category="list-text">AAD が AADDS に基づいている PAM 問題のバグ修正</block>
+  <block id="711ee60888a942ab910e7b40e0f8d557" category="doc">VDS V6 リリース： 2021 年 12 月 2 日木曜日 - 変更予定なし</block>
+  <block id="b7495b5bde185d05dd4ccefb1dee6e82" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 実行時間： 2021 年 12 月 2 日（木）午後 10 時 ～ 午後 11 時の Eastern _Impact ： _None</block>
 </blocks>
