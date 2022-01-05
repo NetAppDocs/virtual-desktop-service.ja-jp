@@ -26,7 +26,6 @@
   <block id="9e0469ab1b8f18cd57fdfcaaa2d6b47f" category="list-text">* 名前： * このアクティビティに名前を付けます</block>
   <block id="8e83f6aadc0939e24b033df07e69851d" category="list-text">* 概要： * オプションで概要を入力します</block>
   <block id="34cadc09b2c4d022bfb350f7f7d4b769" category="list-text">* 展開 * ドロップダウンから希望の展開を選択します</block>
-  <block id="6986a05b492f69090e7525dc1775cfbd" category="list-text">* スクリプト： * ドロップダウンからインストール（またはアンインストール）スクリプトを選択します。これは、クローンを作成してカスタマイズしたグローバルスクリプトまたは顧客スクリプトです。</block>
   <block id="0ee89bcafd2efcca731201a092c053c3" category="list-text">* 引数： * は空白のままにします</block>
   <block id="65442f5cfec5e18bfff9391c3b87f7e7" category="list-text">* 有効チェックボックス :* チェックボックス</block>
   <block id="aa0084e0f5b950d9583f4d133275eb85" category="list-text">* イベントの種類：ドロップダウンから「手動」を選択します</block>
@@ -259,7 +258,6 @@
   <block id="2d86848c2fd08aa1659518c452e3d29c" category="list-text">次に、「 setup.exe /download Configuration.xml 」（手順 10 でエクスポートした XML ファイルに一致するように「 Configuration.xml 」を変更）を実行します。何も起きていないように思われる場合は、この手順に時間がかかることがあります。</block>
   <block id="b54037fe38104140f51b5c6d2e287846" category="list-text">最後に、「 setup.exe /configure Configuration.xml 」を実行します（ファイルに合わせて XML ファイル名を調整します）。</block>
   <block id="d9b3e29ab2ccadb1f5eaec4669e15054" category="section-title">サポートされない自動導入です</block>
-  <block id="dc5144f2c52953cf6f52ba4f57c9b163" category="admonition">この自動化プロセスは、カスタム PS1 と事前に構築された XML に依存します。ネットアップが保証していないのは、対象のマシンが正常に動作するか、影響があるという意味ではサポートされていません。PS1 はネットアップがホストしているため、いつでも変更や削除が可能です。この方法は、独自の自動プロセスを構築してホストするためのテンプレートとして使用することをお勧めします。このプロセスは、 Windows Server 2016 Datacenter 10.0.14393 および Windows 10 Enterprise for Virtual Desktop 10.0.18362 （ Azure 上、 2019 年 8 月 30 日）で検証済みです。</block>
   <block id="a3390af8e1276c394e3bbf9a6532d194" category="list-text">hosted .ps1 をダウンロードして実行するためのコマンドを実行する</block>
   <block id="eaa5666ff70b797b355a9dcc47d099fd" category="list-text">PS1 は、ホストされている Office 展開設定 .xml をダウンロードします（この XML に使用される Office 構成ツール設定のスクリーンショットはこちら）。</block>
   <block id="822fe97444088a12ef605425b5a2879c" category="list-text">PS1 は、 .xml を参照して ProPlus インストールを実行します</block>
@@ -273,14 +271,12 @@
   <block id="2ab7d79e351843c1c6b88f79ede998c7" category="list-text">編集した PS1 ファイルを、独自のホスト URL にアップロードします</block>
   <block id="bb3de07032932e9f23424cd8bc7535c6" category="list-text">スクリプトイベントスクリプトを編集して ' カスタマイズされた自己ホスト型 PS1 ( 手順 3.1.下。</block>
   <block id="e9e4ac709c598f563fdb6c453d273a70" category="section-title">スクリプト化されたイベントステップ</block>
-  <block id="ec64f56eeb9d4461fa75be9d2e339158" category="paragraph">これは、通常のアプリケーションインストールスクリプトイベントと同じワークフローに従います。これらの手順では、アプリケーション管理計画の手順に従って、チョコレートがすでにインストールされていることを前提としています。Office 365 ProPlus 自動インストールとチョコレート</block>
   <block id="375c1d06d8fd3cb671e0442c9526e875" category="paragraph">O365 ProPlus をインストールするには、次の設定で新しいスクリプトを作成します。</block>
   <block id="70031512165dd89b18f1b7881e5ea04a" category="list-text">スクリプトファイルがありません</block>
   <block id="d1517a4ecb193e896e4b4f56f2b2fc54" category="list-text">powershell.exe で実行します</block>
   <block id="a801e91305ad6efd050a7aa89e11415e" category="list-text">引数（オプション）： Set-ExecutionPolicy Bypass-Scope Process-Force ； iex （ New - Object System.Net.WebClient).DownloadString(‘http://getAVD.com/proplus_minus_onedrive.ps1’ ）</block>
   <block id="6b87e95328b5a09052cc674fb24b4372" category="list-text">を編集します<block ref="91abb941a52e49854bbdfd1b3e4db307" category="inline-link-rx"></block> とは、これを、自身がホストしている PS1 ファイルの URL に置き換えます。</block>
   <block id="b9462cbfc9904e24e05f57943cb37910" category="paragraph"><block ref="b9462cbfc9904e24e05f57943cb37910" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3e54d9209811c059152ce1bbbf830137" category="paragraph">スクリプトが保存されたら、次の手順でそのスクリプトをトリガーに関連付けます。この場合 'VDS でアプリケーションのインストールが要求されたときにスクリプトをトリガします詳細については、『アプリケーション管理ガイド』を参照してください。</block>
   <block id="f76378eedde875a9ba21c2a6173d2a08" category="summary">スクリプトドキュメント - Google Chrome</block>
   <block id="0a3a314366b7a6336d9141df56dc4056" category="doc">スクリプト化されたイベントドキュメント - Google Chrome</block>
   <block id="88bc6760918ea47b9938c680aed120f8" category="section-title">Google Chrome の概要</block>
@@ -292,7 +288,6 @@
   <block id="9796d9093d04b992ba28c09bc63e8de6" category="paragraph">リポジトリ内のスクリプトが何らかのアクションを実行するには ' そのスクリプトを選択したトリガに関連付けるアクティビティを作成する必要がありますこの例のアクティビティでは、アプリケーションがワークスペースに追加された場合、またはワークスペースから削除された場合（ VDS の _Workspace &gt; Applications_page から）、このアプリケーションをインストール / アンインストールします。</block>
   <block id="39f03b220ae0be62e3d2db7db9c9c96f" category="paragraph">VDS スクリプト化されたイベントには '_Create Server_ など ' 他の多くのタイプのアクティビティトリガが用意されていますこのトリガは '_Application Install_( または _Application Uninstall_) イベントタイプの代わりに使用できます_ サーバの作成 _ を使用すると 'VDS で新たに作成したすべての VM に対してこのアプリケーションのインストールが実行されます_ サーバの作成 _ およびその他のトリガが文書化されており ' 調査できます <block ref="de7b0b235a74fc34c3151150bdd2d11c" category="inline-link-macro-rx"></block>。</block>
   <block id="73d5342eba070f636ac3246f319bf77f" category="inline-link-macro">セクション。</block>
-  <block id="9f8526a67fa44fc4a97f2eee2a679f0e" category="admonition">このアプリケーションは 'VDS アプリケーションライブラリに存在する必要がありますこれ <block ref="bf3bed7e9c33f406222a0da03c1c9b87" category="inline-link-macro-rx"></block> RDS 記事のアプリエンタイトルメントでは、ライブラリにアプリを追加する方法について説明しています。</block>
   <block id="661e9f71644c958b31c23007f17a0918" category="list-title">アクティビティを作成し、このスクリプトをアクションにリンクするには：</block>
   <block id="d245bbd1593bbe1e0a07e5b484719064" category="list-text">VDS のスクリプトイベントセクションに移動します</block>
   <block id="12ec4f8e0b10ed85dcc3a3291700ee0c" category="list-text">* イベントの種類：ドロップダウンから「 Application Install 」 ( アプリケーションのインストール ) または「 Application Uninstall 」 ( アプリケーションのアンインストール ) を選択します</block>
@@ -302,7 +297,6 @@
   <block id="bd0b5fc7d3accf1c9c23f50664070008" category="doc">アプリケーションエンタイトルメント</block>
   <block id="bd7126ad8633377189420bb62c058bdc" category="paragraph">VDS には、アプリケーションの自動化と使用権に関する強力な機能が組み込まれています。この機能を使用すると、ユーザーは同じセッションホストに接続している間に、異なるアプリケーションにアクセスできます。これは、ショートカットを非表示にするカスタム GPO と、ユーザーのデスクトップにショートカットを選択的に配置する自動化によって実現されます。</block>
   <block id="324f8f4a5778c6ea5ba9868e8b8a6ecd" category="inline-link-macro">AVD のアプリケーションエンタイトルメントワークフロー</block>
-  <block id="65be13b73db9986c105cffb5a7b1e257" category="admonition">このワークフローは、環境 RDS 配置のみを対象としています。AVD アプリケーションの使用権に関するドキュメントについては ' を参照してください <block ref="74176c341779afa5ab584577d5c6e491" category="inline-link-macro-rx"></block></block>
   <block id="b1b55ab1a1c6b74c0bf15e237870315e" category="paragraph">アプリケーションは 'VDS で管理されるセキュリティグループを介して ' ユーザーに直接割り当てることもできます</block>
   <block id="f6e701775ed84523ced6013ccc1c55e7" category="list-title">アプリケーションのプロビジョニングプロセスは、以下の手順で構成されます。</block>
   <block id="7536fe5ad5d43c0130226971039e4cce" category="list-text">アプリカタログにアプリを追加します</block>
@@ -386,16 +380,10 @@
   <block id="23e00296f6657081755eaabedacbdb86" category="list-text">DNS を実行している DNS サーバーを指定すると、ドメイン名を入力します ( この例では、 _netapp.com になります ) 。</block>
   <block id="1d7efe34a1fb9bfa0208431f5378276f" category="paragraph">Azure Virtual Desktop （ AVD ）環境では、アプリケーションアクセスはアプリケーショングループメンバーシップによって管理されます。</block>
   <block id="496917925ff1bca95756bf15fe5caaad" category="inline-link-macro">RDS のアプリケーションエンタイトルメントワークフロー</block>
-  <block id="43ba0971ba3818465a0e1b57765337dd" category="admonition">このワークフローでは、環境 AVD 配置のみが使用されます。RDS アプリケーションの使用権に関するドキュメントについては、を参照してください <block ref="0ab43ecb3f8f5a1bd44a7cd9813b2e41" category="inline-link-macro-rx"></block></block>
   <block id="5dd1e6505d3c04401fd454b5ffb9dc85" category="inline-link-macro">パブリックリソースを参照してください</block>
-  <block id="495e6c2cd86f427b95918dc7f7658ba5" category="admonition">AVD は文書化されたサービスで、多くのサービスがあります <block ref="ef37fc637501cb1b64c849d5e95b4c7b" category="inline-link-macro-rx"></block>。VDS は、 AVD の標準的な動作方法をスーパーシードしません。代わりに ' この記事では 'VDS がすべての AVD 展開で使用されている標準概念にどのようにアプローチするかを説明します</block>
   <block id="0e7e254a7d4e2a858d09ff79fdccd52b" category="inline-link-macro">VDS 論理階層の概要</block>
   <block id="50a23d7ebe892b26bd7b0552230ac621" category="admonition">を確認します <block ref="05ae7d1d442f957aa820e98576a0863c" category="inline-link-macro-rx"></block> 記事はこの記事を検討する前にまたは間有用であるかもしれない。</block>
   <block id="376779f7fa41bf17d051f3319d5493a9" category="section-title">エンドユーザービュー</block>
-  <block id="6dd02028a6b947d7c2577bc5747e3c87" category="paragraph">Azure Virtual Desktop では、各エンドユーザに AVD 管理者によって RemoteApp または Desktop へのアクセス権が割り当てられます。これは VDS のアプリケーショングループ割り当てで行います。</block>
-  <block id="beb173d7ce84bfc931c94b09d09cf88b" category="paragraph">* RemoteApp * とは、セッションホスト上でリモートで実行され、デスクトップコンテキストなしでローカルデバイス上で表示されるアプリケーションです。「ストリーミングアプリ」とも呼ばれるこのアプリケーションは、ローカルデバイス上のローカルアプリケーションのように見えますが、セキュリティコンテキストで実行され、セッションホストのストレージレイヤとコンピューティングレイヤで実行されます。</block>
-  <block id="c8fe1c628cadc46ecf02adfb20b36571" category="paragraph">* デスクトップ * とは、セッションホストで実行され、ローカルデバイスで表示される Windows の完全な操作を指します。通常は、全画面表示ウィンドウです。「リモートデスクトップ」と呼ばれる一般的なデスクトップ自体には、そのセッションホストにインストールされているアプリケーションが含まれます。このアプリケーションは、ユーザーがデスクトップセッションウィンドウ内から起動できます。</block>
-  <block id="16f9214a810a38f9bdfb64ccd95395b5" category="paragraph">ログインすると、エンドユーザには管理者によって割り当てられたリソースが表示されます。以下は、エンドユーザーが AVD クライアントでログインしたときに表示されるビューの例です。これはより複雑な例です。エンドユーザーは、シングルデスクトップまたは RemoteApp のみを割り当てることがよくあります。エンドユーザは、これらのリソースのいずれかをダブルクリックすると、そのアプリケーション / デスクトップを起動できます。</block>
   <block id="bcfc9a1d3d5c7d85ca3668f7b580b1bd" category="image-alt">management.Deployments.VDS サイト 0e49c</block>
   <block id="ccd0db95f33eda669eeb53de8cfbd8a7" category="paragraph">このより複雑な例では、このユーザは 2 つの異なるデスクトップセッションと 4 つの異なるストリーミングアプリケーションにアクセスできます。</block>
   <block id="5e28132e18129a459dbfbccb6ce2fd40" category="list-text">* 使用可能なデスクトップ *</block>
@@ -410,9 +398,7 @@
   <block id="5ab5dbb66bfc3c54ee3978a6d57f1304" category="paragraph">このようなアプリケーションとデスクトップは、さまざまなセッションホスト、 AVD ワークスペースでホストされており、異なる Azure リージョンでホストされている可能性もあります。</block>
   <block id="81082c76742ab056ac7a81e234bad9f6" category="paragraph">次の図は、これらの各リソースがホストされている場所と、これらのリソースがこのエンドユーザにどのように割り当てられているかを示しています。</block>
   <block id="59aec6518c484ba78e0a00ee2aaad732" category="image-alt">management.Deployment.VDS サイト 0e880</block>
-  <block id="464925bfbaa0b5a6ce19e4d15b3ad700" category="paragraph">上に示すように、このエンドユーザーが利用できるさまざまなリソースは、異なるセッションホストでホストされ、異なるホストプールでホストされています。また、異なる AVD ワークスペースの異なる IT 組織によって管理される可能性もあります。この例では示していませんが、 VDS サイト機能を使用して、これらのリソースを異なる Azure リージョンやサブスクリプションでホストすることもできます。</block>
   <block id="c90a7d1e1da84682e02f4747838b15ae" category="section-title">デスクトップアクセスの提供</block>
-  <block id="ca0655b1e1179c320612ca3e9cc2d6a1" category="paragraph">デフォルトでは、すべてのホストプールは 1 つのアプリケーショングループから始まり、 Windows デスクトップエクスペリエンスへのアクセスの割り当てに使用されます。これらのセッションホストにインストールされているすべてのアプリケーションは、このアプリケーショングループに割り当てられているエンドユーザーにアクセスできます。</block>
   <block id="1973c675e440465f67198c5c6a06af65" category="list-title">VDS のユーザーに対してデスクトップリソースを有効にするには：</block>
   <block id="4976a77bf3f5152bc054082a6f0307ae" category="list-text">ワークスペース &gt; AVD &gt; ホストプール &gt; アプリケーショングループページに移動し、「デスクトップ」リソースのアプリケーショングループをクリックします。</block>
   <block id="3a9159413b8c5248957238ae412ac8d3" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー 349fe</block>
@@ -421,8 +407,6 @@
   <block id="b7f126ce5e82a2008a4e482580ea8ae0" category="list-text">編集ダイアログでは、ユーザーまたはグループごとにこのアプリケーショングループにユーザーを追加または削除できます。</block>
   <block id="8dd96d112e4daa5e5cbdd2e088cc1538" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー 07ff0</block>
   <block id="0aeea781bb4573e7a7b80d9e0959a102" category="section-title">RemoteApp Access を提供しています</block>
-  <block id="c8be41097d9c5bac80502416347cfc76" category="paragraph">RemoteApp へのアクセスをプロビジョニングするには、ホストプール内に新しいアプリケーショングループを作成する必要があります。作成したアプリケーションは、このアプリケーショングループに割り当てる必要があります。</block>
-  <block id="b3fe74a0079928f138f9de43b257cf18" category="admonition">これらのセッションホスト上のアプリケーションは、このホストプールの「デスクトップ」 AppGroup に割り当てられたすべてのユーザーがすでに使用できます。アプリケーションへのアクセスを提供するだけで、 RemoteApp グループを介してアクセスをプロビジョニングする必要もありません。RemoteApp グループは、ストリーミングアプリとしてローカルデバイス上で AS IF を実行するアプリへのアクセスを有効にするためにのみ必要です。</block>
   <block id="5433662a54506604d2c01b4c71d4e834" category="section-title">新しいアプリケーショングループを作成します</block>
   <block id="f5a55acd43f8d93045189303323088e0" category="list-text">[ ワークスペース ] &gt; [AVD] &gt; [ ホストプール ] &gt; [ アプリケーショングループ ] ページに移動し、 [+] [ アプリケーショングループの追加 ] ボタンをクリックします</block>
   <block id="4827d1cb4a1c718653466145675decb0" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー d33da</block>
@@ -432,7 +416,6 @@
   <block id="474fdb99403b967e01f54886073db222" category="list-text">ワークスペース &gt; AVD &gt; ホストプール &gt; アプリケーショングループページに移動し、「 RemoteApp 」リソースのアプリケーショングループをクリックします。</block>
   <block id="aa48cfc5de9c883c19cf67592140446a" category="image-alt">管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 3dcde</block>
   <block id="6c3e4645a69cdcb7d8eabf8fd67340f7" category="image-alt">管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 27a41</block>
-  <block id="1b2e4bd4d3b0a81e5b975d602a171c35" category="list-text">下にスクロールして「リモートアプリ」セクションに移動します。このセクションでは、 VDS が直接セッションホストに照会して、ストリーミングに使用可能なアプリケーションを表示するために、データを入力する時間がかかる場合があります。</block>
   <block id="6c7c9b816af581d8b27f9aa09850ca3f" category="image-alt">管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 1e9f2</block>
   <block id="2c986f5e26a059d90f20656e8c46ba09" category="list-text">このアプリケーショングループのユーザーが RemoteApp リソースとしてアクセスできるアプリケーションを検索して選択します。</block>
   <block id="3a9c20318a590aab6689c74493fa46ed" category="summary">AVD および VDS の前提条件</block>
@@ -666,16 +649,11 @@
   <block id="205a59db4036e74f9b83e4ba73b6de5f" category="inline-link-macro">アプリケーションエンタイトルメントガイド</block>
   <block id="d7abef2c5d8e354bd0b66c917ff457e4" category="paragraph">アクション内のスクリプト化されたイベントの詳細な例については、を参照してください <block ref="40f0d0f069e2cf1b61b4e53e6fcaf47b" category="inline-link-macro-rx"></block>。</block>
   <block id="b3372e7e58f7df8bea213a36d972936a" category="paragraph">さらに、スクリプトによる処理を必要としない自動化を作成することもできます。システムトリガーによって自動化フローが起動され、オプションの引数を指定して既存のプログラムまたはシステムユーティリティが実行されます。</block>
-  <block id="f549b42c4d5b54609f13082f40a1e191" category="paragraph">スクリプトイベントには ' スクリプトの * リポジトリ * と * アクティビティ * の両方が含まれますスクリプトには、 * 何を実行するかという指示が含まれています。アクティビティは、スクリプトを適切なトリガーとターゲット（ * when と where * ）にリンクしています。</block>
   <block id="33fcf2b3ec4686d9cd06051c726d0ba2" category="section-title">リポジトリ</block>
-  <block id="1ac92087421cb7f41ac786f7534a01e6" category="paragraph">[ リポジトリ ] タブには 'VDS アカウント内から配備できるすべてのスクリプトのリストが表示されますVDS インスタンスのすべての管理者が共有するカスタムリポジトリです。スクリプト化イベントへのアクセスは '_VDS&gt; 管理者 &gt; 権限ページ _ で管理できます</block>
   <block id="451dd8e9460817f0bd8acc6140d4df8c" category="image-alt">sub.Management.Scripted Events.scripted イベント 1ce76</block>
   <block id="c0b481b22467d01000ac83cb497c62eb" category="section-title">顧客フィルタ</block>
-  <block id="e9778d7b3db63f39f09e77e69842d466" category="paragraph">各 VDS 管理者組織には、組織によって作成またはカスタマイズされたスクリプトのプライベートライブラリがあります。これらのスクリプトは、スクリプトタイプ " 顧客 " として定義されます。 お客様のスクリプト：すべての VDS 管理者が削除および編集し ' 適切な管理者権限を持つスクリプトをスクリプトイベントセクションに追加します</block>
   <block id="268f4ab25bfc3581635010dddf4a8193" category="section-title">グローバルフィルタ</block>
-  <block id="927358d2c17095b86840f8f4cbfe5a9d" category="paragraph">ネットアップは、すべての VDS 管理者組織で共通の「グローバル」スクリプトのライブラリも公開し、管理しています。これらのスクリプトは、スクリプトタイプ「グローバル」として定義されます。 VDS 管理者がグローバルスクリプトを編集または削除することはできません。代わりに、グローバルスクリプトを「クローニング」できます。このスクリプトは「顧客」スクリプトであり、編集して使用できます。</block>
   <block id="05ed7636fa67bb70fab414f58c790051" category="section-title">スクリプトをダウンロードします</block>
-  <block id="f34457412e81203e528746359a1115e8" category="paragraph">スクリプト化されたイベントに関連付けられたスクリプトファイルをダウンロードする機能により 'VDS 管理者は配備前に基本となるスクリプトファイルを確認および編集できます完全には理解できないスクリプトを実行することは絶対にお勧めしません。</block>
   <block id="13fb1f89829192e4a445af884f6a82fc" category="image-alt">sub.Management.Scripted イベント .scripted イベント 02a9b</block>
   <block id="ab79ad502000f4b8eb72d5e67b0cb3c5" category="section-title">スクリプトを追加します</block>
   <block id="a05746f77c12d2ddeb109fb2cf77ebb0" category="paragraph">[__ スクリプトの追加 ] ボタンをクリックすると ' スクリプトを作成してリポジトリに保存するための新しいページが開きます</block>
@@ -1052,9 +1030,7 @@
   <block id="12091a16585e61c1f3929f80b54a3c5a" category="paragraph">自動クローンプロセスは、毎日のメンテナンスの実行が設定されているときに実行されます。デフォルトは午前 0 時ですが、編集可能です。日々のメンテナンスの一環として、各リソースプールに対してリソースの変更スレッドを実行します。Change Resources スレッドは、プールの構成を使用するユーザーの数に基づいて、必要な共有サーバーの数を決定します（カスタマイズ可能。サーバごとに 10 、 21 、 30 などのユーザーを指定できます）。</block>
   <block id="a8fbacc32ba95611b3d3b06b0ec0757b" category="section-title">新しいサーバの「オンデマンド」自動作成</block>
   <block id="82f7dc06df0d3ad59f2d7f9b7b4d51e1" category="paragraph">この VDS 機能を使用すると、使用可能なリソースプールに追加サーバを自動的に「オンデマンド」でクローニングできます。</block>
-  <block id="a5fd83775adcc31b654c0b8c47335575" category="paragraph">VDS 管理者が VDS にログインし、組織またはワークスペースモジュールの下で特定のクライアントを検索し、概要タブを開きます。Servers Tile には、すべてのサーバ（ TSD1 、 TS1 、 D1 など）が一覧表示されます。個々のサーバのクローンを作成するには、サーバ名の右端にある歯車をクリックし、 [ クローン ] オプションを選択します。</block>
   <block id="0aef5cba860b290ab24729bab2231c8a" category="paragraph">通常、このプロセスには約 1 時間かかります。ただし、期間は VM のサイズと、基盤となるハイパーバイザーで使用可能なリソースによって異なります。複製されるサーバは再起動が必要になるため、通常は営業時間外またはスケジュールされた保守期間中に実行します。</block>
-  <block id="999002602de9a58ea51ec4b54bb8e4d7" category="paragraph">TSData サーバーのクローンを作成する場合、重複するファイルがないように、 c:\Home 、 c:\Data 、 c:\Pro の各フォルダを削除します。この場合、クローニングプロセスは失敗します。これらのファイルの削除に問題がありました。このエラーはあいまいです。通常は、ファイルまたはプロセスが開いているためにクローニングイベントが失敗したことを意味します。次に、すべての AV を無効にしてください（このエラーを説明する可能性があるため）。</block>
   <block id="676d86763051d0dbf2cfb7c04b9d4db6" category="summary">NetApp VDS リリースノート v5.2</block>
   <block id="0c06cfd592100f5f40c2c4b08a8d16ee" category="doc">Cloud Workspace Management Suite –バージョン 5.2</block>
   <block id="d53ce049874147e1e93a6d044e3602eb" category="admonition">今後の CWMS v5.2 については、リリースはすべて修正プログラムと見なされます。</block>
@@ -1351,7 +1327,6 @@
   <block id="1706835c91ab08069908303b289cbe1d" category="list-text">自動化サービスと新しい SSL ワイルドカード証明書（ RDP 接続）： RDS ゲートウェイ上の更新された RDP 証明書を常にリフレッシュするためのコマンドの更新順序（つまり、キャッシュされない）</block>
   <block id="f1dbf86a84eb68de825a59b3273e05f9" category="section-title">CWS ® 5.1 の初期リリースの概要</block>
   <block id="9b90c1aca16c828db70c8df88d6e17e4" category="paragraph">Cloud Workspace Suite 5.1 は、 2017 年第 3 四半期からパブリックベータ版に移行しています。このリリースでは、 CWS API と Admin Control インターフェイスの両方が更新されています。このリリースは、 CWS 5.0 （ 2016 年第 4 四半期リリース）のアップデートであり、バージョン 4.x エンティティとの「下位互換性」はありません。</block>
-  <block id="9b20c519dc0a743a42cd92e7ee33b0cb" category="paragraph">2017 年第 4 四半期に正式にリリースされた後は、 CWS 5.1 への移行に伴うアップグレード料金や導入コストは発生しません。アップグレードは、各パートナーと連携して CloudJumper によって完了し、既存のサービスは中断されません。CWS 5.1 は、以前のバージョンのすべての機能を引き続きサポートし、管理者とエンドユーザの両方のエクスペリエンスを向上させる新機能を拡張し、以前のリリースの Cloud Workspace Suite で導入された受賞歴のある自動化とオーケストレーションをさらに向上させます。</block>
   <block id="2ca6ef09be695ac497490dbd54b0b0ed" category="paragraph">CWS 5.1 のアップグレードは、 CWS 5.0 で導入された最新のアーキテクチャと REST API プラットフォームを拡張して活用することにより、最も高速で簡単なアップグレードです。CWS 5.1 は、 CloudJumper のフレンドリーな環境への取り組みを継続し、外部の開発者が Cloud Workspace に基づいてサービスや製品を拡張できるようにしています。</block>
   <block id="70bd9f9c3ca71770710be675bf7a580c" category="admonition">CWS 4.x は 2017 年 12 月 31 日に正式にサポート終了となります。CWS 4.x プラットフォームに参加しているパートナーは、 4.x 導入に関する直接サポートを受けなくなり、 4.x の更新やバグ修正は提供されなくなります。</block>
   <block id="5f76e43cf1c0d776e656e94980b71057" category="section-title">5.1 主な特長：</block>
@@ -1392,7 +1367,6 @@
   <block id="3a580f142203677f1f0bc30898f63f53" category="section-title">Azure</block>
   <block id="2d5dc75ae0469095c0637f057c402dd9" category="inline-link-macro">Azure クラウドバックアップ</block>
   <block id="8913cc7788b298aa780f3224869e4a04" category="paragraph">Azure では、 VDS でネイティブを使用してバックアップを自動的に設定できます <block ref="ec91135da0e64bcbb6a4909a510f9421" category="inline-link-macro-rx"></block> ローカル冗長ストレージ（ LRS ）を使用。必要に応じて、地理的冗長ストレージ（ GRS ）を Azure Management Portal で設定できます。</block>
-  <block id="3b0d4c04dc0d4c377f2542dba48388fd" category="list-text">バックアップポリシーは、サーバタイプごとに個別に定義できます（デフォルトで推奨されます）。また 'VDS UI から個別のマシンにスケジュールを割り当てることができますこの設定は ' ワークスペースページでサーバ名をクリックすることで ' サーバの詳細ビューに移動して適用できます ( 以下のビデオ : 個別のバックアップポリシーの設定を参照 )</block>
   <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="list-text">データ</block>
   <block id="f99ed0e8f70c8446786b799b8eee4030" category="list-text">毎日 7 回、毎週 5 回、毎月 2 回のバックアップを作成します。ビジネス要件に基づいて保持期間を延長</block>
   <block id="2e47d8c99a88c73e87d55c3a97a75c83" category="list-text">これは、専用のデータサーバと、アプリケーションおよびデータベース用のアドオン VPS VM の両方に当てはまります。</block>
@@ -1879,7 +1853,6 @@
   <block id="ec042dfa22465eef7af61dd76df8883b" category="paragraph"><block ref="ec042dfa22465eef7af61dd76df8883b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cb2ef55a4c597199f2c2cdb9b735b40d" category="section-title">その他のアクティブなリソース</block>
   <block id="7763b00636c6efdd417ae95dd3c98b7e" category="paragraph">ワークロードスケジューリングでは、 Wake on Demand 機能を起動して他のプラットフォームタスクを容易にするために必要な CWMGR1 などのプラットフォームサーバは制御されません。また、通常の環境動作では 24 時間 365 日稼働する必要があります。</block>
-  <block id="b951cb137c024520eacebdd9211a593f" category="paragraph">環境全体を非アクティブ化することでさらに削減できますが、非本番環境でのみ推奨されます。VDS の導入セクションで実行できる手動の操作です。環境を正常な状態に戻すには、同じページで手動の手順も必要です。</block>
   <block id="db8821fec66fe5401765408d885bd7af" category="paragraph"><block ref="a465fc361e27d7a8f0a5a1a4e74c4d93" category="inline-image-macro-rx" type="image"></block>
 <block ref="a572e7bd9333f94adc37c8d478645009" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2b8b8fa764769363d08d026e7a10acea" category="summary">NetApp TV のビデオコンテンツ</block>
@@ -2218,7 +2191,6 @@
   <block id="e95bc2ac4c5245d6acfac76806228d6a" category="cell"><block ref="e95bc2ac4c5245d6acfac76806228d6a" category="inline-link-rx"></block></block>
   <block id="c08c272bc5648735d560f0ba5114a256" category="cell">サポートにお問い合わせください</block>
   <block id="efa3c8b9f6b061603cf89b98cd2a2322" category="section-title">VDS コスト見積もりツール</block>
-  <block id="17bd5e26ae7dcbc2018a8b92bc995c1b" category="paragraph">VDS コスト試算ツールは、 Azure または Google Cloud でパブリッククラウドのコストを見積もることができる、目的に合わせて構築された付加価値ツールです。このツールには、予算を変更して最適化し、組織の予算内で必要な解決策を提供する方法が含まれています。</block>
   <block id="13148717f8faa9037f37d28971dfc219" category="cell">検証</block>
   <block id="58a0f2575d22246e5f81bca54977485e" category="cell">今後のリリースのプレビュー</block>
   <block id="024957c905c934855715e4a4ffb541d5" category="cell"><block ref="024957c905c934855715e4a4ffb541d5" category="inline-link-rx"></block></block>
@@ -3393,17 +3365,12 @@
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">トラブルシューティング</block>
   <block id="9865338f841174f4b55b7c9659b0f0ad" category="paragraph">エンドユーザーが赤い X 印の付いたドライブを見たら、ドライブを右クリックして [ 切断 ] を選択します。ログアウトしてから再度ドライブに戻ってください。<block ref="ebe95739f908b108224503abc00fdf12" category="inline-image-macro-rx" type="image"></block></block>
   <block id="df200579946b94e2c86f53f4a3051323" category="summary">スクリプトの文書作成 - AMD Radeon Instinct ドライバ</block>
-  <block id="b28e1a59b4ceaba90e82d7b098dacbb8" category="paragraph">VDS では、概念が論理階層のさまざまなレイヤに整理されます。この記事では、それらがどのように連携するかについて概説します。</block>
   <block id="a2d8b472e559dda415f47cf3f5ba8ffe" category="section-title">VDS 組織スキーム</block>
-  <block id="074fc983726d3b6c180e990bf37c27cf" category="paragraph">VDS 管理ポータルは、にあります<block ref="69f1bdc58d8e8591f3ab0c4640b0f810" category="inline-link-rx"></block>。この Web インターフェイスでは、 VDS 関連のすべてのオブジェクトを 1 つの画面で管理できます。VDS Web UI には、コンポーネントと論理コンテナの次の階層があります。</block>
   <block id="ee90c5300db796c65c21d407a90aa32a" category="section-title">VDS の導入</block>
-  <block id="234b95d6c5df55dced0af9d48ee84b2b" category="paragraph">_Deployment_ は '_VDS ワークスペース _ を含む 'VDS の概念です特定の導入アーキテクチャでは、複数の VDS ワークスペースを配置できます。</block>
   <block id="9f0f80b56ec6303113add15468417d02" category="admonition">1 つの導入環境で複数の VDS ワークスペースを実行することは「マルチテナンシー」と呼ばれ、 RDS 導入ではオプションとしてのみ機能します。 AVD の導入では、このアプローチはサポートされません。</block>
   <block id="b1d870541567d334843bc17b5d63abdc" category="paragraph">展開は Active Directory ドメインによって定義され、 AD ドメインと展開の間に 1:1 の関係があります。</block>
-  <block id="caa8bddee5349cba1196a03fe5da4c8e" category="paragraph">導入環境内のすべての VDS ワークスペースで共有される導入をサポートするために導入される特定の VM リソースがあります。例：各導入には、 VDS アプリケーションを実行するサーバである CWMGR1 という名前の VM が含まれています。これは SQL Express データベースであり、展開内の VDS ワークスペース（および含まれるリソース）の管理を容易にします。</block>
   <block id="2bb89fd3673dd7c95c44c1b9f3af00f7" category="section-title">VDS ワークスペース</block>
   <block id="c903cea40ddac1ba3514455162f25d49" category="admonition">「 * VDS * Workspace 」と「 * AVD * Workspace 」には違いがあります。</block>
-  <block id="ffe7c8c3ede46e63132fc3be73067892" category="paragraph">VDS ワークスペースは、クライアント ( エンドユーザー ) リソースの配置内の論理コンテナです。これらのリソースには、仮想マシン（セッションホスト、アプリケーションサーバ、データベースサーバ、ファイルサーバなど）、仮想ネットワーク、 ストレージやその他のハイパーバイザーインフラ：</block>
   <block id="3a61e2ca6ebb314d11e9bafa754d4976" category="paragraph">VDS ワークスペースには、ユーザー、セキュリティグループ、ワークロードスケジューリング、アプリケーション、自動化、 VM 、および AVD の構成。</block>
   <block id="0d411c026a5dddf6bde7d12a6a34ae10" category="paragraph">通常 'VDS ワークスペースは単一の会社 ' つまり ( エンタープライズ環境の場合 ) ビジネスユニットと連携します</block>
   <block id="43409894baffdadb0be966a0d3bdc0b0" category="section-title">VDS サイト</block>
@@ -3414,8 +3381,6 @@
   <block id="5c9e5a60ab9b54f944a262b39d09b585" category="section-title">AVD ホストプール</block>
   <block id="96c80efe5d69060054226bdaa8b00022" category="paragraph">AVD ホストプールは、 AVD ワークスペース内に配置され、セッションホストとアプリケーショングループのユーザーを保持して、ユーザーセッションをサーバー化し、個々のリソースへのアクセスを制御する論理コンテナです。</block>
   <block id="2057a4af9bb28a4cbc3b202149549520" category="section-title">AVD アプリケーショングループ</block>
-  <block id="a11216afb41d50aa3ef5ddded717591b" category="paragraph">各 AVD ホストプールは、 1 つの「デスクトップ」アプリケーショングループから始まります。この（または他の）アプリグループにユーザーやグループを割り当てて、割り当てられたユーザーにアプリグループ内のリソースへのアクセスを許可することができます。</block>
-  <block id="5ed3c516c0914d432e415c249a0753a2" category="paragraph">VDS のホストプール内に追加のアプリケーショングループを作成できます。追加のアプリケーショングループはすべて、 Windows デスクトップの完全なエクスペリエンスではなく、 RemoteApp のリソースを提供し、 RemoteApp のリソースを提供します。</block>
   <block id="62cbdd6ad8d30a7461fd5bb43d1470fa" category="summary">スクリプトドキュメント - AVD の Microsoft チーム</block>
   <block id="3bf910bda727d33aab2dc7f73ad934d3" category="doc">スクリプト化されたイベントドキュメント - AVD の Microsoft チーム</block>
   <block id="51482112197d082f8787326328121e65" category="section-title">Microsoft Teams for AVD の概要</block>
@@ -3427,7 +3392,6 @@
   <block id="be50f46ed7a6154338fa8575af41e85b" category="summary">スクリプトドキュメント - Microsoft Edge Chromium Optimizations</block>
   <block id="d62994dc13f2447f5c4436a74a9a6dae" category="doc">スクリプト化されたイベントドキュメント - Microsoft Edge Chromium Optimizations</block>
   <block id="64bf57ef1eb695ae728c9a143c30fb5d" category="section-title">Microsoft Edge Chromium の最適化</block>
-  <block id="c2327a645c37d3671b1b4ccb7accf25e" category="paragraph">Microsoft Edge Chromium 89 では、 Microsoft Edge Chromium ブラウザタブのリソース消費を制限する機能が追加されました。このグローバルスクリプトは、設定を適用してバックグラウンドタブをタイムアウトに制限し、 15 分後にリソースの消費を停止します。オーディオを再生している背景タブは影響を受けません。</block>
   <block id="7dff833b5a4b20d205011db88a6471ef" category="paragraph">詳細については、を参照してください <block ref="3665b1433878c477744478feb00a7de8" category="inline-link-macro-rx"></block>。</block>
   <block id="1bf0164b6c8572c44528a5df55ca0539" category="doc">Microsoft チームの概要</block>
   <block id="b2f2f13d734d96abe956c686f3007fde" category="paragraph">このスクリプトパッケージでは、 chocolatey パッケージマネージャを使用して Microsoft Teams_を インストール / アンインストールします <block ref="c5ec4b919c462535a88ca6c450c12437" category="inline-link-rx"></block> をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。</block>
@@ -3764,7 +3728,6 @@
   <block id="bc5c0a9c8c1f7c35a3cd02398b2c003b" category="doc">&lt;strong&gt; データの変更 /Pro/Home フォルダ &lt;/strong&gt; 概要</block>
   <block id="fa89c329e4778ffa596cc0556838b7fc" category="section-title">「データ /Pro/Home フォルダの概要」を変更します</block>
   <block id="53d42f8e1d72593ab06f78acb02df418" category="image-alt">Management.command center.operations.change data home pro フォルダ 678cd</block>
-  <block id="6975e1571fbfc61560ea954792c9a50f" category="paragraph">データ、プロファイル、およびユーザーのホームフォルダの保存場所は、 Active Directory によって管理されます。コマンドセンターでは、これらの場所を変更する処理を実行できます。</block>
   <block id="0e25d1512498bd6c0d0bc89e8ea68b36" category="image-alt">Management.command center.operation.copy テンプレートを gallery ed821 にコピーします</block>
   <block id="2f2b6fe7c362f2583e3f0b220feaec1f" category="section-title">リソースプールを選択しています</block>
   <block id="c7319855ff827f5a834dc2b7310954d5" category="paragraph">リソースプールの選択が空白の場合、設定はグローバルに適用されます。</block>
@@ -3784,7 +3747,6 @@
   <block id="a6156ea9d66fef24e87e841fbabf7cca" category="section-title">共有</block>
   <block id="4aa45f3bd7449c2db60b20294c364346" category="paragraph">*_Shared_ * タイプは、複数の異なる VM イメージと VM の役割を持つ環境全体を導入するように設計された VM イメージの集合です。</block>
   <block id="d6544351055e99d60ae43a571204dd50" category="section-title">VDI</block>
-  <block id="27058b58931d4de258ef8afe2aa0f1ff" category="paragraph">*_VDI_ * タイプは、 1 つの VM イメージで、複数の同一 VM を導入するために使用および再利用されます。これは、通常、ユーザセッションのホストに使用されます。すべてのタイプの AVD セッションホストについて、 VM ごとに複数のセッションを実行するホストであっても、 _VDI_type を選択する必要があります。</block>
   <block id="e1a98a8b5a80dfe9df7d792ba6f956ea" category="section-title">新しい Provisioning Collection を作成します</block>
   <block id="3d05d2abc0888d1966e34de8718d6d48" category="paragraph">Provisioning Collections （プロビジョニングコレクション）は、各導入環境内の VDS インタフェースの *_Provisioning Collections_ * サブタブにあります。</block>
   <block id="79cb9336d6185581f8150defa59268f2" category="paragraph"><block ref="79cb9336d6185581f8150defa59268f2" category="inline-image-macro-rx" type="image"></block></block>
@@ -3802,7 +3764,6 @@
   <block id="28c4090f5add8a39eb45ebc1815369a0" category="list-text">* データ * - この VM はユーザセッションをホストしません</block>
   <block id="d606c0e654c3e62ddbc3c51149ab36f4" category="list-text">* TSData * - この VM は、セッションホストとストレージホストの両方になります（最大：ワークスペースあたり 1 つの TSData ）。</block>
   <block id="f20483d0b860e7b5221a4e55770ccbd6" category="list-text">* VM Template * - 使用可能なリストから選択します。ストックハイパーバイザーイメージと以前に保存したプロビジョニングコレクションの両方が選択可能です。</block>
-  <block id="e7b3941e457506e15222b70242356366" category="list-text">注： Azure Marketplace からの Windows 7 イメージでは、 PowerShell Remoting は有効になっていません。Windows 7 イメージを使用するには、 PowerShell Remoting を有効にして、共有イメージギャラリーにカスタムイメージを提供する必要があります。</block>
   <block id="121fdbb3bdc3555f82dd48a88f257cb7" category="list-text">注：既存の Provisioning Collection を使用すると、計画されたイメージアップグレードプロセスの一環として、既存のイメージを更新して再展開できます。</block>
   <block id="51b8fda98790da8de324cfba4470a65d" category="list-text">* ストレージタイプ * - コストとパフォーマンスを考慮した OS ディスクの速度を選択します</block>
   <block id="83659f9f7e3256f3af4abad8013b7796" category="list-text">* データドライブ * - オプションで、このイメージに接続されている 2 番目のディスクを有効にします。通常は、 2 e.e で上記のデータストレージレイヤーに対して有効にします</block>
@@ -4230,15 +4191,12 @@
   <block id="88b2d89c67d85e84558bba0ee5d22344" category="doc">&lt;strong&gt; テンプレートを Gallery にコピー &lt;/strong&gt; 概要</block>
   <block id="f00d5902f085f4a525f7729a2d183fb7" category="section-title">テンプレートを Gallery Overview にコピーします</block>
   <block id="69a85df46de1c9f673b252704b33bd24" category="image-alt">Management.command center.operation.copy テンプレートを gallery 67ea4 にコピーします</block>
-  <block id="21087e268f5fce23262dd7168c7f70a8" category="paragraph">VDI プロビジョニングコレクションが確定すると、イメージは Azure にイメージとして格納され、同じ VDS サイトに導入できます。同じサブスクリプション内の別の Azure リージョンにイメージを導入できるようにするには、「テンプレートを Gallery にコピー」機能を使用します。この操作により、 VM イメージが共有ギャラリーにコピーされ、選択したすべての領域にレプリケートされます。</block>
   <block id="83032ce12981580e4cdc1d253de8ebf1" category="section-title">VDS ドロップダウンでの VM テンプレートの可用性</block>
-  <block id="ac846f4b92b33a50794d612c2808a51e" category="paragraph">レプリケーションが完了すると、新しい VM の導入時に VM テンプレートを選択するためのドロップダウンの VDS にイメージが表示されます。共有イメージは、コピー時に選択された任意の領域への展開に使用できます。</block>
   <block id="ea719ca9599866e7aae2fe126bb0863e" category="image-alt">Management.command center.operation.copy テンプレートを gallery 04bd8 にコピーします</block>
   <block id="8c817667da8f9cd7827a37014ddc8131" category="paragraph">共有ギャラリーに格納されている VM イメージには、「 x.x.x.x 」形式のバージョンが追加されます。このバージョンは Azure ポータル内のイメージのバージョンと一致しています。</block>
   <block id="906d07732233f71dc2ff1080bdd9f46f" category="image-alt">Management.command center.operationes.copy テンプレートを gallery ee598 にコピーします</block>
   <block id="77fc932b03b30b3966ed2910fce14651" category="admonition">イメージのレプリケーションには時間がかかる場合があり（イメージのサイズによって異なります）、バージョンをクリックするとステータスが表示されます（例 #1.0.0# ）をクリックします。</block>
   <block id="816fdf069f69753e87cf798424e069c4" category="section-title">地域別の可用性</block>
-  <block id="b032995a26d9ecc2fbb8b16b625647c9" category="paragraph">配置は、イメージが複製されたリージョンにのみ実行できます。このチェックボックスをオンにするには、 Azure ポータルで「 1.x 」をクリックし、次に示すように「 On_Update Replication_ 」をクリックします。</block>
   <block id="e0a7b22350d041179d5abc9503ca6ef6" category="image-alt">Management.command center.operation.copy テンプレートをギャラリー 9b63a にコピーします</block>
   <block id="aaacdf95ba2b1f61a2950d234fcc67ab" category="paragraph">ニックウールード</block>
   <block id="c6f89f26926a9c16573e5dc704918f72" category="doc">RDS セッションホストの更新プロセス</block>
@@ -4537,13 +4495,11 @@
   <block id="3f1c80cc6dd134b4494c50673ad245d1" category="admonition">この処理は確立されたメンテナンス期間に実行することを推奨します。メンテナンス期間の間は、エンドユーザがログインしないように指示され（または VM がユーザ接続を許可しないように設定されている）、この処理を実行するとエンドユーザデスクトップにアクセスできなくなります。</block>
   <block id="b7d7d6510062e208f7c5c8e8390cf5f4" category="doc">CWMS 5.1 マイナーリリース： 2018 年 10 月 18 日（木</block>
   <block id="7fff39c69ffed509befc703a10849155" category="paragraph">Command Center は、展開内の CWMGR1 プラットフォームサーバ上で実行される実行可能ファイルです。CWMGR1 VM に接続し、その VM 上でローカルに実行することによってアクセスします。</block>
-  <block id="23645cfa260589c8a00cc2f4dd692cbd" category="paragraph">このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。</block>
   <block id="e446863d235a9e2417e5f5023e30dab0" category="section-title">コマンドセンターを実行しています</block>
   <block id="4397d7e6a3f72ecfbfa6253e0c017843" category="list-title">Command Center アプリケーションを実行するには、次の手順に従います。</block>
   <block id="12a951eb22e2c512abf9383da11b139b" category="list-text">VDS &gt; Deployment &gt; Platform Servers_page からサーバに接続し、 _Actions_ アイコンをクリックして、「 Connect 」を選択します。</block>
   <block id="9469d638b1ca05c1af605f0db5e97aca" category="image-alt">Management.command センターの概要 68087</block>
   <block id="78d2654735926eea6a74c018b02639f1" category="list-text">クレデンシャルの入力を求められたら、 domain admin クレデンシャルを入力</block>
-  <block id="fe9d5646a734af5727b395278e4ca0cd" category="list-text">ユーザーは、「 CW インフラストラクチャ」セキュリティグループのメンバーである必要があります。一貫性を保つため、このメンバーシップを追加することをお勧めします。そのためには、ユーザーを _AD のレベル 3 テクニシャングループ &gt; クラウドワークスペース &gt; クラウドワークスペーステクニカルユーザー &gt; グループ _ のメンバーにすることをお勧めします</block>
   <block id="ac6641cdaac1900cbe92e65d25dcb0c8" category="image-alt">Management.command センターの概要 1c42d</block>
   <block id="dbf0d1256a58215c66213b42406103c3" category="list-text">_ Command Center_ のデスクトップアイコンを探して実行します</block>
   <block id="c84c918c7f9212c2f6f131a5badbd56e" category="image-alt">Management.command センターの概要 3c860</block>
@@ -4551,14 +4507,11 @@
   <block id="381d5d3cfd644c6ee01e73424974e853" category="section-title">[ 操作（ Operations ） ] タブ</block>
   <block id="4245ce4359e4f2f8d84ba49abe34ce08" category="image-alt">Management.command センターの概要 b614e</block>
   <block id="e00b53ac36f1ab67bd55b503f7433384" category="paragraph">コマンド * メニューから、アクションのリストから選択できます（下記のリストを参照）。</block>
-  <block id="70de3c0324ce606fe88d45c88ba059b4" category="paragraph">コマンドを選択すると、「 * データのロード * 」ボタンから配置データを入力できます。[Load Data] ボタンは、以前に選択したデータ（例 ドロップダウンから特定の VM を選択した後、使用可能なバックアップ日のリストをロードする）</block>
   <block id="2e9f0f0555eeb57a7748d178aa4f439c" category="image-alt">Management.command センターの概要 85417</block>
   <block id="583fe57e461614c357aeae3fc4114eee" category="paragraph">コマンドを選択した後、 [* コマンドを実行（ Execute Command * ） ] をクリックすると、選択したプロセスが実行されます。</block>
-  <block id="a0a5351369a69f519811ab4d0f826555" category="paragraph">ログを確認するには、 * すべてのログを表示 * ボタンをクリックします。RAW テキストファイルが開き、最新のエントリが下に表示されます。</block>
   <block id="96207966c5b77825eb147e108f5b7785" category="section-title">コマンドリスト</block>
   <block id="2c995eb5052e706144080b36e01ac6db" category="inline-link-macro">テンプレートを Gallery にコピー</block>
   <block id="17623da53c49870f351d31dca02a49b5" category="list-text"><block ref="17623da53c49870f351d31dca02a49b5" category="inline-link-macro-rx"></block></block>
-  <block id="90f4ea8cb8191a9a925e35ae28a776dc" category="paragraph">VDS には、プロファイルの縮小処理が組み込まれており、毎晩実行されます。5 GB 以上のファイルを保存できる場合 ' この自動化により ' ユーザーのプロファイルの FSLogix コンテナが自動的に縮小されますこの自動化は、毎日午前 12 時 1 分に実行されます。5GB のしきい値は、 CWMGR1 サーバに搭載されている DCConfig で設定できます。</block>
   <block id="8b72c2bc5db9966dc7dc3e2692e70ebc" category="image-alt">Advanced.fslogix プロファイル縮小 ea982</block>
   <block id="abb96039c045d19f71a6a95315ac6c92" category="doc">AMD Radeon Instinct ドライバの概要</block>
   <block id="47166dc97a9eea9403c57bcbb1fdee69" category="paragraph">このスクリプトパッケージは、 chocolatey パッケージマネージャを使用して、 _AMD Radeon Instinct Drivers_ をインストール / アンインストールします <block ref="c5ec4b919c462535a88ca6c450c12437" category="inline-link-rx"></block> をクリックして、を展開します。chocolatey は VM の作成時に VDS によって導入されますが、このスクリプトでは chocolatey が存在しない場合はその前提条件として確認およびインストールされます。</block>
@@ -4595,7 +4548,6 @@
   <block id="5f44fd9279cc181cc6a2ba58dc33abcf" category="doc">コマンドセンターコマンド：テンプレートを Gallery にコピー</block>
   <block id="bc7663567c22abd2e4b4784f8d5f7678" category="section-title">コマンドセンター警告</block>
   <block id="46433f623976c5af8ebdc7ab92816a48" category="inline-link-macro">コマンドセンターの概要</block>
-  <block id="2c8ba1178f78e5412cd75bc1ca7e8dac" category="admonition">Command Center は、展開内の CWMGR1 プラットフォームサーバ上で動作するアプリケーションです。このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。詳細については、を参照してください <block ref="a48f4703e36280df80993e60ba576b79" category="inline-link-macro-rx"></block> 記事。</block>
   <block id="85fe10f5d1b1fd0371e1131d6540f41d" category="doc">スクリプト化されたイベントドキュメント - AVD ショートパスを有効にします</block>
   <block id="657c4461e228bd4628647c9bba441cb2" category="paragraph">この AVD 機能に関する Microsoft のマニュアルは、次の URL から入手できます。<block ref="ce8abb3ebcad935b317f33e57160d38f" category="inline-link-rx"></block>=== 手動アクティビティを追加リポジトリ内のスクリプトが何らかのアクションを実行するには ' そのスクリプトを選択したトリガに関連付けるアクティビティを作成する必要がありますこの例のアクティビティは 'VDS 管理者が手動でスクリプトをトリガしたときに実行されます</block>
   <block id="779d6d9f46a352cebccf44b836a44271" category="summary">FSLogix プロファイル縮小機能の概要</block>
@@ -4731,4 +4683,53 @@
   <block id="303a34eec2182a2a22c6448a3e5eafbb" category="doc">VDS V6 リリース： 2022 年 1 月 6 日木曜日</block>
   <block id="d64473aae9849f968a75d27d0d4d1350" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 次の場合： _2022 年 1 月 6 日（木）午後 10 時 ~ 午後 11 時にイースタン _ インパクト： _ エンドユーザのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="1cf2ecc6b20f83f56b8cd96d3c14f028" category="list-text">導入プロセスの開始時に、一意な Azure 承認問題のバグ修正。</block>
+  <block id="df1d7646cadbf91ab7859121ccadd9e0" category="admonition">このアプリケーションは 'VDS アプリケーションライブラリに存在する必要がありますこれ <block ref="bf3bed7e9c33f406222a0da03c1c9b87" category="inline-link-macro-rx"></block> RDS 記事のアプリエンタイトルメントでは、ライブラリにアプリを追加する方法について説明しています。</block>
+  <block id="5c3b032da8f2919a4c721171ab43debf" category="list-text">* スクリプト： * ドロップダウンからインストール（またはアンインストール）スクリプトを選択します。これは、クローンを作成してカスタマイズしたグローバルスクリプトまたは顧客スクリプトです。</block>
+  <block id="7f21ec8a76adcc10e03f03272dc55989" category="admonition">このワークフローは、環境 RDS 配置のみを対象としています。AVD アプリケーションの使用権に関するドキュメントについては ' を参照してください <block ref="74176c341779afa5ab584577d5c6e491" category="inline-link-macro-rx"></block></block>
+  <block id="4a6dcab2ea23046fa6acb9c972fc722f" category="paragraph">VDS 管理者が VDS にログインし、組織またはワークスペースモジュールの下で特定のクライアントを検索し、概要タブを開きます。Servers Tile には、すべてのサーバ（ TSD1 、 TS1 、 D1 など）が一覧表示されます。個々のサーバのクローンを作成するには、サーバ名の右端にある歯車をクリックし、 [ クローン ] オプションを選択します。</block>
+  <block id="5327b77165f2952e493ceffcb00fc97d" category="paragraph">TSData サーバーのクローンを作成する場合、重複するファイルがないように、 c:\Home 、 c:\Data 、 c:\Pro の各フォルダを削除します。この場合、クローニングプロセスは失敗します。これらのファイルの削除に問題がありました。このエラーはあいまいです。通常は、ファイルまたはプロセスが開いているためにクローニングイベントが失敗したことを意味します。次に、すべての AV を無効にしてください（このエラーを説明する可能性があるため）。</block>
+  <block id="8275473225fce2fd7038755af7026f6b" category="admonition">この自動化プロセスは、カスタム PS1 と事前に構築された XML に依存します。ネットアップが保証していないのは、対象のマシンが正常に動作するか、影響があるという意味ではサポートされていません。PS1 はネットアップがホストしているため、いつでも変更や削除が可能です。この方法は、独自の自動プロセスを構築してホストするためのテンプレートとして使用することをお勧めします。このプロセスは、 Windows Server 2016 Datacenter 10.0.14393 および Windows 10 Enterprise for Virtual Desktop 10.0.18362 （ Azure 上、 2019 年 8 月 30 日）で検証済みです。</block>
+  <block id="ca7e1fe8d8bc4eba505de64e7681c52b" category="paragraph">これは、通常のアプリケーションインストールスクリプトイベントと同じワークフローに従います。これらの手順では、アプリケーション管理計画の手順に従って、チョコレートがすでにインストールされていることを前提としています。Office 365 ProPlus 自動インストールとチョコレート</block>
+  <block id="441b124e320f6694d4d5723f0dce4b32" category="paragraph">スクリプトが保存されたら、次の手順でそのスクリプトをトリガーに関連付けます。この場合 'VDS でアプリケーションのインストールが要求されたときにスクリプトをトリガします詳細については、『アプリケーション管理ガイド』を参照してください。</block>
+  <block id="468efc6451a2aa4ae307b4b4ba81988d" category="paragraph">このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。</block>
+  <block id="425b6f8ad1e8479b9498381236759446" category="list-text">ユーザーは、「 CW インフラストラクチャ」セキュリティグループのメンバーである必要があります。一貫性を保つため、このメンバーシップを追加することをお勧めします。そのためには、ユーザーを _AD のレベル 3 テクニシャングループ &gt; クラウドワークスペース &gt; クラウドワークスペーステクニカルユーザー &gt; グループ _ のメンバーにすることをお勧めします</block>
+  <block id="c8b0179c7723fa9612a5afc30f09c235" category="paragraph">コマンドを選択すると、「 * データのロード * 」ボタンから配置データを入力できます。[Load Data] ボタンは、以前に選択したデータ（例 ドロップダウンから特定の VM を選択した後、使用可能なバックアップ日のリストをロードする）</block>
+  <block id="1991b3a8bd038ca8b28dbf7ec9416cbb" category="paragraph">ログを確認するには、 * すべてのログを表示 * ボタンをクリックします。RAW テキストファイルが開き、最新のエントリが下に表示されます。</block>
+  <block id="3c7074eb608a559df4e7529502ada582" category="list-text">バックアップポリシーは、サーバタイプごとに個別に定義できます（デフォルトで推奨されます）。また 'VDS UI から個別のマシンにスケジュールを割り当てることができますこの設定は ' ワークスペースページでサーバ名をクリックすることで ' サーバの詳細ビューに移動して適用できます ( 以下のビデオ : 個別のバックアップポリシーの設定を参照 )</block>
+  <block id="5329adaf1322063c572cbceaf8ab9c38" category="paragraph">VDS コスト試算ツールは、 Azure または Google Cloud でパブリッククラウドのコストを見積もることができる、目的に合わせて構築された付加価値ツールです。このツールには、予算を変更して最適化し、組織の予算内で必要な解決策を提供する方法が含まれています。</block>
+  <block id="7b8eccd09dfe8569fc96e78f5da6579d" category="paragraph">2017 年第 4 四半期に正式にリリースされた後は、 CWS 5.1 への移行に伴うアップグレード料金や導入コストは発生しません。アップグレードは、各パートナーと連携して CloudJumper によって完了し、既存のサービスは中断されません。CWS 5.1 は、以前のバージョンのすべての機能を引き続きサポートし、管理者とエンドユーザの両方のエクスペリエンスを向上させる新機能を拡張し、以前のリリースの Cloud Workspace Suite で導入された受賞歴のある自動化とオーケストレーションをさらに向上させます。</block>
+  <block id="e5e4078c31f5ab3bf1fa6e7b2dcfcaf3" category="paragraph">*_VDI_ * タイプは、 1 つの VM イメージで、複数の同一 VM を導入するために使用および再利用されます。これは、通常、ユーザセッションのホストに使用されます。すべてのタイプの AVD セッションホストについて、 VM ごとに複数のセッションを実行するホストであっても、 _VDI_type を選択する必要があります。</block>
+  <block id="d28368185145227a8585afcf383c8cb2" category="list-text">注： Azure Marketplace からの Windows 7 イメージでは、 PowerShell Remoting は有効になっていません。Windows 7 イメージを使用するには、 PowerShell Remoting を有効にして、共有イメージギャラリーにカスタムイメージを提供する必要があります。</block>
+  <block id="c31198a443d2cbef15eecb743db35f4a" category="paragraph">VDS には、プロファイルの縮小処理が組み込まれており、毎晩実行されます。5 GB 以上のファイルを保存できる場合 ' この自動化により ' ユーザーのプロファイルの FSLogix コンテナが自動的に縮小されますこの自動化は、毎日午前 12 時 1 分に実行されます。5GB のしきい値は、 CWMGR1 サーバに搭載されている DCConfig で設定できます。</block>
+  <block id="209825a877e11121de0007d470cdda0c" category="list-text">パートナーとサブパートナーの両方について、セルフサービスパスワードリセットレポートを紹介します</block>
+  <block id="77f90cd15185be8a841a6cd4f59e16b7" category="paragraph">VDI プロビジョニングコレクションが確定すると、イメージは Azure にイメージとして格納され、同じ VDS サイトに導入できます。同じサブスクリプション内の別の Azure リージョンにイメージを導入できるようにするには、「テンプレートを Gallery にコピー」機能を使用します。この操作により、 VM イメージが共有ギャラリーにコピーされ、選択したすべての領域にレプリケートされます。</block>
+  <block id="8462a715b527225e20aecada75c5ec58" category="paragraph">レプリケーションが完了すると、新しい VM の導入時に VM テンプレートを選択するためのドロップダウンの VDS にイメージが表示されます。共有イメージは、コピー時に選択された任意の領域への展開に使用できます。</block>
+  <block id="adf4ce32e74a99820885998c87332e14" category="paragraph">配置は、イメージが複製されたリージョンにのみ実行できます。このチェックボックスをオンにするには、 Azure ポータルで「 1.x 」をクリックし、次に示すように「 On_Update Replication_ 」をクリックします。</block>
+  <block id="8d2b99382183b4f2efedee98698e5461" category="paragraph">環境全体を非アクティブ化することでさらに削減できますが、非本番環境でのみ推奨されます。VDS の導入セクションで実行できる手動の操作です。環境を正常な状態に戻すには、同じページで手動の手順も必要です。</block>
+  <block id="c87453bc3b09ec6fe9e4d0cdb6bbe8cc" category="paragraph">Microsoft Edge Chromium 89 では、 Microsoft Edge Chromium ブラウザタブのリソース消費を制限する機能が追加されました。このグローバルスクリプトは、設定を適用してバックグラウンドタブをタイムアウトに制限し、 15 分後にリソースの消費を停止します。オーディオを再生している背景タブは影響を受けません。</block>
+  <block id="7d753bd86a0c85f6e73b68f6dbedf2de" category="admonition">このワークフローでは、環境 AVD 配置のみが使用されます。RDS アプリケーションの使用権に関するドキュメントについては、を参照してください <block ref="0ab43ecb3f8f5a1bd44a7cd9813b2e41" category="inline-link-macro-rx"></block></block>
+  <block id="25b39771f06304178c47b965c8baf65d" category="admonition">AVD は文書化されたサービスで、多くのサービスがあります <block ref="ef37fc637501cb1b64c849d5e95b4c7b" category="inline-link-macro-rx"></block>。VDS は、 AVD の標準的な動作方法をスーパーシードしません。代わりに ' この記事では 'VDS がすべての AVD 展開で使用されている標準概念にどのようにアプローチするかを説明します</block>
+  <block id="629e86be310a4074f7f96e8053f58d24" category="paragraph">Azure Virtual Desktop では、各エンドユーザに AVD 管理者によって RemoteApp または Desktop へのアクセス権が割り当てられます。これは VDS のアプリケーショングループ割り当てで行います。</block>
+  <block id="31277e1c8a1002a04b82c23689937668" category="paragraph">* RemoteApp * とは、セッションホスト上でリモートで実行され、デスクトップコンテキストなしでローカルデバイス上で表示されるアプリケーションです。「ストリーミングアプリ」とも呼ばれるこのアプリケーションは、ローカルデバイス上のローカルアプリケーションのように見えますが、セキュリティコンテキストで実行され、セッションホストのストレージレイヤとコンピューティングレイヤで実行されます。</block>
+  <block id="01858c5473d7f75d1c4554d388d91137" category="paragraph">* デスクトップ * とは、セッションホストで実行され、ローカルデバイスで表示される Windows の完全な操作を指します。通常は、全画面表示ウィンドウです。「リモートデスクトップ」と呼ばれる一般的なデスクトップ自体には、そのセッションホストにインストールされているアプリケーションが含まれます。このアプリケーションは、ユーザーがデスクトップセッションウィンドウ内から起動できます。</block>
+  <block id="bf6ac29ade6cf8e14d89dc08b6bf1761" category="paragraph">ログインすると、エンドユーザには管理者によって割り当てられたリソースが表示されます。以下は、エンドユーザーが AVD クライアントでログインしたときに表示されるビューの例です。これはより複雑な例です。エンドユーザーは、シングルデスクトップまたは RemoteApp のみを割り当てることがよくあります。エンドユーザは、これらのリソースのいずれかをダブルクリックすると、そのアプリケーション / デスクトップを起動できます。</block>
+  <block id="77a84148666c82542584e57d0c6ec43d" category="paragraph">上に示すように、このエンドユーザーが利用できるさまざまなリソースは、異なるセッションホストでホストされ、異なるホストプールでホストされています。また、異なる AVD ワークスペースの異なる IT 組織によって管理される可能性もあります。この例では示していませんが、 VDS サイト機能を使用して、これらのリソースを異なる Azure リージョンやサブスクリプションでホストすることもできます。</block>
+  <block id="098b02c52f0db3d5ddbdd0288ca7ec20" category="paragraph">デフォルトでは、すべてのホストプールは 1 つのアプリケーショングループから始まり、 Windows デスクトップエクスペリエンスへのアクセスの割り当てに使用されます。これらのセッションホストにインストールされているすべてのアプリケーションは、このアプリケーショングループに割り当てられているエンドユーザーにアクセスできます。</block>
+  <block id="0a14f1535ea14c5bd93244bb6dbf4792" category="paragraph">RemoteApp へのアクセスをプロビジョニングするには、ホストプール内に新しいアプリケーショングループを作成する必要があります。作成したアプリケーションは、このアプリケーショングループに割り当てる必要があります。</block>
+  <block id="3d2884c0236d13ed6261947f4b728fcc" category="admonition">これらのセッションホスト上のアプリケーションは、このホストプールの「デスクトップ」 AppGroup に割り当てられたすべてのユーザーがすでに使用できます。アプリケーションへのアクセスを提供するだけで、 RemoteApp グループを介してアクセスをプロビジョニングする必要もありません。RemoteApp グループは、ストリーミングアプリとしてローカルデバイス上で AS IF を実行するアプリへのアクセスを有効にするためにのみ必要です。</block>
+  <block id="7ae4c2ef09690aa217f7605a240c3da4" category="list-text">下にスクロールして「リモートアプリ」セクションに移動します。このセクションでは、 VDS が直接セッションホストに照会して、ストリーミングに使用可能なアプリケーションを表示するために、データを入力する時間がかかる場合があります。</block>
+  <block id="37282db4103868ec297ff1f434418904" category="paragraph">スクリプトイベントには ' スクリプトの * リポジトリ * と * アクティビティ * の両方が含まれますスクリプトには、 * 何を実行するかという指示が含まれています。アクティビティは、スクリプトを適切なトリガーとターゲット（ * when と where * ）にリンクしています。</block>
+  <block id="f6fd2aeb180289469f1049467a0516b4" category="paragraph">[ リポジトリ ] タブには 'VDS アカウント内から配備できるすべてのスクリプトのリストが表示されますVDS インスタンスのすべての管理者が共有するカスタムリポジトリです。スクリプト化イベントへのアクセスは '_VDS&gt; 管理者 &gt; 権限ページ _ で管理できます</block>
+  <block id="e18bab607917db0b6015f8eb5eef52ae" category="paragraph">各 VDS 管理者組織には、組織によって作成またはカスタマイズされたスクリプトのプライベートライブラリがあります。これらのスクリプトは、スクリプトタイプ " 顧客 " として定義されます。 お客様のスクリプト：すべての VDS 管理者が削除および編集し ' 適切な管理者権限を持つスクリプトをスクリプトイベントセクションに追加します</block>
+  <block id="9d72345d70a945d837bf3572115fa240" category="paragraph">ネットアップは、すべての VDS 管理者組織で共通の「グローバル」スクリプトのライブラリも公開し、管理しています。これらのスクリプトは、スクリプトタイプ「グローバル」として定義されます。 VDS 管理者がグローバルスクリプトを編集または削除することはできません。代わりに、グローバルスクリプトを「クローニング」できます。このスクリプトは「顧客」スクリプトであり、編集して使用できます。</block>
+  <block id="4f59d45cbca68020170a8684b5b8886d" category="paragraph">スクリプト化されたイベントに関連付けられたスクリプトファイルをダウンロードする機能により 'VDS 管理者は配備前に基本となるスクリプトファイルを確認および編集できます完全には理解できないスクリプトを実行することは絶対にお勧めしません。</block>
+  <block id="6772d4a7f270c4743310d726d916f19e" category="paragraph">VDS では、概念が論理階層のさまざまなレイヤに整理されます。この記事では、それらがどのように連携するかについて概説します。</block>
+  <block id="7b8733b8d4d97267675a429a1c09c452" category="paragraph">VDS 管理ポータルは、にあります<block ref="69f1bdc58d8e8591f3ab0c4640b0f810" category="inline-link-rx"></block>。この Web インターフェイスでは、 VDS 関連のすべてのオブジェクトを 1 つの画面で管理できます。VDS Web UI には、コンポーネントと論理コンテナの次の階層があります。</block>
+  <block id="f5c59dac168d8d477cbfff4db5c43c19" category="paragraph">_Deployment_ は '_VDS ワークスペース _ を含む 'VDS の概念です特定の導入アーキテクチャでは、複数の VDS ワークスペースを配置できます。</block>
+  <block id="2dd797c702553872201c4a3863f765cc" category="paragraph">導入環境内のすべての VDS ワークスペースで共有される導入をサポートするために導入される特定の VM リソースがあります。例：各導入には、 VDS アプリケーションを実行するサーバである CWMGR1 という名前の VM が含まれています。これは SQL Express データベースであり、展開内の VDS ワークスペース（および含まれるリソース）の管理を容易にします。</block>
+  <block id="dda8bc8718cc6eb90dfc0629c5be11c1" category="paragraph">VDS ワークスペースは、クライアント ( エンドユーザー ) リソースの配置内の論理コンテナです。これらのリソースには、仮想マシン（セッションホスト、アプリケーションサーバ、データベースサーバ、ファイルサーバなど）、仮想ネットワーク、 ストレージやその他のハイパーバイザーインフラ：</block>
+  <block id="f7c2cc4ea52fa0930a3bf06522f84b8c" category="paragraph">各 AVD ホストプールは、 1 つの「デスクトップ」アプリケーショングループから始まります。この（または他の）アプリグループにユーザーやグループを割り当てて、割り当てられたユーザーにアプリグループ内のリソースへのアクセスを許可することができます。</block>
+  <block id="f7c1c070d65b6ccf74bca5345b3ff6ed" category="paragraph">VDS のホストプール内に追加のアプリケーショングループを作成できます。追加のアプリケーショングループはすべて、 Windows デスクトップの完全なエクスペリエンスではなく、 RemoteApp のリソースを提供し、 RemoteApp のリソースを提供します。</block>
+  <block id="2bf46ad58410756ffcf2ab58406d5151" category="paragraph">データ、プロファイル、およびユーザーのホームフォルダの保存場所は、 Active Directory によって管理されます。コマンドセンターでは、これらの場所を変更する処理を実行できます。</block>
+  <block id="2a56e61a4cdc8f4df5f2f537a46b206a" category="admonition">Command Center は、展開内の CWMGR1 プラットフォームサーバ上で動作するアプリケーションです。このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。詳細については、を参照してください <block ref="a48f4703e36280df80993e60ba576b79" category="inline-link-macro-rx"></block> 記事。</block>
 </blocks>
