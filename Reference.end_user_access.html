@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>エンドユーザーの要件</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="エンドユーザーの要件" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/virtual-desktop-service/Reference.end_user_access.html" />
+	<meta property="og:description" content="エンドユーザアクセス" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/virtual-desktop-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="エンドユーザアクセス">
+  <meta name="keywords" content=" ">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ja-jp/virtual-desktop-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/virtual-desktop-service/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/virtual-desktop-service/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ja-jp/virtual-desktop-service/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ja-jp/virtual-desktop-service/js/na-search.js'></script>
+  
+
+  
+  <script src='/ja-jp/virtual-desktop-service/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/virtual-desktop-service/js/na-utility.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ja-jp/virtual-desktop-service/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/virtual-desktop-service/js/toc.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ja-jp/virtual-desktop-service/js/version-dropdown.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/product-family.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/jszip.min.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/virtual-desktop-service/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索" 
+          data-no-results-found="{query}に該当する結果はありません" 
+          data-did-you-mean="{suggestion} を検索" 
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
+          data-results-found="{hitCount} 件見つかりました"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/virtual-desktop-service/Reference.end_user_access.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/virtual-desktop-service/Reference.end_user_access.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/virtual-desktop-service/Reference.end_user_access.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>利用可能なPDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ja-jp/virtual-desktop-service/pdfs/fullsite-sidebar/Virtual_Desktop_Service_のマニュアル.pdf" >
+          <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>このドキュメントサイトのPDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/VDS_を使用した導入.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            VDS を使用した導入
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/Azure.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/Azure_Virtual_Desktop_の_1_つです.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure Virtual Desktop の 1 つです
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/Google.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Google
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/アーキテクチャ.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            アーキテクチャ
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/データ層を変更します.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            データ層を変更します
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/管理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            管理
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/導入.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            導入
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/アプリケーション.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            アプリケーション
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/スクリプト化されたイベント.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            スクリプト化されたイベント
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/コマンドセンター.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            コマンドセンター
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/処理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            処理
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/ユーザー管理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            ユーザー管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/システム管理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            システム管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/トラブルシューティング.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            トラブルシューティング
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/参照.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            参照
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/以前のバージョン.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            以前のバージョン
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ja-jp/virtual-desktop-service/pdfs/pages/Reference.end_user_access.pdf" >
+    <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/スクリプトライブラリのドキュメント.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            スクリプトライブラリのドキュメント
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/詳細設定.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            詳細設定
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/ネットアップ_VDS_v5_4_のビデオ.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            ネットアップ VDS v5.4 のビデオ
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ja-jp/virtual-desktop-service/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別のPDFドキュメントのコレクション<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/index.html">
+        Virtual Desktop Service のマニュアル
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> VDS を使用した導入</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure Virtual Desktop の 1 つです</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html">
+        Azure への AVD の導入
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html">
+        補足 - 既存の AD を使用した AVD
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html">
+        VDS v5.4 コンポーネントとアクセス権 (AVD)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_prerequisites.html">
+        VDS v5.4 前提条件 (AVD)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.vds_v6.0_prerequisites.html">
+        VDS v6.0 の前提条件 (AVD)
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.GCP.RDS.deploying_rds_in_gcp.html">
+        Google で RDS を展開する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.GCP.vds_v5.4_prerequisites.html">
+        VDS v5.4 の前提条件（ RDS+ GCP ）
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> アーキテクチャ</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/virtual-desktop-service/Architectural.change_data_layer.html">
+        <div class="na-navbar-padding"> データ層を変更します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectural.change_data_layer.Azure_Files.html">
+        Azure Files の特長
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectual.migrate_data_into_vds.html">
+        データを VDS に移行します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        AVD v1 を v2 にアップグレードします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectural.Wildcard_SSL_certificate_renewal_process.html">
+        SSL 証明書を更新してください
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectural.AVD_teardown_guide.html">
+        VDS ティアダウンガイド
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 導入</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Deployments.provisioning_collections.html">
+        プロビジョニングコレクション
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Deployments.logical_hierarchy_overview.html">
+        VDS 論理階層の概要
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> アプリケーション</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        RDS のアプリケーションエンタイトルメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Applications.AVD_application_entitlement_workflow.html">
+        AVD のアプリケーションエンタイトルメント
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> スクリプト化されたイベント</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Scripted_Events.scripted_events.html">
+        スクリプドイベントの概要
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> コマンドセンター</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.command_center.overview.html">
+        Management Command Center の概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 処理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.command_center.operations.copy_template_to_gallery.html">
+        テンプレートを Gallery にコピー
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Cost_Optimization.workload_schedule.html">
+        コスト最適化を構成します
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ユーザー管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.manage_user_accounts.html">
+        ユーザアカウントを管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.manage_folders_and_permissions.html">
+        フォルダとアクセス権の管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        アプリケーションアクセスの管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.reset_user_password.html">
+        ユーザパスワードをリセットします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.multi-factor_authentication.html">
+        MFA を設定します
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> システム管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.create_domain_admin_account.html">
+        ドメイン管理者アカウントを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.provide_3rd_party_access.html">
+        サードパーティのアクセスを提供します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.configure_backup.html">
+        バックアップを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.clone_virtual_machines.html">
+        仮想マシンのクローンを作成
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.auto_add_disk_space.html">
+        ディスクスペースの自動追加
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.azure_key_vault.html">
+        Azure キーバックアップ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.configure_antivirus.html">
+        アンチウイルスを構成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.adding_moving_mapped_drives.html">
+        マッピングされたドライブの追加と移動
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> トラブルシューティング</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.reviewing_vds_logs.html">
+        VDS ログの確認
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.internet_connection_quality.html">
+        インターネット接続品質
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.enable_user_wallpaper.html">
+        ユーザの壁紙を有効にする
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.printing_issues.html">
+        印刷の問題
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.azure_vcpu_core_quota.html">
+        Azure vCPU コアクォータ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.unlocking_user_accounts.html">
+        ユーザアカウントのロックを解除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.general_vm_performance.html">
+        一般的な VM のパフォーマンス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.dns_forwarding_for_azure_aadds_sso.html">
+        Azure の DNS 転送で SSO が追加されています
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.application_issues.html">
+        アプリケーションの問題
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 参照</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html">
+        VDS v6.0 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v5.4_release_notes.html">
+        VDS v5.4 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_windows_client_release_notes.html">
+        VDS Windows クライアントのリリースノート
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 以前のバージョン</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v5.3_release_notes.html">
+        VDS v5.3 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.cwms_v5.2_release_notes.html">
+        CWMS v5.2 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.cws_v5.1_release_notes.html">
+        CWS v5.1 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.cws_v5.0_release_notes.html">
+        CWS v5.0 リリースノート
+      </a></li></ul></li></ul></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.end_user_access.html">
+        エンドユーザアクセス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.vds_change_environments.html">
+        VDS 変更環境
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> スクリプトライブラリのドキュメント</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.AdobeReader.html">
+        Adobe Reader DC
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.AMDRadeonInstinctDrivers.html">
+        AMD Radeon Instinct ドライバ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.EzeepPrintApp.html">
+        ezeep Print アプリ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.GoogleChrome.html">
+        Google Chrome
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftEdgeChromium.html">
+        Microsoft Edge Chromium
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftOffice365.html">
+        Microsoft Office 365 の場合
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html">
+        Microsoft One Drive
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftTeams.html">
+        Microsoft チーム
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftTeamsAVD.html">
+        AVD の Microsoft チーム
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.NvidiaCudaDrivers.html">
+        NVIDIA Cuda ドライバ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.NvidiaGridDrivers.html">
+        NVIDIA Grid ドライバ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.AVDScreenCaptureProtection.html">
+        AVD 画面キャプチャ保護
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.ZoomVDI-AVD.html">
+        AVD のズーム
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 詳細設定</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Advanced.fslogix_profile_shrink.html">
+        FSLogix プロファイルの縮小
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ネットアップ VDS v5.4 のビデオ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_content_netapptv.html">
+        NetApp TV のコンテンツ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVDRDS_deploy_54.html">
+        AVD または RDS を展開する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVD_hostpool_54.html">
+        Azure に AVD ホストプールを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVD_users_appgroups_54.html">
+        AVD ユーザーとアプリケーショングループを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVDRDS_optimize_resources_54.html">
+        リソースの管理とコストの最小化
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_VDS_day_in_the_life.html">
+        AVD と RDS のアプリケーション管理を自動化します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        v1 AVD ホストプールを v2 にアップグレードします
+      </a></li></ul></li></ul>
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">ホーム</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">ドキュメント</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/virtual-desktop-service/">Virtual&nbsp;Desktop&nbsp;Service</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          エンドユーザーの要件
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">エンドユーザーの要件</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-08-24 20:32:21 +0000">08/24/2021</time>
+    
+  
+
+<span>寄稿者
+  <a target="_blank" href="https://github.com/tvanroo">
+    <img  class="avatar avatar-small"
+          alt="tvanroo"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/29737083?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+
+<div class="sect1">
+<h2 id="概要">概要</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp VDS では、異なるユーザエンドポイントデバイスの追跡や推奨は行われません。いくつかの基本事項を推奨しますが、これによって、他の可能なエンドポイントの選択が除外されることはありません。</p>
+</div>
+<div class="paragraph">
+<p>リモートデスクトップ環境は、さまざまなエンドポイントデバイスからアクセスできます。クライアントは、 Microsoft およびサードパーティベンダーから直接入手できます。NetApp VDS では、 Windows デバイス用のカスタム接続クライアント（ <em>NetApp VDS Client for Windows</em> ）と、 HTML 5 ブラウザと互換性のある Web クライアントが提供されます。</p>
+</div>
+<div class="paragraph">
+<p>Azure Virtual Desktop 環境には、さまざまなエンドポイントデバイスからアクセスできます。RDS とは異なり、 AVD 環境にアクセスできるのは Microsoft ネイティブクライアントのみです。Microsoft は、 Windows 、 MacOS 、 Android 、 iOS 、および Web クライアント向けにクライアントを公開しています。また、 IGEL と提携して、 Linux ベースのシンクライアント製品を提供しています。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="エンドユーザー接続オプション">エンドユーザー接続オプション</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="リモートデスクトップサービス">リモートデスクトップサービス</h3>
+<div class="sect3">
+<h4 id="windows-用の-netapp-vds-クライアント">Windows 用の NetApp VDS クライアント</h4>
+<div class="paragraph">
+<p>RDS 環境に接続するには、 Windows 用 NetApp VDS クライアントが最適です。このシンプルなインストーラを使用すると、ユーザー名とパスワードのみを使用して接続できます。サーバやゲートウェイの設定は必要ありません。印刷とローカルドライブマッピングが自動的に有効になり、この方法では最高のパフォーマンスが得られます。</p>
+</div>
+<div class="sect4">
+<h5 id="vds-クライアント-url-のセーフリスト">VDS クライアント URL のセーフリスト</h5>
+<div class="paragraph">
+<p>アウトバウンドネットワーク接続がコントローラであり、 NetApp VDS Client for Windows for Windows を引き続き使用できることを保証するために、セーフリストに次の項目を追加することを推奨します。 * api.cloudworkspace.com * vdsclient.app * api.vdsclient.app * bin.vdsclient.app</p>
+</div>
+<div class="paragraph">
+<p>リクエストに応じて、パートナー様のロゴと連絡先情報を使用して、このアプリケーションのブランドバージョンを作成することができます。この情報をリクエストするには、サポートにお問い合わせください。</p>
+</div>
+<div class="paragraph">
+<p>NetApp VDS クライアントは、次の場所からダウンロードできます。 <a href="https://cwc.cloudworkspace.com/download/cwc-win-setup.exe" class="bare">https://cwc.cloudworkspace.com/download/cwc-win-setup.exe</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>印刷： * Windows 用 NetApp VDS クライアントと接続すると、 ThinPrint を使用して自動的に印刷が設定されます。</p>
+</li>
+<li>
+<p>ローカルファイルアクセス： * デフォルトでは、 Windows 用 NetApp VDS クライアントは、ローカルデバイスドライブ（ HDD 、 USB 、ネットワーク）をクラウドユーザセッションと共有します。ユーザーは、 Windows エクスプローラの「この PC 」の場所からデータを参照したり、転送したりできます。VDS でワークスペースまたはユーザを編集することで、この機能を無効にすることができます。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>_VDS &gt; ワークスペース &gt; ユーザーとグループ &gt; セキュリティ設定 _<span class="image"><img src="win_client_disk_access.png" alt=""></span></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="netapp-vds-web-クライアント">NetApp VDS Web クライアント</h4>
+<div class="paragraph">
+<p>NetApp VDS Web クライアントには、でアクセスできます <a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p>
+</div>
+<div class="paragraph">
+<p>エンドユーザーは、ブラウザーが HTML5 をサポートしている限り、 Web ページからデスクトップにアクセスすることもできます。HTML5 のブラウザの互換性はで確認できます <a href="https://html5test.com/" class="bare">https://html5test.com/</a></p>
+</div>
+<div class="paragraph">
+<p>ネットアップ VDS パートナー様向けに、このページの完全ブランド版を作成できます。パートナーは SSL 証明書を提供する必要があり、実装には少々のプロフェッショナルサービス料金が必要です。プロセスを開始するには、サポートにお問い合わせください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>印刷： * HTML5 経由で接続している場合、 Virtual Desktop から印刷すると PDF が生成されます。 PDF はブラウザにダウンロードされ、ローカルに印刷できます。</p>
+</li>
+<li>
+<p>ローカルファイルアクセス： * HTML5 経由で接続している場合、ユーザーはクラウドドライブにファイルをアップロードできます。これを行うには、フローティング・クラウド・アイコンをクリックし、ファイルをアップロードして、 [ この PC ] &gt; [ クラウドオン ] に移動します。 Windows エクスプローラで、仮想デスクトップユーザーセッション内のファイルにアクセスするための場所。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="手動で設定された-rds-クライアント">手動で設定された RDS クライアント</h4>
+<div class="paragraph">
+<p>もう 1 つの最適な接続方法は、 Microsoft リモートデスクトップアプリケーションを手動で構成することです。これは、 MacOS 、 Linux 、 iOS 、 Android 、 ThinClient に最適です。唯一の要件は、デバイス / ソフトウェアが RDP 経由で接続し、 RDS ゲートウェイを設定できることです。</p>
+</div>
+<div class="paragraph">
+<p>RDP クライアントを手動で設定するために必要な情報は次のとおりです（リンクは、その情報がある場所に移動します）。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ユーザ名</p>
+</li>
+<li>
+<p>パスワード</p>
+</li>
+<li>
+<p>サーバアドレス（PC 名）</p>
+</li>
+<li>
+<p>ゲートウェイアドレス。</p>
+</li>
+<li>
+<p>印刷： * ローカル RDP クライアントを構成する場合、ユーザーは印刷用にプリンタをクラウド環境に転送することもできます。</p>
+</li>
+<li>
+<p>ローカルファイルアクセス :* RDP クライアントを手動で構成する場合、ユーザーは仮想デスクトップユーザーセッションで特定のフォルダを共有することを選択できます。</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="rds-ゲートウェイアドレスを確認する">RDS ゲートウェイアドレスを確認する</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>VDS に移動します (<a href="https://manage.cloudworkspace.com)" class="bare">https://manage.cloudworkspace.com)</a></p>
+</li>
+<li>
+<p>[ 展開 ] をクリックします</p>
+</li>
+<li>
+<p>展開の名前をクリックします</p>
+</li>
+<li>
+<p>Deployment Details の下の RDP Gateway を探します</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="manual_client1.png" alt=""></span></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="共有セッションホスト上のユーザのサーバアドレスを検索する">共有セッションホスト上のユーザのサーバアドレスを検索する</h5>
+<div class="paragraph">
+<p>VDS に移動します (<a href="https://manage.cloudworkspace.com)" class="bare">https://manage.cloudworkspace.com)</a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ワークスペースをクリックします</p>
+</li>
+<li>
+<p>ワークスペースの名前をクリックします</p>
+</li>
+<li>
+<p>[ 会社の詳細 ] で [ サーバーアドレス ] を見つけます<span class="image"><img src="manual_client2.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="vdi-ユーザのサーバアドレスを確認する">VDI ユーザのサーバアドレスを確認する</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>VDS に移動します (<a href="https://manage.cloudworkspace.com)" class="bare">https://manage.cloudworkspace.com)</a></p>
+</li>
+<li>
+<p>ワークスペースをクリックします</p>
+</li>
+<li>
+<p>ワークスペースの名前をクリックします</p>
+</li>
+<li>
+<p>[ 会社の詳細 ] で [ サーバーアドレス ] を見つけます<span class="image"><img src="manual_client3.png" alt=""></span></p>
+</li>
+<li>
+<p>[ ユーザーとグループ ] タブをクリックします</p>
+</li>
+<li>
+<p>ユーザ名をクリックします</p>
+</li>
+<li>
+<p>VDI サーバのアドレスを確認します<span class="image"><img src="manual_client4.png" alt=""></span></p>
+</li>
+<li>
+<p>この VDI ユーザのサーバアドレスは、サーバアドレス： dvy.ADA.cloudworkspace.app ですが、企業コード（ dvy など）で VDI サーバの値（例：）に置き換えられます DVYTS1 ）…</p>
+<div class="literalblock">
+<div class="content">
+<pre>e.g. DVYTS1.ada.cloudworkspace.app</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rds-要件マトリックス">RDS 要件マトリックス</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">を入力します</th>
+<th class="tableblock halign-left valign-top">オペレーティングシステム</th>
+<th class="tableblock halign-left valign-top">RDS クライアントのアクセス方法</th>
+<th class="tableblock halign-left valign-top">RDS Web クライアント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows PC の場合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft RDP 8 アプリケーションを使用する Windows 7 以降</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp VDS クライアントでクライアントを手動で設定します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MacOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MacOS 10.10 以降および Microsoft Remote Desktop 8 アプリ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手動でクライアントを設定します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IOS 8.0 以降および任意 <a href="https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8">"リモートデスクトップアプリ"</a> RD ゲートウェイをサポートします</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手動でクライアントを設定します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">実行可能な Android バージョン <a href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.android&amp;hl=en_US">"Microsoft Remote Desktop アプリ"</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手動でクライアントを設定します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux の場合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RD ゲートウェイをサポートする RDS アプリケーションを使用すると、実質的にすべてのバージョンがサポートされます</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手動でクライアントを設定します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">シンクライアント</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RD ゲートウェイをサポートしていれば、さまざまなシンクライアントが機能します。Windows ベースのシンクライアントが推奨されます</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手動でクライアントを設定します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://login.cloudworkspace.com/" class="bare">https://login.cloudworkspace.com/</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="比較マトリックス">比較マトリックス</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">エレメント / フィーチャー（ elements/Features ）</th>
+<th class="tableblock halign-left valign-top">HTML5 ブラウザ</th>
+<th class="tableblock halign-left valign-top">Windows 用 VDS クライアント</th>
+<th class="tableblock halign-left valign-top">MacOS RDP クライアント</th>
+<th class="tableblock halign-left valign-top">モバイルデバイス上の RDP クライアント</th>
+<th class="tableblock halign-left valign-top">モバイルデバイス上の HTML5 クライアント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ローカルドライブアクセス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">背景をクリックし、画面上部の中央に表示されるクラウドアイコンをクリックします</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows エクスプローラで使用できます</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[RDP] を右クリックします。[ リダイレクト ] タブに移動します。次に、マップするフォルダを選択します。デスクトップにログインすると、マップされたドライブとして表示されます。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表示スケーリング</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">サイズを変更でき、ブラウザウィンドウのサイズに基づいて変更されます。これは、エンドポイントの解像度（複数のモニタの場合はプライマリエンドポイントモニタ）よりも大きくすることはできません</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">再スケーリングは可能ですが、エンドポイントの画面解像度と常に同じになります（複数のモニタの場合は、プライマリのエンドポイントモニタ）。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">再スケーリングは可能ですが、エンドポイントの画面解像度と常に同じになります（複数のモニタの場合は、プライマリのエンドポイントモニタ）。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コピー / 貼り付け</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クリップボードのリダイレクトで有効にしました。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クリップボードのリダイレクトで有効にしました。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クリップボードのリダイレクトで有効にしました。仮想デスクトップ内で、 Command + C または V ではなく、 Ctrl + C または V を使用します</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クリップボードのリダイレクトで有効にしました。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クリップボードのリダイレクトで有効にしました。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">プリンタマッピング</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ローカルプリンタおよびネットワークプリンタを検出するためにブラウザが使用している PDF プリンタドライバで処理される印刷</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThinPrint ユーティリティを使用してマッピングされたすべてのローカルプリンタおよびネットワークプリンタ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThinPrint ユーティリティを使用してマッピングされたすべてのローカルプリンタおよびネットワークプリンタ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThinPrint ユーティリティを使用してマッピングされたすべてのローカルプリンタおよびネットワークプリンタ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ローカルプリンタおよびネットワークプリンタを検出するためにブラウザが使用している PDF プリンタドライバで処理される印刷</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">パフォーマンス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RemoteFX （音声およびビデオの拡張機能）が有効になっていません</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDP を介して RemoteFX を有効化し、オーディオ / ビデオのパフォーマンスを向上</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDP を介して RemoteFX を有効化し、オーディオ / ビデオのパフォーマンスを向上</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RemoteFX を有効にして、オーディオ / ビデオのパフォーマンスを向上させました</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RemoteFX （オーディオ / ビデオの拡張機能）が有効になっていません</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">モバイルデバイスでのマウスの使用</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">画面をタップしてマウスを移動し、をクリックします</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">画面を押したままドラッグしてマウスを移動し、をタップしてクリックします</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="周辺機器">周辺機器</h4>
+<div class="sect4">
+<h5 id="印刷">印刷</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>仮想デスクトップクライアントには、ローカルプリンタをクラウドデスクトップにシームレスに渡す ThinPrint が含まれています。</p>
+</li>
+<li>
+<p>HTML5 接続方法では、ローカル印刷用に PDF がブラウザにダウンロードされます。</p>
+</li>
+<li>
+<p>MacOS 上の Microsoft Remote Desktop 8 アプリケーションでは、プリンタをクラウドデスクトップに共有できます</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="usb-周辺機器">USB 周辺機器</h5>
+<div class="paragraph">
+<p>スキャナ、カメラ、カードリーダー、オーディオデバイスなどのアイテムでは、ミックスされた結果が得られます。仮想デスクトップ環境には、これを妨げる独自の機能はありませんが、必要なデバイスをテストすることをお勧めします。営業担当者は、必要に応じてテストアカウントを設定できます。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="帯域幅">帯域幅</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>ネットアップでは、ユーザごとに最低 150KB の帯域幅を推奨しています。容量が大きいほど、ユーザエクスペリエンスが向上します。</p>
+</li>
+<li>
+<p>100 ミリ秒未満のインターネット・レイテンシーと、ジッタが非常に低いことも同様に重要です。こちらの技術情報アーティクル</p>
+</li>
+<li>
+<p>VoIP 、ビデオストリーミング、オーディオストリーミング、および一般的なインターネットブラウジングの使用により、帯域幅のニーズがさらに増加します。</p>
+</li>
+<li>
+<p>仮想デスクトップ自体が消費する帯域幅の量は、ユーザの帯域幅要件を計算する際に最も小さい要素の 1 つとなります。</p>
+</li>
+</ul>
+</div>
+<div class="sect5">
+<h6 id="microsoft-帯域幅に関する推奨事項">Microsoft 帯域幅に関する推奨事項</h6>
+<div class="paragraph">
+<p><a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/bandwidth-recommendations" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/bandwidth-recommendations</a></p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="アプリケーションの推奨事項">アプリケーションの推奨事項</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ワークロード</th>
+<th class="tableblock halign-left valign-top">サンプルアプリケーション</th>
+<th class="tableblock halign-left valign-top">推奨される帯域幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">タスクワーカー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Word 、 Outlook 、 Excel 、 Adobe Reader</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5 Mbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">オフィスワーカー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Word 、 Outlook 、 Excel 、 Adobe Reader 、 PowerPoint 、 フォトビューア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 Mbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ナレッジワーカー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Word 、 Outlook 、 Excel 、 Adobe Reader 、 PowerPoint 、 フォトビューア、 Java</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 Mbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">パワーワーカー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Word 、 Outlook 、 Excel 、 Adobe Reader 、 PowerPoint 、 フォトビューア、 Java 、 CAD/CAM 、イラストレーション / パブリッシング</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 Mbps</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+これらの推奨事項は、セッション内のユーザ数に関係なく適用されます。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="解像度に関する推奨事項を表示します">解像度に関する推奨事項を表示します</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">30 fps での一般的なディスプレイ解像度</th>
+<th class="tableblock halign-left valign-top">推奨される帯域幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">約 1024 × 768 ピクセル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5 Mbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">約 1280 × 720 px</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 Mbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">約 1920 × 1080 ピクセル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 Mbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">約 3840 × 2160 ピクセル（ 4K ）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 Mbps</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="ローカルデバイスのシステムリソース">ローカルデバイスのシステムリソース</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>RAM 、 CPU 、ネットワークカード、グラフィックス機能などのローカルシステムリソースは、原因のユーザエクスペリエンスにはばらつきがあります。</p>
+</li>
+<li>
+<p>これは、ネットワークとグラフィックス機能の中で最も当てはまるものです。</p>
+</li>
+<li>
+<p>1 GB の RAM と低消費電力のプロセッサを低価格の Windows デバイスに搭載。推奨される最小メモリ容量は 2 ～ 4 GB です。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-virtual-desktop-の-1-つです">Azure Virtual Desktop の 1 つです</h3>
+<div class="sect3">
+<h4 id="avd-windows-クライアント">AVD Windows クライアント</h4>
+<div class="paragraph">
+<p>から Windows 7/10 クライアントをダウンロードします <a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-10" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-10</a> エンドユーザのユーザ名とパスワードを使用してログインします。リモートアプリケーションとデスクトップ接続（ RADC ）、リモートデスクトップ接続（ mstsc ）、および NetApp VDS Client for Windows アプリケーションは、現在 AVD インスタンスへのログイン機能をサポートしていません。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="avd-web-クライアント">AVD Web クライアント</h4>
+<div class="paragraph">
+<p>ブラウザで、 Azure Virtual Desktop Web Client の Azure Resource Manager 統合バージョンに移動します <a href="https://rdweb.AVD.microsoft.com/arm/webclient" class="bare">https://rdweb.AVD.microsoft.com/arm/webclient</a> ユーザアカウントでサインインします。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+Azure Resource Manager との統合なしで Azure Virtual Desktop （クラシック）を使用している場合は、でリソースに接続します <a href="https://rdweb.AVD.microsoft.com/webclient" class="bare">https://rdweb.AVD.microsoft.com/webclient</a> 代わりに、
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/issues/new?body=Page%3A%20[エンドユーザーの要件](https://docs.netapp.com/ja-jp/virtual-desktop-service/Reference.end_user_access.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/virtual-desktop-service/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/blob/main/sub.Reference.end_user_access.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/virtual-desktop-service/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/virtual-desktop-service/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Web サイトについてのフィードバックを<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">お寄せください</a>
+  <a href="https://docs.netapp.com/ja-jp/announcements/" class="n-footer__copyright">お知らせ</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/virtual-desktop-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/virtual-desktop-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/virtual-desktop-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/virtual-desktop-service/js/www-ntap.js'></script>
+    <script src='/ja-jp/virtual-desktop-service/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>

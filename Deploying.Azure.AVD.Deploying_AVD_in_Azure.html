@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>AVD 導入ガイド</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="AVD 導入ガイド" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html" />
+	<meta property="og:description" content="VDS を Azure に導入する手順を追ったガイドです" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/virtual-desktop-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="VDS を Azure に導入する手順を追ったガイドです">
+  <meta name="keywords" content=" ">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ja-jp/virtual-desktop-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/virtual-desktop-service/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/virtual-desktop-service/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/virtual-desktop-service/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/virtual-desktop-service/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ja-jp/virtual-desktop-service/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ja-jp/virtual-desktop-service/js/na-search.js'></script>
+  
+
+  
+  <script src='/ja-jp/virtual-desktop-service/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/virtual-desktop-service/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/virtual-desktop-service/js/na-utility.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ja-jp/virtual-desktop-service/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/virtual-desktop-service/js/toc.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ja-jp/virtual-desktop-service/js/version-dropdown.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/product-family.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/jszip.min.js'></script>
+  <script src='/ja-jp/virtual-desktop-service/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/virtual-desktop-service/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索" 
+          data-no-results-found="{query}に該当する結果はありません" 
+          data-did-you-mean="{suggestion} を検索" 
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
+          data-results-found="{hitCount} 件見つかりました"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>利用可能なPDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ja-jp/virtual-desktop-service/pdfs/fullsite-sidebar/Virtual_Desktop_Service_のマニュアル.pdf" >
+          <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>このドキュメントサイトのPDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/VDS_を使用した導入.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            VDS を使用した導入
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/Azure.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/Azure_Virtual_Desktop_の_1_つです.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure Virtual Desktop の 1 つです
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ja-jp/virtual-desktop-service/pdfs/pages/Deploying.Azure.AVD.Deploying_AVD_in_Azure.pdf" >
+    <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/Google.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Google
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/アーキテクチャ.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            アーキテクチャ
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/データ層を変更します.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            データ層を変更します
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/管理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            管理
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/導入.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            導入
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/アプリケーション.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            アプリケーション
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/スクリプト化されたイベント.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            スクリプト化されたイベント
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/コマンドセンター.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            コマンドセンター
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/処理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            処理
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/ユーザー管理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            ユーザー管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/システム管理.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            システム管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/トラブルシューティング.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            トラブルシューティング
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/参照.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            参照
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/以前のバージョン.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            以前のバージョン
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/スクリプトライブラリのドキュメント.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            スクリプトライブラリのドキュメント
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/詳細設定.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            詳細設定
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/virtual-desktop-service/pdfs/sidebar/ネットアップ_VDS_v5_4_のビデオ.pdf" 
+            
+          >
+            <img src="/ja-jp/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            ネットアップ VDS v5.4 のビデオ
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ja-jp/virtual-desktop-service/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別のPDFドキュメントのコレクション<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/index.html">
+        Virtual Desktop Service のマニュアル
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> VDS を使用した導入</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure Virtual Desktop の 1 つです</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html">
+        Azure への AVD の導入
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html">
+        補足 - 既存の AD を使用した AVD
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html">
+        VDS v5.4 コンポーネントとアクセス権 (AVD)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_prerequisites.html">
+        VDS v5.4 前提条件 (AVD)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.vds_v6.0_prerequisites.html">
+        VDS v6.0 の前提条件 (AVD)
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.GCP.RDS.deploying_rds_in_gcp.html">
+        Google で RDS を展開する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Deploying.GCP.vds_v5.4_prerequisites.html">
+        VDS v5.4 の前提条件（ RDS+ GCP ）
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> アーキテクチャ</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/virtual-desktop-service/Architectural.change_data_layer.html">
+        <div class="na-navbar-padding"> データ層を変更します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectural.change_data_layer.Azure_Files.html">
+        Azure Files の特長
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectual.migrate_data_into_vds.html">
+        データを VDS に移行します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        AVD v1 を v2 にアップグレードします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectural.Wildcard_SSL_certificate_renewal_process.html">
+        SSL 証明書を更新してください
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectural.AVD_teardown_guide.html">
+        VDS ティアダウンガイド
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 導入</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Deployments.provisioning_collections.html">
+        プロビジョニングコレクション
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Deployments.logical_hierarchy_overview.html">
+        VDS 論理階層の概要
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> アプリケーション</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        RDS のアプリケーションエンタイトルメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Applications.AVD_application_entitlement_workflow.html">
+        AVD のアプリケーションエンタイトルメント
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> スクリプト化されたイベント</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Scripted_Events.scripted_events.html">
+        スクリプドイベントの概要
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> コマンドセンター</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.command_center.overview.html">
+        Management Command Center の概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 処理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.command_center.operations.copy_template_to_gallery.html">
+        テンプレートを Gallery にコピー
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Cost_Optimization.workload_schedule.html">
+        コスト最適化を構成します
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ユーザー管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.manage_user_accounts.html">
+        ユーザアカウントを管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.manage_folders_and_permissions.html">
+        フォルダとアクセス権の管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        アプリケーションアクセスの管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.reset_user_password.html">
+        ユーザパスワードをリセットします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.User_Administration.multi-factor_authentication.html">
+        MFA を設定します
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> システム管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.create_domain_admin_account.html">
+        ドメイン管理者アカウントを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.provide_3rd_party_access.html">
+        サードパーティのアクセスを提供します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.configure_backup.html">
+        バックアップを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.clone_virtual_machines.html">
+        仮想マシンのクローンを作成
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.auto_add_disk_space.html">
+        ディスクスペースの自動追加
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.azure_key_vault.html">
+        Azure キーバックアップ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.configure_antivirus.html">
+        アンチウイルスを構成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Management.System_Administration.adding_moving_mapped_drives.html">
+        マッピングされたドライブの追加と移動
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> トラブルシューティング</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.reviewing_vds_logs.html">
+        VDS ログの確認
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.internet_connection_quality.html">
+        インターネット接続品質
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.enable_user_wallpaper.html">
+        ユーザの壁紙を有効にする
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.printing_issues.html">
+        印刷の問題
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.azure_vcpu_core_quota.html">
+        Azure vCPU コアクォータ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.unlocking_user_accounts.html">
+        ユーザアカウントのロックを解除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.general_vm_performance.html">
+        一般的な VM のパフォーマンス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.dns_forwarding_for_azure_aadds_sso.html">
+        Azure の DNS 転送で SSO が追加されています
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Troubleshooting.application_issues.html">
+        アプリケーションの問題
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 参照</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html">
+        VDS v6.0 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v5.4_release_notes.html">
+        VDS v5.4 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_windows_client_release_notes.html">
+        VDS Windows クライアントのリリースノート
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 以前のバージョン</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v5.3_release_notes.html">
+        VDS v5.3 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.cwms_v5.2_release_notes.html">
+        CWMS v5.2 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.cws_v5.1_release_notes.html">
+        CWS v5.1 リリースノート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.Release_Notes.cws_v5.0_release_notes.html">
+        CWS v5.0 リリースノート
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.end_user_access.html">
+        エンドユーザアクセス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Reference.vds_change_environments.html">
+        VDS 変更環境
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> スクリプトライブラリのドキュメント</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.AdobeReader.html">
+        Adobe Reader DC
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.AMDRadeonInstinctDrivers.html">
+        AMD Radeon Instinct ドライバ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.EzeepPrintApp.html">
+        ezeep Print アプリ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.GoogleChrome.html">
+        Google Chrome
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftEdgeChromium.html">
+        Microsoft Edge Chromium
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftOffice365.html">
+        Microsoft Office 365 の場合
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html">
+        Microsoft One Drive
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftTeams.html">
+        Microsoft チーム
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftTeamsAVD.html">
+        AVD の Microsoft チーム
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.NvidiaCudaDrivers.html">
+        NVIDIA Cuda ドライバ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.NvidiaGridDrivers.html">
+        NVIDIA Grid ドライバ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.AVDScreenCaptureProtection.html">
+        AVD 画面キャプチャ保護
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/scriptlibrary.ZoomVDI-AVD.html">
+        AVD のズーム
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 詳細設定</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Advanced.fslogix_profile_shrink.html">
+        FSLogix プロファイルの縮小
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ネットアップ VDS v5.4 のビデオ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_content_netapptv.html">
+        NetApp TV のコンテンツ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVDRDS_deploy_54.html">
+        AVD または RDS を展開する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVD_hostpool_54.html">
+        Azure に AVD ホストプールを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVD_users_appgroups_54.html">
+        AVD ユーザーとアプリケーショングループを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_azure_AVDRDS_optimize_resources_54.html">
+        リソースの管理とコストの最小化
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/video_VDS_day_in_the_life.html">
+        AVD と RDS のアプリケーション管理を自動化します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        v1 AVD ホストプールを v2 にアップグレードします
+      </a></li></ul></li></ul>
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">ホーム</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">ドキュメント</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/virtual-desktop-service/">Virtual&nbsp;Desktop&nbsp;Service</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          AVD 導入ガイド
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">AVD 導入ガイド</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-08-11 05:40:09 +0000">08/11/2021</time>
+    
+  
+
+<span>寄稿者
+</span>
+
+
+</p>
+
+
+<div class="sect1">
+<h2 id="概要">概要</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>このガイドでは、 Azure の NetApp Virtual Desktop Service （ VDS ）を利用して Azure Virtual Desktop （ AVD ）を導入する手順を段階的に説明します。</p>
+</div>
+<div class="paragraph">
+<p>ガイドの内容は次のとおりです。 <a href="https://cwasetup.cloudworkspace.com/" class="bare">https://cwasetup.cloudworkspace.com/</a></p>
+</div>
+<div class="paragraph">
+<p>このコンセプトの実証（ POC ）ガイドは、お客様が独自の Azure サブスクリプションテストで AVD を迅速に導入して設定できるようにすることを目的としています。このガイドは、クリーンな非本番環境の Azure Active Directory テナントへの環境を構築することを前提としています。</p>
+</div>
+<div class="paragraph">
+<p>特に既存の AD または Azure AD 環境への本番環境の導入は非常に一般的ですが、この POC ガイドではそのプロセスを考慮していません。複雑な POC や本番環境の導入は、ネットアップ VDS の営業 / サービスチームで開始し、セルフサービスでは実施しないでください。</p>
+</div>
+<div class="paragraph">
+<p>この POC ドキュメントでは、 AVD の導入全体を説明し、 VDS プラットフォームで利用可能な導入後の構成の主な領域について簡単に説明します。完了すると、完全に展開された機能的な AVD 環境が構築され、ホストプール、アプリケーショングループ、ユーザーが提供されます。オプションで、自動化されたアプリケーション配信、セキュリティグループ、ファイル共有権限、 Azure Cloud Backup 、インテリジェントなコスト最適化を構成できます。VDS では、 GPO 経由で一連のベストプラクティス設定が導入されます。オプションでこれらの制御を無効にする方法についても説明します。 POC では、管理対象外のローカルデバイス環境と同様に、セキュリティ制御を行わない必要があります。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="avd-の基本">AVD の基本</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Azure Virtual Desktop は、クラウドで実行される包括的なデスクトップおよびアプリケーション仮想化サービスです。主な機能の一部を以下に示します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ゲートウェイ、ブローカー、ライセンス、ログインなどのプラットフォームサービスが、 Microsoft のサービスとして含まれています。ホストと管理が必要なインフラを最小限に抑えることができます。</p>
+</li>
+<li>
+<p>Azure Active Directory をアイデンティティプロバイダとして利用すると、条件付きアクセスなどの追加の Azure セキュリティサービスをレイヤ化できます。</p>
+</li>
+<li>
+<p>ユーザーは、 Microsoft サービスのシングルサインオン体験を体験できます。</p>
+</li>
+<li>
+<p>ユーザセッションは、独自のリバース接続技術を使用してセッションホストに接続します。つまり、受信ポートをオープンする必要はなく、エージェントが AVD 管理プレーンへの発信接続を作成してエンドユーザデバイスに接続します。</p>
+</li>
+<li>
+<p>逆接続では、パブリックインターネットに公開されることなく仮想マシンを実行できるため、リモート接続を維持しながらもワークロードを分離できます。</p>
+</li>
+<li>
+<p>AVD には Windows 10 Multi Session へのアクセスが含まれているため、高密度のユーザセッションの効率性を備えた Windows 10 Enterprise 環境が実現します。</p>
+</li>
+<li>
+<p>FSLogix のプロファイルには ' ユーザー・セッションのパフォーマンス ' ストレージ効率の向上 ' 非永続的な環境における Office エクスペリエンスの向上などが含まれます</p>
+</li>
+<li>
+<p>AVD では、デスクトップ全体と RemoteApp へのアクセスがサポートされます。永続的または非永続的、および専用とマルチセッションの両方のエクスペリエンス。</p>
+</li>
+<li>
+<p>AVD は RDS CAL の必要性に代わる「 Windows 10 Enterprise E3 per User 」を活用し、 Azure でのセッションホスト VM の時間あたりのコストを大幅に削減できるため、組織は Windows ライセンスを節約できます。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ガイドの範囲">ガイドの範囲</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>このガイドでは、 Azure と VDS の管理者の視点から、ネットアップ VDS テクノロジを使用した AVD の導入手順を説明します。Azure テナントとサブスクリプションは事前構成なしで提供されます。このガイドは、 AVD のエンドツーエンドの設定を支援します</p>
+</div>
+<div class="olist arabic">
+<div class="title">このガイドでは、次の手順について説明します。</div>
+<ol class="arabic">
+<li>
+<p><a href="#Azure Prerequisites">Azure テナント、 Azure サブスクリプション、および Azure 管理者アカウントの権限の前提条件を確認する</a></p>
+</li>
+<li>
+<p><a href="#Collect Discovery Details">必要な検出の詳細を収集します</a></p>
+</li>
+<li>
+<p><a href="#VDS Setup Sections">Azure セットアップウィザード専用の VDS を使用して、 Azure 環境を構築します</a></p>
+</li>
+<li>
+<p><a href="#Create AVD Host Pool">標準の Windows 10 EVD イメージを使用して、最初のホストプールを作成します</a></p>
+</li>
+<li>
+<p><a href="#Enable VDS desktops to users">Azure AD ユーザへの仮想デスクトップの割り当て</a></p>
+</li>
+<li>
+<p><a href="#Default app group">ユーザーにデスクトップ環境を提供するために、ユーザーをデフォルトのアプリケーショングループに追加します。</a> 必要に応じて、 <a href="#Create Additional AVD App Group(s)">RemoteApp サービスを提供するホストプールを追加で作成します</a></p>
+</li>
+<li>
+<p><a href="#End User AVD Access">クライアントソフトウェアや Web クライアントを介してエンドユーザとして接続します</a></p>
+</li>
+<li>
+<p><a href="#Admin connection options">プラットフォームおよびクライアントサービスにローカルおよびドメイン管理者として接続します</a></p>
+</li>
+<li>
+<p><a href="#Multi-Factor Authentication (MFA)">オプションで 'VDS 管理者および AVD エンド・ユーザーに対して VDS の多要素認証を有効にします</a></p>
+</li>
+<li>
+<p><a href="#Application Entitlement Workflow">オプションで、アプリケーションライブラリ、アプリケーションインストールの自動化、ユーザーやセキュリティグループによるアプリケーションマスキングなど、アプリケーションエンタイトルメントワークフロー全体を順を追って説明します</a></p>
+</li>
+<li>
+<p><a href="#Azure AD Security Groups">必要に応じて、 Active Directory セキュリティグループ、フォルダ権限、およびグループごとのアプリケーション使用権を作成および管理します。</a></p>
+</li>
+<li>
+<p><a href="#Configure Cost Optimization Options">オプションで、ワークロードのスケジューリングやライブスケーリングなどのコスト最適化テクノロジーを設定できます</a></p>
+</li>
+<li>
+<p><a href="#Create and Manage VM Images">必要に応じて、仮想マシンイメージを作成、更新、および Sysprep して、将来の展開に備えます</a></p>
+</li>
+<li>
+<p><a href="#Configure Azure Cloud Backup Service">必要に応じて、 Azure Cloud Backup を設定します</a></p>
+</li>
+<li>
+<p><a href="#Select App Management/Policy Mode">必要に応じて、デフォルトのセキュリティ制御グループポリシーを無効にします</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="azure-の前提条件">Azure の前提条件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>VDS では、ネイティブの Azure セキュリティコンテキストを使用して AVD インスタンスを導入します。VDS セットアップウィザードを開始する前に、いくつかの Azure の前提条件を確立する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>導入時に、 Azure テナント内から既存の管理者アカウントを認証することで、サービスアカウントと権限が VDS に付与されます。</p>
+</div>
+<div class="sect2">
+<h3 id="クイック前提条件チェックリスト">クイック前提条件チェックリスト</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Azure AD インスタンスを使用する Azure テナント（ Microsoft 365 インスタンスも可）</p>
+</li>
+<li>
+<p>Azure サブスクリプション</p>
+</li>
+<li>
+<p>Azure 仮想マシンに使用可能な Azure クォータ</p>
+</li>
+<li>
+<p>グローバル管理者ロールおよびサブスクリプション所有権ロールを持つ Azure Admin アカウント</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+詳細な前提条件については、を参照してください <a href="docs_components_and_permissions.html">"この PDF"</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-ad-の-azure-管理者">Azure AD の Azure 管理者</h3>
+<div class="paragraph">
+<p>この既存の Azure 管理者は、ターゲットテナント内の Azure AD アカウントである必要があります。VDS セットアップで Windows Server AD アカウントを導入することはできますが、 Azure AD との同期をセットアップするには追加の手順が必要です（このガイドでは対象外）。</p>
+</div>
+<div class="paragraph">
+<p>これを確認するには、 Azure Management Portal で「 Users 」 &gt; 「 All Users 」の下にあるユーザアカウントを検索します。<span class="image"><img src="Azure%20Admin%20in%20Azure%20AD.png" alt=""></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="グローバル管理者ロール">グローバル管理者ロール</h3>
+<div class="paragraph">
+<p>Azure Administrator には、 Azure テナント内のグローバル管理者ロールが割り当てられている必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">Azure AD での役割を確認するには、次の手順を実行します。</div>
+<ol class="arabic">
+<li>
+<p>Azure ポータルにログインします <a href="https://portal.azure.com/" class="bare">https://portal.azure.com/</a></p>
+</li>
+<li>
+<p>Azure Active Directory を検索して選択します</p>
+</li>
+<li>
+<p>右側の次のペインで、 [ 管理 ] セクションの [ ユーザー ] オプションをクリックします</p>
+</li>
+<li>
+<p>チェックする管理者ユーザの名前をクリックします</p>
+</li>
+<li>
+<p>[ ディレクトリの役割 ] をクリックします。右端のペインに、グローバル管理者ロールが表示されます<span class="image"><img src="Global%20Administrator%20Role%201.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">このユーザにグローバル管理者ロールがない場合は、次の手順を実行して追加できます（ログインしたアカウントはグローバル管理者である必要があります）。</div>
+<ol class="arabic">
+<li>
+<p>上記のステップ 5 のユーザーディレクトリロール詳細ページで、詳細ページの上部にある割り当ての追加ボタンをクリックします。</p>
+</li>
+<li>
+<p>ロールのリストで [ グローバル管理者（ Global administrator ） ] をクリックします。[ 追加 ] ボタンをクリックします。<span class="image"><img src="Global%20Administrator%20Role%202.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-サブスクリプションの所有権">Azure サブスクリプションの所有権</h3>
+<div class="paragraph">
+<p>Azure Administrator は、導入を含むサブスクリプションのサブスクリプション所有者でもある必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">管理者がサブスクリプションオーナーであることを確認するには、次の手順を実行します。</div>
+<ol class="arabic">
+<li>
+<p>Azure ポータルにログインします <a href="https://portal.azure.com/" class="bare">https://portal.azure.com/</a></p>
+</li>
+<li>
+<p>を検索し、 [ 購読 ] を選択します</p>
+</li>
+<li>
+<p>右側のペインで、サブスクリプション名をクリックすると、サブスクリプションの詳細が表示されます</p>
+</li>
+<li>
+<p>左側のペインで、 Access Control （ IAM ）メニュー項目をクリックします</p>
+</li>
+<li>
+<p>[ 役割の割り当て ] タブをクリックします。Azure 管理者は、所有者セクションに記載する必要があります。<span class="image"><img src="Azure%20Subscription%20Ownership%201.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Azure Administrator が表示されていない場合は、次の手順に従って、アカウントをサブスクリプション所有者として追加できます。</div>
+<ol class="arabic">
+<li>
+<p>ページ上部の [ 追加 ] ボタンをクリックし、 [ 役割の割り当ての追加 ] オプションを選択します</p>
+</li>
+<li>
+<p>右側にダイアログが表示されます。ロールのドロップダウンで [Owner] を選択し、 [Select] ボックスに管理者のユーザ名を入力します。Administrator のフルネームが表示されたら、それを選択します</p>
+</li>
+<li>
+<p>ダイアログの下部にある [ 保存（ Save ） ] ボタンをクリックします<span class="image"><img src="Azure%20Subscription%20Ownership%202.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-コンピューティングコアクォータ">Azure コンピューティングコアクォータ</h3>
+<div class="paragraph">
+<p>CWA セットアップウィザードと VDS ポータルで新しい仮想マシンが作成されます。 Azure サブスクリプションを正常に実行するには、使用可能なクォータが必要です。</p>
+</div>
+<div class="olist arabic">
+<div class="title">クォータを確認するには、次の手順を実行します。</div>
+<ol class="arabic">
+<li>
+<p>[ 購読 ] モジュールに移動し '[ 使用量 + クォータ ] をクリックします</p>
+</li>
+<li>
+<p>「 Providers 」ドロップダウンですべてのプロバイダーを選択し、「 Providers 」ドロップダウンで「 Microsoft.Compute 」を選択します</p>
+</li>
+<li>
+<p>[Locations] ドロップダウンからターゲット領域を選択します</p>
+</li>
+<li>
+<p>仮想マシンファミリ別の使用可能なクォータのリストが表示されます<span class="image"><img src="Azure%20Compute%20Core%20Quota.png" alt=""></span>クォータを増やす必要がある場合は、 [Request add] をクリックし、プロンプトに従って容量を追加します。初期導入の場合 ' 特に標準 DSVI 3 ファミリの拡張見積もりを要求します</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="検出の詳細を収集">検出の詳細を収集</h3>
+<div class="paragraph">
+<p>CWA セットアップウィザードを使用して作業したら、いくつかの質問に答えてください。NetApp VDS では、導入前にこれらの選択を記録できるリンク PDF が提供されています。アイテムには次のものが</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">項目</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VDS 管理者クレデンシャル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">既存の VDS 管理者クレデンシャルがある場合は、それらを収集します。それ以外の場合は、導入時に新しい管理者アカウントが作成されます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure リージョン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">サービスのパフォーマンスと可用性に基づいて、対象となる Azure リージョンを特定します。これ <a href="https://azure.microsoft.com/en-us/services/virtual-desktop/assessment/" target="_blank" rel="noopener">"Microsoft ツール"</a> 地域に基づいてエンドユーザーの経験を推定できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory タイプ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM はドメインに参加する必要がありますが、 Azure AD に直接参加することはできません。VDS 環境では、新しい仮想マシンを作成するか、既存のドメインコントローラを使用できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File Management の略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">パフォーマンスは、特にユーザプロファイルストレージに関連するディスク速度に大きく依存します。VDS セットアップウィザードでは、シンプルなファイルサーバを導入したり、 Azure NetApp Files （ ANF ）を設定したりできます。ほとんどの本番環境では ANF を推奨しますが、 POC ではファイルサーバオプションで十分なパフォーマンスを実現できます。ストレージオプションについて、 Azure で既存のストレージリソースを使用するなど、導入後に改定することができます。詳細については、 ANF の価格設定を参照してください <a href="https://azure.microsoft.com/en-us/pricing/details/netapp/" class="bare">https://azure.microsoft.com/en-us/pricing/details/netapp/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">仮想ネットワークのスコープ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">導入には、ルーティング可能な /20 ネットワーク範囲が必要です。VDS セットアップウィザードでは、この範囲を定義できます。この範囲は、 Azure またはオンプレミスの既存の VNet と重複しないことが重要です（ 2 つのネットワークが VPN または ExpressRoute 経由で接続される場合）。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-セットアップセクション">VDS セットアップセクション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>にログインします <a href="https://cwasetup.cloudworkspace.com/" class="bare">https://cwasetup.cloudworkspace.com/</a> 前提条件のセクションに記載されている Azure 管理者のクレデンシャルを使用してログイン</p>
+</div>
+<div class="sect2">
+<h3 id="iaas-とプラットフォーム">IaaS とプラットフォーム</h3>
+<div class="paragraph">
+<p><span class="image"><img src="VDS%20Setup%20Sections%201.png" alt=""></span></p>
+</div>
+<div class="sect3">
+<h4 id="azure-ad-ドメイン名">Azure AD ドメイン名</h4>
+<div class="paragraph">
+<p>Azure AD ドメイン名は、選択したテナントに継承されます。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="場所">場所</h4>
+<div class="paragraph">
+<p>適切な <strong> Azure リージョン </strong> を選択します。これ <a href="https://azure.microsoft.com/en-us/services/virtual-desktop/assessment/" target="_blank" rel="noopener">"Microsoft ツール"</a> 地域に基づいてエンドユーザーの経験を推定できます。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="active-directory-タイプ">Active Directory タイプ</h4>
+<div class="paragraph">
+<p>VDS は、ドメインコントローラ機能用の <strong> 新しい仮想マシン </strong> でプロビジョニングすることも、既存のドメインコントローラを利用するようにセットアップすることもできます。このガイドでは、新規 Windows Server Active Directory を選択します。これにより、サブスクリプションの下に 1 つまたは 2 つの VM が作成されます（このプロセスで選択した内容に基づいて）。</p>
+</div>
+<div class="paragraph">
+<p>既存の AD 展開に関する詳細な記事を参照してください <a href="Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html">"こちらをご覧ください"</a>。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="active-directory-ドメイン名">Active Directory ドメイン名</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>ドメイン名 ** を入力してください。Azure AD ドメイン名は上記からミラーリングすることを推奨します。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ファイル管理">ファイル管理</h4>
+<div class="paragraph">
+<p>VDS では、単純なファイルサーバ仮想マシンをプロビジョニングしたり、 Azure NetApp Files をセットアップおよび設定したりできます。本番環境では、ユーザーごとに 30GB を割り当てることをお勧めします。また、最適なパフォーマンスを得るには、ユーザーごとに 5-15 の IOPS を割り当てる必要があることを確認しました。</p>
+</div>
+<div class="paragraph">
+<p>POC （非本番環境）では、ファイルサーバは低コストでシンプルな導入オプションですが、 Azure Managed Disks の利用可能なパフォーマンスは、小規模な本番環境でも IOPS 消費に圧倒されることがあります。</p>
+</div>
+<div class="paragraph">
+<p>たとえば、 Azure 内の 4TB 標準 SSD ディスクは最大 500 IOPS をサポートし、最大 100 ユーザの IOPS を 5 ユーザあたりサポートします。ANF Premium では、同じサイズのストレージセットアップで、 32 倍以上の IOPS 転記で 1 万 6 、 000 IOPS をサポートします。</p>
+</div>
+<div class="paragraph">
+<p>本番環境の AVD 展開では、 <strong>Microsoft の推奨事項 </strong> として Azure NetApp Files が推奨されています。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+Azure NetApp Files を導入するサブスクリプションで利用できるようにする必要があります。ネットアップアカウント担当者にお問い合わせいただくか、 <a href="https://aka.ms/azurenetappfiles" class="bare">https://aka.ms/azurenetappfiles</a> にアクセスしてください
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>また、ネットアップをプロバイダとして登録する必要があります。これを行うには、次の手順を実行します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Azure ポータルのサブスクリプションに移動します</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[ リソースプロバイダ ] をクリックします</p>
+</li>
+<li>
+<p>ネットアップをフィルタリング</p>
+</li>
+<li>
+<p>プロバイダーを選択して、 [ 登録 ] をクリックします</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rds-ライセンス番号">RDS ライセンス番号</h4>
+<div class="paragraph">
+<p>NetApp VDS を使用して、 RDS 環境や AVD 環境を導入できます。AVD を展開する場合、このフィールドは <strong> 空 </strong> のままにすることができます。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="thinprint">ThinPrint</h4>
+<div class="paragraph">
+<p>NetApp VDS を使用して、 RDS 環境や AVD 環境を導入できます。AVD を展開するときに、この切り替えは <strong>off</strong> （左に切り替え）のままにできます。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="通知-e-メール">通知 E メール</h4>
+<div class="paragraph">
+<p>VDS では、展開通知と継続的な正常性レポートが、提供された ** メールに送信されます。これはあとで変更できます。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vm-およびネットワーク">VM およびネットワーク</h3>
+<div class="paragraph">
+<p>VDS 環境をサポートするために実行する必要があるさまざまなサービスがあります。これらは総称して「 VDS プラットフォーム」と呼ばれます。これらの設定には、 CWMGR 、 1 つまたは 2 つの RDS ゲートウェイ、 1 つまたは 2 つの HTML5 ゲートウェイ、 FTPS サーバ、および 1 つまたは 2 つの Active Directory VM が含まれます。</p>
+</div>
+<div class="paragraph">
+<p>ほとんどの AVD 展開では、単一の仮想マシンオプションが使用されています。 Microsoft は AVD ゲートウェイを PaaS サービスとして管理しています。</p>
+</div>
+<div class="paragraph">
+<p>RDS のユースケースを含む小規模でシンプルな環境では、これらのサービスをすべて 1 つの仮想マシンオプションに集約して、 VM コストを削減できます（拡張性に限りがあります）。100 人以上のユーザが使用する RDS では、 RDS や HTML5 ゲートウェイの拡張性を高めるために、複数の仮想マシンを選択することを推奨します<span class="image"><img src="VDS%20Setup%20Sections%202.png" alt=""></span></p>
+</div>
+<div class="sect3">
+<h4 id="プラットフォーム-vm-の構成">プラットフォーム VM の構成</h4>
+<div class="paragraph">
+<p>NetApp VDS を使用して、 RDS 環境や AVD 環境を導入できます。AVD を展開する場合は、シングル仮想マシンの選択を推奨します。RDS 展開では、ブローカーやゲートウェイなどの追加コンポーネントを展開して管理する必要があります。これらのサービスは、本番環境では専用の冗長仮想マシン上で実行する必要があります。AVD の場合、これらのサービスはすべて Azure によってサービスとして提供されるため、 <strong> シングル仮想マシン </strong> 構成が推奨されます。</p>
+</div>
+<div class="sect4">
+<h5 id="単一の仮想マシン">単一の仮想マシン</h5>
+<div class="paragraph">
+<p>AVD のみを使用する（ RDS または 2 つの組み合わせは使用しない）配置には、このオプションを選択することをお勧めします。単一の仮想マシン環境では、 Azure の単一の VM で次のロールがホストされます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CW Manager の略</p>
+</li>
+<li>
+<p>HTML5 ゲートウェイ</p>
+</li>
+<li>
+<p>RDS ゲートウェイ</p>
+</li>
+<li>
+<p>リモートアプリ</p>
+</li>
+<li>
+<p>FTPS サーバ（オプション）</p>
+</li>
+<li>
+<p>ドメインコントローラの役割</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>このコンフィグレーションで推奨される RDS 使用事例の最大ユーザー数は 100 ユーザーです。この構成では、ロードバランシングが行われた RDS+ HTML5 ゲートウェイはオプションではないため、冗長性が制限されるだけでなく、将来的に拡張性を高めるためのオプションも制限されます。ここでも、 Microsoft はゲートウェイを PaaS サービスとして管理しているため、 AVD の導入にはこの制限は適用されません。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+この環境がマルチテナンシー用に設計されている場合、単一の仮想マシン構成はサポートされません。 AVD も AD Connect もサポートされません。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="複数の仮想マシン">複数の仮想マシン</h5>
+<div class="paragraph">
+<p>VDS プラットフォームを複数の仮想マシンに分割する場合、 Azure の専用 VM で次の役割がホストされます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>リモートデスクトップゲートウェイ</p>
+<div class="paragraph">
+<p>VDS セットアップを使用して、 1 つまたは 2 つの RDS ゲートウェイを展開および設定できます。これらのゲートウェイは、オープンインターネットから、導入環境内のセッションホスト VM への RDS ユーザセッションをリレーします。RDS ゲートウェイは重要な機能を処理し、 RDS をオープンインターネットからの直接攻撃から保護し、環境内のすべての RDS トラフィックを暗号化します。2 つのリモートデスクトップゲートウェイが選択されている場合、 VDS セットアップは 2 つの VM を展開し、着信 RDS ユーザーセッションをロードバランシングするように設定します。</p>
+</div>
+</li>
+<li>
+<p>HTML5 ゲートウェイ</p>
+<div class="paragraph">
+<p>VDS セットアップを使用して、 1 つまたは 2 つの HTML5 ゲートウェイを導入および設定できます。これらのゲートウェイは、 VDS の Server_feature への _ 接続と Web ベースの VDS クライアント（ H5 ポータル）で使用される HTML5 サービスをホストします。2 つの HTML5 ポータルを選択すると、 VDS セットアップによって 2 つの VM が導入され、受信する HTML5 ユーザセッションの負荷を分散するように設定されます。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+複数サーバオプションを使用する場合（インストールされている VDS クライアントのみを介して接続する場合でも） VDS から Server_Functionality への _ 接続を有効にすることを推奨します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>『 Gateway Scalability Notes 』</p>
+<div class="paragraph">
+<p>RDS のユースケースでは、追加のゲートウェイ VM を使用して環境の最大サイズをスケールアウトでき、 RDS または HTML5 ゲートウェイは約 500 ユーザをサポートします。ゲートウェイの追加は、ネットアッププロフェッショナルサービスによるサポートが最小限で済むため、後で追加できます</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>この環境がマルチテナンシー用に設計されている場合は、仮想マシンを複数選択する必要があります。</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="タイムゾーン">タイムゾーン</h4>
+<div class="paragraph">
+<p>エンドユーザのエクスペリエンスにはローカルタイムゾーンが反映されますが、デフォルトのタイムゾーンを選択する必要があります。環境の <strong> プライマリ管理 </strong> を実行するタイムゾーンを選択します。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="仮想ネットワークのスコープ">仮想ネットワークのスコープ</h4>
+<div class="paragraph">
+<p>VM をそれぞれの目的に応じて別のサブネットに分離することを推奨します。まず、ネットワークスコープを定義し、 /20 範囲を追加します。</p>
+</div>
+<div class="paragraph">
+<p>VDS セットアップは、検出して、成功したことを示す範囲を提案します。ベストプラクティスに従い、サブネット IP アドレスはプライベート IP アドレス範囲にする必要があります。</p>
+</div>
+<div class="paragraph">
+<p>範囲は次のとおりです。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>192.168.0.0 ～ 192.168.255.255</p>
+</li>
+<li>
+<p>172.16.0.0 ～ 172.31.255.255</p>
+</li>
+<li>
+<p>10.0.0.0 ～ 10.255.255.255</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>必要に応じて確認と調整を行い、 [ 検証 ] をクリックして、次のそれぞれのサブネットを特定します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>tenant ：セッションホストサーバとデータベースサーバが配置される範囲です</p>
+</li>
+<li>
+<p>サービス： Azure NetApp Files のような PaaS サービスが提供される範囲です</p>
+</li>
+<li>
+<p>プラットフォーム : プラットフォームサーバーが存在する範囲です</p>
+</li>
+<li>
+<p>ディレクトリ： AD サーバが配置される範囲です</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="レビュー">レビュー</h3>
+<div class="paragraph">
+<p>最後のページでは、選択内容を確認することができます。レビューが完了したら、 [ 検証（ Validate ） ] ボタンをクリックします。VDS セットアップですべてのエントリが確認され、導入環境が提供された情報を続行できることが確認されます。この検証には 2~10 分かかることがあります。進捗状況を確認するには、ログのロゴ（右上）をクリックして検証アクティビティを確認します。</p>
+</div>
+<div class="paragraph">
+<p>検証が完了すると、 [Validate] ボタンの代わりに緑色の [Provision （プロビジョニング） ] ボタンが表示されます。Provision （プロビジョニング）をクリックして、導入のプロビジョニングプロセスを開始します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ステータス">ステータス</h3>
+<div class="paragraph">
+<p>プロビジョニングプロセスにかかる時間は、 Azure のワークロードと選択内容によって異なり、 2 ～ 4 時間です。ステータスページをクリックするか、導入プロセスが完了したことを示す E メールを待つことで、ログの進捗状況を確認できます。導入環境では、 VDS とリモートデスクトップ、または AVD の両方の実装をサポートするために必要な仮想マシンと Azure コンポーネントが構築されます。これには、リモートデスクトップセッションホストとファイルサーバの両方として機能する単一の仮想マシンが含まれます。AVD 実装では、この仮想マシンはファイルサーバとしてのみ動作します。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ad-connect-をインストールして設定します">AD Connect をインストールして設定します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>インストールが正常に完了した直後に、 AD Connect をドメインコントローラにインストールして構成する必要があります。単一プラットフォーム VM のセットアップでは、 CWMGR1 マシンが DC です。AD 内のユーザは、 Azure AD とローカルドメインを同期する必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">AD Connect をインストールして設定するには、次の手順を実行します。</div>
+<ol class="arabic">
+<li>
+<p>ドメイン管理者としてドメインコントローラに接続します。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Azure Key Vault からクレデンシャルを取得します（を参照） <a href="Management.System_Administration.azure_key_vault.html">"ここに記載されているキー・ボールト"</a>)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>AD Connect をインストールし、ドメイン admin （ Enterprise Admin ロールの権限を持つ）および Azure AD Global Admin でログインします</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="avd-サービスをアクティブ化しています">AVD サービスをアクティブ化しています</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>導入が完了したら、次の手順で AVD 機能を有効にします。AVD を有効にするには、 Azure Administrator が Azure AVD サービスを使用して Azure AD ドメインとサブスクリプションを登録し、アクセスできるようにする必要があります。同様に、 Microsoft では、 Azure で自動化アプリケーション用に同じ権限を VDS から要求する必要があります。以下の手順で、そのプロセスを説明します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="avd-ホストプールを作成します">AVD ホストプールを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AVD 仮想マシンへのエンドユーザアクセスは、仮想マシンを含むホストプールとアプリケーショングループによって管理され、アプリケーショングループにはユーザとユーザアクセスのタイプが含まれます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">をクリックして、最初のホストプールを作成します</div>
+<ol class="arabic">
+<li>
+<p>AVD ホストプールセクションのヘッダーの右側にある追加ボタンをクリックします。<span class="image"><img src="Create%20AVD%20Host%20Pool%201.png" alt=""></span></p>
+</li>
+<li>
+<p>ホストプールの名前と概要を入力します。</p>
+</li>
+<li>
+<p>ホストプールタイプを選択します</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong> プール </strong> 複数のユーザーが同じアプリケーションがインストールされている仮想マシンの同じプールにアクセスすることを意味します。</p>
+</li>
+<li>
+<p><strong> パーソナル </strong> ユーザに独自のセッションホスト VM が割り当てられるホストプールを作成します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>ロードバランサのタイプを選択します</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong> 第 1 の深さ </strong> は、プール内の第 2 の仮想マシンで開始する前に、最初の共有仮想マシンを最大ユーザー数まで満たします</p>
+</li>
+<li>
+<p><strong> まず、その幅 </strong> では、プール内のすべての仮想マシンにユーザーがラウンドロビン方式で配布されます</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>このプールで仮想マシンを作成するための Azure 仮想マシンテンプレートを選択します。VDS では、サブスクリプションで使用可能なすべてのテンプレートが表示されますが、ベストなエクスペリエンスを得るために最新の Windows 10 マルチユーザービルドを選択することをお勧めします。現在のビルドは Windows-10-20h1-EVD です。（必要に応じて、 Provisioning Collection 機能を使用してゴールドイメージを作成し、カスタム仮想マシンイメージからホストを作成）</p>
+</li>
+<li>
+<p>Azure マシンサイズを選択します。評価を実施するためには、 D シリーズ（マルチユーザの場合は標準のマシンタイプ）または E シリーズ（負荷の高いマルチユーザシナリオの場合は拡張メモリ構成）を推奨します。シリーズやサイズを変えて試す場合は、 VDS で後からマシンサイズを変更できます</p>
+</li>
+<li>
+<p>ドロップダウンリストから、仮想マシンの管理対象ディスクインスタンスに対応するストレージタイプを選択します</p>
+</li>
+<li>
+<p>ホストプールの作成プロセスで作成する仮想マシンの数を選択します。あとでプールに仮想マシンを追加できますが、 VDS で要求した仮想マシンの数が構築され、作成後にホストプールに追加されます</p>
+</li>
+<li>
+<p>ホストプールの追加ボタンをクリックして、作成プロセスを開始します。AVD ページで進捗状況を追跡することも、 [ タスク ] セクションの [ 展開 / 展開名 ] ページでプロセスログの詳細を確認することもできます</p>
+</li>
+<li>
+<p>ホストプールが作成されると、 AVD ページのホストプールリストに表示されます。ホストプールの名前をクリックすると、その詳細ページが表示されます。このページには、仮想マシン、アプリケーショングループ、およびアクティブユーザのリストが含まれます</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+VDS 内の AVD ホストは、ユーザーセッションの接続を許可しない設定で作成されます。これは、ユーザ接続を受け入れる前にカスタマイズできるように設計されています。この設定は、セッションホストの設定を編集することで変更できます。 <span class="image"><img src="Create%20AVD%20Host%20Pool%202.png" alt=""></span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ユーザの-vds-デスクトップを有効にします">ユーザの VDS デスクトップを有効にします</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>前述したように 'VDS は導入時にエンドユーザーのワークスペースをサポートするために必要なすべての要素を作成します展開が完了したら、次の手順では、 AVD 環境に導入するユーザーごとにワークスペースへのアクセスを有効にします。この手順では、仮想デスクトップのデフォルトであるプロファイル設定とエンドユーザデータレイヤアクセスが作成されます。VDS は、 Azure AD エンドユーザーを AVD アプリケーションプールにリンクするために、この構成を再利用します。</p>
+</div>
+<div class="olist arabic">
+<div class="title">エンドユーザーのワークスペースを有効にするには、次の手順を実行します。</div>
+<ol class="arabic">
+<li>
+<p>VDS にログインします <a href="https://manage.cloudworkspace.com" class="bare">https://manage.cloudworkspace.com</a> プロビジョニング時に作成した VDS プライマリ管理者アカウントを使用する。アカウント情報を覚えていない場合は、 NetApp VDS に問い合わせて情報を取得してください</p>
+</li>
+<li>
+<p>[ ワークスペース ] メニューアイテムをクリックし、プロビジョニング時に自動的に作成されたワークスペースの名前をクリックします</p>
+</li>
+<li>
+<p>[ ユーザーとグループ ] タブをクリックします<span class="image"><img src="Enable%20VDS%20desktops%20to%20Users%201.png" alt=""></span></p>
+</li>
+<li>
+<p>有効にする各ユーザについて、ユーザ名をスクロールし、歯車アイコンをクリックします</p>
+</li>
+<li>
+<p>[Enable Cloud Workspace] オプションを選択します<span class="image"><img src="Enable%20VDS%20desktops%20to%20Users%202.png" alt=""></span></p>
+</li>
+<li>
+<p>有効化プロセスが完了するまで、 30~90 秒かかります。ユーザのステータスが [ 保留中 ] から [ 使用可能 ] に変わります</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+Azure AD ドメインサービスをアクティブ化すると、 Azure で管理ドメインが作成され、作成された AVD 仮想マシンがそのドメインに参加します。仮想マシンへの従来のログインを使用するには、 Azure AD ユーザのパスワードハッシュを同期して、 NTLM 認証と Kerberos 認証をサポートする必要があります。このタスクを実行する最も簡単な方法は、 Office.com または Azure Portal でユーザパスワードを変更することです。これにより、パスワードハッシュの同期が強制的に行われます。ドメインサービスサーバの同期サイクルには、最大 20 分かかることがあります。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="ユーザセッションを有効にします">ユーザセッションを有効にします</h3>
+<div class="paragraph">
+<p>デフォルトでは、セッションホストはユーザ接続を受け入れることができません。この設定は、新しいユーザセッションを防止するために本番環境で使用できる「ドレインモード」と呼ばれ、最終的にホストはすべてのユーザセッションを削除できます。新しいユーザセッションがホストで許可される場合、このアクションは通常、セッションホストを「ローテーションに」配置することと呼ばれます。</p>
+</div>
+<div class="paragraph">
+<p>本番環境では、新しいホストをドレインモードで開始することを推奨します。ホストが本番環境のワークロードに対応できるようになる前に、通常は設定タスクを実行する必要があるためです。</p>
+</div>
+<div class="paragraph">
+<p>テストと評価では、ホストのドレインモードをすぐに解除して、ユーザが接続できるようにし、機能を確認できるようにすることができます。セッションホストでユーザーセッションを有効にするには ' 次の手順に従います</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ワークスペースページの AVD セクションに移動します。</p>
+</li>
+<li>
+<p>[AVD host pools] の下のホストプール名をクリックします。<span class="image"><img src="Enable%20User%20Sessions%201.png" alt=""></span></p>
+</li>
+<li>
+<p>セッションホストの名前をクリックし、 [ 新しいセッションを許可する ] チェックボックスをオンにして、 [ セッションホストの更新 ] をクリックします。ローテーションに配置する必要があるすべてのホストについて、この手順を繰り返します。<span class="image"><img src="Enable%20User%20Sessions%202.png" alt=""></span></p>
+</li>
+<li>
+<p>各ホスト行項目の AVD のメインページには、「 Allow New Session 」の現在の統計も表示されます。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="デフォルトのアプリケーショングループ">デフォルトのアプリケーショングループ</h3>
+<div class="paragraph">
+<p>デスクトップアプリケーショングループは、ホストプール作成プロセスの一環としてデフォルトで作成されます。このグループは、すべてのグループメンバーにインタラクティブなデスクトップアクセスを提供します。グループにメンバーを追加するには：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>アプリケーショングループの名前をクリックします<span class="image"><img src="Default%20App%20Group%201.png" alt=""></span></p>
+</li>
+<li>
+<p>追加したユーザの数を示すリンクをクリックします<span class="image"><img src="Default%20App%20Group%202.png" alt=""></span></p>
+</li>
+<li>
+<p>名前の横にあるチェックボックスをオンにして、アプリケーショングループに追加するユーザーを選択します</p>
+</li>
+<li>
+<p>[ ユーザーの選択 ] ボタンをクリックします</p>
+</li>
+<li>
+<p>アプリグループを更新ボタンをクリックします</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="追加の-avd-アプリグループを作成">追加の AVD アプリグループを作成</h3>
+<div class="paragraph">
+<p>追加のアプリケーショングループをホストプールに追加できます。これらのアプリケーショングループは、 RemoteApp を使用して、ホストプール仮想マシンから App Group ユーザに特定のアプリケーションを公開します。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+AVD では、エンドユーザーをデスクトップアプリグループタイプまたは RemoteApp グループタイプにのみ割り当てることができます。ただし、両方を同じホストプールに含めることはできません。そのため、ユーザーを適切に分離するようにしてください。ユーザーがデスクトップおよびストリーミングアプリにアクセスする必要がある場合は、アプリをホストするために 2 番目のホストプールが必要です。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">新しいアプリケーショングループを作成するには：</div>
+<ol class="arabic">
+<li>
+<p>アプリケーショングループセクションのヘッダーにある追加ボタンをクリックします<span class="image"><img src="Create%20Additional%20AVD%20App%20Group%201.png" alt=""></span></p>
+</li>
+<li>
+<p>アプリケーショングループの名前と概要を入力します</p>
+</li>
+<li>
+<p>[Add Users] リンクをクリックして、グループに追加するユーザを選択します。名前の横にあるチェックボックスをクリックして各ユーザを選択し、 [Select Users] ボタンをクリックします<span class="image"><img src="Create%20Additional%20AVD%20App%20Group%202.png" alt=""></span></p>
+</li>
+<li>
+<p>[Add RemoteApps] リンクをクリックして、このアプリケーショングループにアプリケーションを追加します。AVD は、仮想マシンにインストールされているアプリケーションのリストをスキャンすることで、可能なアプリケーションのリストを自動的に生成します。アプリケーション名の横にあるチェックボックスをクリックしてアプリケーションを選択し、 Select RemoteApps ボタンをクリックします。<span class="image"><img src="Create%20Additional%20AVD%20App%20Group%203.png" alt=""></span></p>
+</li>
+<li>
+<p>[ アプリケーショングループの追加 ] ボタンをクリックして、アプリケーショングループを作成します</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="エンドユーザ-avd-アクセス">エンドユーザ AVD アクセス</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>エンドユーザは、 Web Client またはさまざまなプラットフォーム上にインストールされたクライアントを使用して AVD 環境にアクセスできます</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Web クライアント： <a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-web" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-web</a></p>
+</li>
+<li>
+<p>Web クライアントのログイン URL ： <a href="http://aka.ms/AVDweb" class="bare">http://aka.ms/AVDweb</a></p>
+</li>
+<li>
+<p>Windows クライアント： <a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-and-10" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-and-10</a></p>
+</li>
+<li>
+<p>Android クライアント： <a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-android" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-android</a></p>
+</li>
+<li>
+<p>MacOS クライアント : <a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos</a></p>
+</li>
+<li>
+<p>iOS クライアント： <a href="https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-ios" class="bare">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-ios</a></p>
+</li>
+<li>
+<p>IGEL シンクライアント： <a href="https://www.igel.com/igel-solution-family/windows-virtual-desktop/" class="bare">https://www.igel.com/igel-solution-family/windows-virtual-desktop/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>エンドユーザのユーザ名とパスワードを使用してログインします。リモートアプリケーションとデスクトップ接続（ RADC ）、リモートデスクトップ接続（ mstsc ）、および CloudWorksapce クライアント for Windows アプリケーションは、現在、 AVD インスタンスへのログイン機能をサポートしていません。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ユーザログインを監視する">ユーザログインを監視する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>また、ホストプールの詳細ページには、 AVD セッションにログインしたときにアクティブなユーザのリストも表示されます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="管理接続オプション">管理接続オプション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>VDS 管理者は、さまざまな方法で環境内の仮想マシンに接続できます。</p>
+</div>
+<div class="sect2">
+<h3 id="サーバに接続します">サーバに接続します</h3>
+<div class="paragraph">
+<p>ポータル全体で 'VDS 管理者は [ サーバへの接続 ] オプションを見つけますデフォルトでは、この機能は、ローカル管理者クレデンシャルを動的に生成し、 Web クライアント接続に挿入することによって、管理者を仮想マシンに接続します。接続するために Admin がクレデンシャルを知っている必要はありません（また、で提供されることはありません）。</p>
+</div>
+<div class="paragraph">
+<p>このデフォルト動作は、次のセクションで説明するように、管理者ごとに無効にすることができます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="techlevel-3-管理者アカウント">.tech/Level 3 管理者アカウント</h3>
+<div class="paragraph">
+<p>CWA セットアッププロセスでは、「 Level III 」管理者アカウントが作成されます。ユーザ名の形式は <a href="mailto:username.tech@domain.xyz">username.tech@domain.xyz</a> です</p>
+</div>
+<div class="paragraph">
+<p>これらのアカウントは、一般に「 .tech 」アカウントと呼ばれ、ドメインレベルの管理者アカウントという名前が付けられています。VDS 管理者は、 CWMGR1 （プラットフォーム）サーバに接続するとき、および環境内の他のすべての仮想マシンに接続するときに、 .tech アカウントを使用できます。</p>
+</div>
+<div class="paragraph">
+<p>自動ローカル管理ログイン機能を無効にして、レベル III アカウントを強制的に使用するには、この設定を変更します。VDS &gt; Admins &gt; Admin Name &gt; Check "Tech Account Enabled" と進みます。 このチェックボックスをオンにすると 'VDS 管理者は自動的にローカル管理者として仮想マシンにログインせず ' その .tech 資格情報を入力するように求められます</p>
+</div>
+<div class="paragraph">
+<p>これらのクレデンシャルおよびその他の関連するクレデンシャルは、自動的に _Azure Key Vault に格納され、 Azure Management Portal のからアクセスできます <a href="https://portal.azure.com/" class="bare">https://portal.azure.com/</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="オプションの導入後の操作">オプションの導入後の操作</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="多要素認証-mfa">多要素認証（ MFA ）</h3>
+<div class="paragraph">
+<p>NetApp VDS には、 SMS/E メール MFA が無料で含まれます。この機能を使用して 'VDS 管理者アカウントやエンドユーザーアカウントを保護できます<a href="Management.User_Administration.multi-factor_authentication.html">"MFA 記事"</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="アプリケーション使用権のワークフロー">アプリケーション使用権のワークフロー</h3>
+<div class="paragraph">
+<p>VDS では、アプリケーションカタログと呼ばれる定義済みのアプリケーションリストから、エンドユーザーにアプリケーションへのアクセスを割り当てるメカニズムが提供されます。アプリケーションカタログは、管理されたすべての展開に適用されます。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+自動的に導入された TSD1 サーバーは、アプリケーションのエンタイトルメントをサポートするために現状のままにしておく必要があります。具体的には、この仮想マシンに対して「データへの変換」機能を実行しないでください。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>アプリケーション管理の詳細については、次の記事を参照してください。 <a href="Management.Applications.application_entitlement_workflow.html">""</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-ad-セキュリティグループ">Azure AD セキュリティグループ</h3>
+<div class="paragraph">
+<p>VDS には、 Azure AD セキュリティグループによってサポートされるユーザーグループを作成、入力、および削除する機能が含まれます。これらのグループは 'VDS 以外のセキュリティグループと同様に使用できますVDS では、これらのグループを使用してフォルダ権限とアプリケーション権限を割り当てることができます。</p>
+</div>
+<div class="sect3">
+<h4 id="ユーザグループを作成します">ユーザグループを作成します</h4>
+<div class="paragraph">
+<p>ユーザーグループの作成は、ワークスペース内のユーザーとグループタブで実行されます。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="フォルダ権限をグループごとに割り当てます">フォルダ権限をグループごとに割り当てます</h4>
+<div class="paragraph">
+<p>会社の共有内のフォルダを表示および編集する権限は、ユーザーまたはグループに割り当てることができます。</p>
+</div>
+<div class="paragraph">
+<p><a href="Management.User_Administration.manage_folders_and_permissions.html">""</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="グループごとにアプリケーションを割り当てます">グループごとにアプリケーションを割り当てます</h4>
+<div class="paragraph">
+<p>アプリケーションをユーザに個別に割り当てるだけでなく、グループにプロビジョニングすることもできます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>[ ユーザーとグループの詳細 ] に移動します。<span class="image"><img src="Assign%20Applications%20by%20Group%201.png" alt=""></span></p>
+</li>
+<li>
+<p>新しいグループを追加するか、既存のグループを編集します。<span class="image"><img src="Assign%20Applications%20by%20Group%202.png" alt=""></span></p>
+</li>
+<li>
+<p>グループにユーザとアプリケーションを割り当てます。<span class="image"><img src="Assign%20Applications%20by%20Group%203.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="コスト最適化オプションを設定します">コスト最適化オプションを設定します</h3>
+<div class="paragraph">
+<p>ワークスペース管理は、 AVD 実装をサポートする Azure リソースの管理にも拡張されています。VDS では、ワークロードスケジュールとライブスケーリングの両方を設定し、エンドユーザーのアクティビティに基づいて Azure 仮想マシンのオンとオフを切り替えることができます。これらの機能により、 Azure のリソース利用率とエンドユーザの実際の使用パターンに合わせた支出が実現します。さらに、概念実証 AVD 実装を設定している場合は、 VDS インターフェイスから導入全体を切り替えることができます。</p>
+</div>
+<div class="sect3">
+<h4 id="ワークロードのスケジュール設定">ワークロードのスケジュール設定</h4>
+<div class="paragraph">
+<p>ワークロードスケジューリングは、管理者が、エンドユーザセッションをサポートするために Workspace 仮想マシンを実行するスケジュールを作成できるようにする機能です。一定の曜日にスケジュールされた期間の終了に達すると、 VDS は 1 時間ごとの課金が停止するように Azure 内の仮想マシンの割り当てを停止または解除します。</p>
+</div>
+<div class="olist arabic">
+<div class="title">ワークロードのスケジュール設定を有効にするには</div>
+<ol class="arabic">
+<li>
+<p>VDS にログインします <a href="https://manage.cloudworkspace.com" class="bare">https://manage.cloudworkspace.com</a> VDS クレデンシャルを使用します。</p>
+</li>
+<li>
+<p>[ ワークスペース ] メニューアイテムをクリックし、リスト内のワークスペースの名前をクリックします。 <span class="image"><img src="Workload%20Scheduling%201.png" alt=""></span></p>
+</li>
+<li>
+<p>[ ワークロードのスケジュール ] タブをクリックします。 <span class="image"><img src="Workload%20Scheduling%202.png" alt=""></span></p>
+</li>
+<li>
+<p>[ ワークロードスケジュール ] ヘッダーの [ 管理 ] リンクをクリックします。 <span class="image"><img src="Workload%20Scheduling%203.png" alt=""></span></p>
+</li>
+<li>
+<p>[ ステータス ] ドロップダウンから、 [ 常にオン ] （デフォルト）、 [ 常にオフ ] 、または [ スケジュール済み ] のいずれかのデフォルトの状態を選択します。</p>
+</li>
+<li>
+<p>[ スケジュール済み ] を選択した場合は、次のスケジュールオプションがあります。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>毎日、割り当てられた間隔で実行します。このオプションは、スケジュールを週 7 日すべて同じ開始時間と終了時間に設定します。 <span class="image"><img src="Workload%20Scheduling%204.png" alt=""></span></p>
+</li>
+<li>
+<p>指定した日に割り当てられた間隔で実行します。このオプションでは、選択した曜日についてのみ、同じ開始タイおよび終了時間にスケジュールを設定します。曜日を選択しないと、原因 VDS で仮想マシンがオンにならないようになります。 <span class="image"><img src="Workload%20Scheduling%205.png" alt=""></span></p>
+</li>
+<li>
+<p>時間間隔や日数を変更して実行します。このオプションを選択すると、選択した各曜日の開始時刻と終了時刻が異なるスケジュールに設定されます。 <span class="image"><img src="Workload%20Scheduling%206.png" alt=""></span></p>
+</li>
+<li>
+<p>スケジュールの設定が完了したら、 Update schedule （スケジュールの更新）ボタンをクリックします。 <span class="image"><img src="Workload%20Scheduling%207.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ライブスケーリング">ライブスケーリング</h4>
+<div class="paragraph">
+<p>ライブスケーリングでは、ユーザーの同時負荷に応じて、共有ホストプール内の仮想マシンを自動的にオンまたはオフに切り替えます。各サーバがいっぱいになると、ホストプールのロードバランサがユーザセッション要求を送信するときに使用できるように、追加のサーバがオンになります。ライブスケーリングを効果的に使用するには、ロードバランサータイプとして [ 深度優先 ] を選択します。</p>
+</div>
+<div class="olist arabic">
+<div class="title">ライブスケーリングを有効にするには：</div>
+<ol class="arabic">
+<li>
+<p>VDS にログインします <a href="https://manage.cloudworkspace.com" class="bare">https://manage.cloudworkspace.com</a> VDS クレデンシャルを使用します。</p>
+</li>
+<li>
+<p>[ ワークスペース ] メニューアイテムをクリックし、リスト内のワークスペースの名前をクリックします。 <span class="image"><img src="Live%20Scaling%201.png" alt=""></span></p>
+</li>
+<li>
+<p>[ ワークロードのスケジュール ] タブをクリックします。 <span class="image"><img src="Live%20Scaling%202.png" alt=""></span></p>
+</li>
+<li>
+<p>Live Scaling セクションで、 Enabled オプションボタンをクリックします。 <span class="image"><img src="Live%20Scaling%203.png" alt=""></span></p>
+</li>
+<li>
+<p>[ サーバあたりの最大ユーザ数 ] をクリックし、最大数を入力します。仮想マシンのサイズに応じて、通常は 4~20 の範囲の値を指定します。 <span class="image"><img src="Live%20Scaling%204.png" alt=""></span></p>
+</li>
+<li>
+<p>オプション– [Extra Powered On Servers Enabled] をクリックし、ホストプール用に追加するサーバをいくつか入力します。この設定は、アクティブにいっぱいになっているサーバーに加えて、指定されたサーバー数をアクティブにして、同じ時間内にログオンしている大量のユーザーグループのバッファとして機能します。 <span class="image"><img src="Live%20Scaling%205.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+現在、ライブスケーリングはすべての共有リソースプールを環境で実行しています。近い将来、各プールには独立したライブスケーリングオプションがあります。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="導入環境全体の電源をオフにします">導入環境全体の電源をオフにします</h4>
+<div class="paragraph">
+<p>評価導入のみを散発的な非本番環境でのみ使用する場合は、使用しない環境ですべての仮想マシンをオフにすることができます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">展開をオンまたはオフにする（展開で仮想マシンをオフにする）には、次の手順を実行します。</div>
+<ol class="arabic">
+<li>
+<p>VDS にログインします <a href="https://manage.cloudworkspace.com" class="bare">https://manage.cloudworkspace.com</a> VDS クレデンシャルを使用します。</p>
+</li>
+<li>
+<p>[ 展開 ] メニュー項目をクリックします。 <span class="image"><img src="Power%20Down%20the%20Entire%20Deployment%201.png" alt=""></span>ターゲット展開の行にカーソルを合わせると、設定ギアアイコンが表示されます。 <span class="image"><img src="Power%20Down%20the%20Entire%20Deployment%202.png" alt=""></span></p>
+</li>
+<li>
+<p>ギアをクリックし、「停止」を選択します。 <span class="image"><img src="Power%20Down%20the%20Entire%20Deployment%203.png" alt=""></span></p>
+</li>
+<li>
+<p>再起動または開始するには、手順 1 ～ 3 を実行してから、 [ 開始 ] を選択します。 <span class="image"><img src="Power%20Down%20the%20Entire%20Deployment%204.png" alt=""></span></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+導入環境内のすべての仮想マシンが停止または起動するまでに数分かかることがあります。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vm-イメージの作成と管理">VM イメージの作成と管理</h3>
+<div class="paragraph">
+<p>VDS には、将来の導入に備えて仮想マシンイメージを作成および管理する機能が含まれます。この機能を使用するには、 VDS &gt; Deployments &gt; Deployment Name &gt; Provisioning Collections に移動します。「 VDI イメージコレクション」の機能については、次の URL で説明しています。 <a href="Management.Deployments.provisioning_collections.html">""</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-cloud-backup-service-を設定">Azure Cloud Backup Service を設定</h3>
+<div class="paragraph">
+<p>VDS は、 Azure クラウドバックアップをネイティブで構成、管理できます。 Azure PaaS サービスは、仮想マシンをバックアップするためのサービスです。バックアップポリシーは、タイプまたはホストプールに基づいて、個々のマシンまたはマシンのグループに割り当てることができます。詳細については、以下を参照してください。 <a href="Management.System_Administration.configure_backup.html">""</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="アプリ管理-ポリシーモードを選択します">アプリ管理 / ポリシーモードを選択します</h3>
+<div class="paragraph">
+<p>VDS では、デフォルトで多数の Group Policy Object （ GPO ；グループポリシーオブジェクト）が実装され、エンドユーザのワークスペースがロックダウンされます。これらのポリシーにより、コアデータレイヤの場所（例： c ： \ ）へのアクセスと、エンドユーザとしてのアプリケーションのインストールを実行する機能の両方にアクセスできなくなります。</p>
+</div>
+<div class="paragraph">
+<p>この評価は、 Window Virtual Desktop の機能を実証することを目的としています。したがって、 GPO を削除して、物理ワークスペースと同じ機能とアクセスを提供する「基本的なワークスペース」を実装できます。これを行うには、「基本ワークスペース」オプションの手順に従います。</p>
+</div>
+<div class="paragraph">
+<p>また、仮想デスクトップ管理の全機能セットを利用して「管理されたワークスペース」を実装することもできます。これらの手順には、エンドユーザアプリケーションエンタイトルメント用のアプリケーションカタログの作成と管理、およびアプリケーションとデータフォルダへのアクセスを管理するための管理者レベルの権限の使用が含まれます。AVD ホストプールにこのタイプのワークスペースを実装するには、「管理されたワークスペース」セクションの手順に従います。</p>
+</div>
+<div class="sect3">
+<h4 id="制御された-avd-ワークスペース-デフォルトポリシー">制御された AVD ワークスペース ( デフォルトポリシー )</h4>
+<div class="paragraph">
+<p>VDS 導入では、制御されたワークスペースを使用することがデフォルトモードです。ポリシーは自動的に適用されます。このモードでは、 VDS 管理者がアプリケーションをインストールする必要があります。その後、エンドユーザーはセッションデスクトップのショートカットを使用してアプリケーションにアクセスできます。同様に、マッピングされた共有フォルダを作成し、標準のブートドライブやデータドライブではなく、マッピングされたドライブレターのみを表示する権限を設定することで、データフォルダへのアクセスがエンドユーザに割り当てられます。この環境を管理するには、以下の手順に従って、アプリケーションをインストールし、エンドユーザーアクセスを提供します。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="基本的な-avd-ワークスペースに戻します">基本的な AVD ワークスペースに戻します</h4>
+<div class="paragraph">
+<p>基本的なワークスペースを作成するには、デフォルトで作成されたデフォルトの GPO ポリシーを無効にする必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">これを行うには、次の 1 回限りのプロセスを実行します。</div>
+<ol class="arabic">
+<li>
+<p>VDS にログインします <a href="https://manage.cloudworkspace.com" class="bare">https://manage.cloudworkspace.com</a> プライマリ管理者のクレデンシャルを使用する。</p>
+</li>
+<li>
+<p>左側の [Deployments] メニュー項目をクリックします。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%201.png" alt=""></span></p>
+</li>
+<li>
+<p>展開の名前をクリックします。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%202.png" alt=""></span></p>
+</li>
+<li>
+<p>[Platform Servers] セクション（右中央ページ）で、 CWMGR1 の行の右側をスクロールしてギヤを表示します。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%203.png" alt=""></span></p>
+</li>
+<li>
+<p>ギアをクリックして、「接続」を選択します。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%204.png" alt=""></span></p>
+</li>
+<li>
+<p>プロビジョニング中に作成した「 Tech 」クレデンシャルを入力し、 HTML5 アクセスを使用して CWMGR1 サーバにログオンします。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%205.png" alt=""></span></p>
+</li>
+<li>
+<p>スタート（ Windows ）メニューをクリックし、 Windows 管理ツールを選択します。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%206.png" alt=""></span></p>
+</li>
+<li>
+<p>[ グループポリシーの管理 ] アイコンをクリックします。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%207.png" alt=""></span></p>
+</li>
+<li>
+<p>左側のペインのリストで AADDC Users 項目をクリックします。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%208.png" alt=""></span></p>
+</li>
+<li>
+<p>右側のペインのリストで [Cloud Workspace Users （クラウドワークスペースユーザー） ] ポリシーを右クリックし、 [Link Enabled （リンク有効） ] オプションの選択を解除します。[OK] をクリックして、この操作を確定します。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%209_1.png" alt=""></span> <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%209_2.png" alt=""></span></p>
+</li>
+<li>
+<p>メニューから [ アクション ] 、 [ グループポリシーの更新 ] を選択し、それらのコンピュータでポリシーの更新を強制することを確認します。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%2010.png" alt=""></span></p>
+</li>
+<li>
+<p>手順 9 と 10 を繰り返しますが、リンクを無効にするポリシーとして [AADDC Users] と [Cloud Workspace Companies （クラウドワークスペース企業） ] を選択します。この手順の後で、グループポリシーを強制的に更新する必要はありません。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%2011_1.png" alt=""></span> <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%2011_2.png" alt=""></span></p>
+</li>
+<li>
+<p>グループポリシー管理エディタおよび管理ツールウィンドウを閉じ、ログオフします。 <span class="image"><img src="Reverting%20to%20Basic%20AVD%20Workspace%2012.png" alt=""></span>ここでは、エンドユーザー向けの基本的なワークスペース環境について説明します。これを確認するには、エンドユーザーアカウントの 1 つとしてログインします。セッション環境には、非表示の [ スタート ] メニュー、 C ： \ ドライブへのロックダウンアクセス、非表示の [ コントロールパネル ] など、制御されたワークスペースの制限はありません。</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+導入時に作成された .tech アカウントには 'VDS に関係なく ' アプリケーションをインストールし ' フォルダのセキュリティを変更するためのフルアクセス権がありますただし、 Azure AD ドメインのエンドユーザに同様のフルアクセスを許可する場合は、各仮想マシンのローカル管理者グループに追加する必要があります。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/issues/new?body=Page%3A%20[AVD 導入ガイド](https://docs.netapp.com/ja-jp/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/virtual-desktop-service/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/blob/main/sub.Deploying.Azure.AVD.Deploying_AVD_in_Azure.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/virtual-desktop-service/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/virtual-desktop-service/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/virtual-desktop-service/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Web サイトについてのフィードバックを<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">お寄せください</a>
+  <a href="https://docs.netapp.com/ja-jp/announcements/" class="n-footer__copyright">お知らせ</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/virtual-desktop-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/virtual-desktop-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/virtual-desktop-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/virtual-desktop-service/js/www-ntap.js'></script>
+    <script src='/ja-jp/virtual-desktop-service/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>
