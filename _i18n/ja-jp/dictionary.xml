@@ -4732,4 +4732,7 @@
   <block id="f7c1c070d65b6ccf74bca5345b3ff6ed" category="paragraph">VDS のホストプール内に追加のアプリケーショングループを作成できます。追加のアプリケーショングループはすべて、 Windows デスクトップの完全なエクスペリエンスではなく、 RemoteApp のリソースを提供し、 RemoteApp のリソースを提供します。</block>
   <block id="2bf46ad58410756ffcf2ab58406d5151" category="paragraph">データ、プロファイル、およびユーザーのホームフォルダの保存場所は、 Active Directory によって管理されます。コマンドセンターでは、これらの場所を変更する処理を実行できます。</block>
   <block id="2a56e61a4cdc8f4df5f2f537a46b206a" category="admonition">Command Center は、展開内の CWMGR1 プラットフォームサーバ上で動作するアプリケーションです。このアプリケーションは、トラブルシューティング、診断、および高度な管理機能用に設計されています。このアプリケーションは主にネットアップの社内開発チームやサポートチームが使用しますが、一部の機能はお客様の管理者が使用することもあります。このドキュメントは、選択機能の使用をサポートするために提供されています。これらのコマンドの使用については、ネットアップのサポートチームの協力の上、慎重に行ってください。詳細については、を参照してください <block ref="a48f4703e36280df80993e60ba576b79" category="inline-link-macro-rx"></block> 記事。</block>
+  <block id="4e917b35b838b3848cee837317813f4c" category="doc">VDS V6 リリース： 2022 年 1 月 20 日木曜日</block>
+  <block id="bd2897c731517d781c517e8a96ea7911" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 次の場合： 2022 年 1 月 20 日（木）午後 10 時 ~ 午後 11 時（東部標準時）： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="e6b63d30bde9b8adedb3ce2ec1e54cb2" category="list-text">Azure コスト試算ツール（ ACE ）を使用したリンクリダイレクト問題のバグ修正</block>
 </blocks>
