@@ -1,4 +1,4 @@
-= <strong> データの変更 /Pro/Home フォルダ </strong> 概要
+= 「データ /Pro/Home フォルダの概要」を変更します
 
 
 

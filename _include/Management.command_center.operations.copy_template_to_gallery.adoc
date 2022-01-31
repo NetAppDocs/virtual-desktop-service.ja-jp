@@ -1,4 +1,4 @@
-= <strong> テンプレートを Gallery にコピー </strong> 概要
+= テンプレートを Gallery Overview にコピーします
 
 
 

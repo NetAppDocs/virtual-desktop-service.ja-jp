@@ -362,7 +362,6 @@
   <block id="edbc625659e0f9bb4f4d89e6e41211da" category="list-text">新しいグループを追加するか、既存のグループを編集します。</block>
   <block id="5de0364f79671d7894f7e436f5d6b909" category="list-text">グループにユーザとアプリケーションを割り当てます。</block>
   <block id="d31b827b6e7b04377e23a70451a9b414" category="summary">AADDS NDS および SSO のトラブルシューティング手順ガイド</block>
-  <block id="31e85cf5188638ca8ecc54488f5807d3" category="doc">DNS Forwards for Azure では、 O365 ID を使用して SSO を追加します</block>
   <block id="c2ecd163592833db8cf7047686a0bc27" category="paragraph">ユーザーは、プライマリ電子メールドメインの会社の Web サイトにアクセスできません。</block>
   <block id="1437e89fe4f9155122c0cc20fd399ec8" category="paragraph">たとえば、 VDS ワークスペースのネットアップ従業員は、 SSO アカウントが user@netapp.com_ の場合、 netapp.com にアクセスできません</block>
   <block id="2eaf5aa7aab82397bcfad0a70f17f773" category="paragraph">専用の VDS 環境では、 Azure テナントの内部ドメインを使用します。</block>
@@ -2141,7 +2140,6 @@
   <block id="dccb0d2b442426ba8bd60031596d2402" category="section-title">ユーザー詳細ページ</block>
   <block id="42adcf20cb0be61922dbe94eeb374a65" category="paragraph"><block ref="42adcf20cb0be61922dbe94eeb374a65" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0d4b0025d1c6bffdb44842810e5a52a8" category="summary">これらのメールの内容は何ですか？</block>
-  <block id="f3a92793815a97180a94673fdc3a7009" category="doc">これらのすべての電子メールにはどのようなものがありますか？</block>
   <block id="b5b4be478e80fe42cfbd68f0ada755b8" category="paragraph">VDS では、毎晩さまざまな E メールレポートが送信されます。これらの機能は、環境のさまざまな側面を毎晩要約して、エラーや例外を特定するために設計されています。各テナントを個別に監視することで重要な作業になる可能性がある大規模な導入にも対応できるように調整されています。</block>
   <block id="67222c3ad22de22cf22ecc1cf9c3351c" category="paragraph">小規模な環境では、これらの E メールが過度に生成されたり、不要になったりすることが</block>
   <block id="c6cb8f560cfcac716ae9d4a2732ed529" category="paragraph">これらのレポートを受信する電子メールアドレスは ' アカウント手順の VDS セットアップウィザードで定義されます</block>
@@ -3725,7 +3723,6 @@
   <block id="8f24270094753ebbc66650db1da752c7" category="doc">AVD Shortpath を有効にします</block>
   <block id="1d6ffc609b12ff2761f0903af359abcd" category="paragraph">このスクリプトパッケージでは、 PowerShell で（関連する）コマンドを実行することで、ネイティブ AVD feature_RDP Shortpath_ を有効または無効にします。</block>
   <block id="19d7a86475f639fc81e2eaeb9460a3f0" category="paragraph">この AVD 機能に関する Microsoft のマニュアルは、次の URL から入手できます。<block ref="ce8abb3ebcad935b317f33e57160d38f" category="inline-link-rx"></block></block>
-  <block id="bc5c0a9c8c1f7c35a3cd02398b2c003b" category="doc">&lt;strong&gt; データの変更 /Pro/Home フォルダ &lt;/strong&gt; 概要</block>
   <block id="fa89c329e4778ffa596cc0556838b7fc" category="section-title">「データ /Pro/Home フォルダの概要」を変更します</block>
   <block id="53d42f8e1d72593ab06f78acb02df418" category="image-alt">Management.command center.operations.change data home pro フォルダ 678cd</block>
   <block id="0e25d1512498bd6c0d0bc89e8ea68b36" category="image-alt">Management.command center.operation.copy テンプレートを gallery ed821 にコピーします</block>
@@ -4188,7 +4185,6 @@
   <block id="09de6cc93acfa9bdb902f5a721e99854" category="section-title">CWMS 5.3 リリース： 2019 年 8 月 8 日</block>
   <block id="f5a466a8ed69d939bff4037082a26684" category="paragraph">_ コンポーネント： _5.3 Cloud Workspace Management Suite_When ： _ Thursday August 8 、 2019 年 10 時 ～ 23 時 Eastern _Impact ： _ エンドユーザ向けのクラウドワークスペースデスクトップおよびアプリケーションサービスへのアクセスは中断されません。Cloud Workspace Management Suite へのアクセスは引き続き可能です。</block>
   <block id="9391ca9caacc3c8781678352cbd8ee12" category="list-text">CWMS から CWMGR1 に接続するシナリオのサブセットに関するバグ修正が期待どおりに機能していません</block>
-  <block id="88b2d89c67d85e84558bba0ee5d22344" category="doc">&lt;strong&gt; テンプレートを Gallery にコピー &lt;/strong&gt; 概要</block>
   <block id="f00d5902f085f4a525f7729a2d183fb7" category="section-title">テンプレートを Gallery Overview にコピーします</block>
   <block id="69a85df46de1c9f673b252704b33bd24" category="image-alt">Management.command center.operation.copy テンプレートを gallery 67ea4 にコピーします</block>
   <block id="83032ce12981580e4cdc1d253de8ebf1" category="section-title">VDS ドロップダウンでの VM テンプレートの可用性</block>
@@ -4493,7 +4489,6 @@
   <block id="afb275d8b27dc1975f85cc9cfee04fdf" category="image-alt">scriptlibrary.activity.InstallAdobeReader</block>
   <block id="4fb4d4a9329eca7327f80a9a57371955" category="paragraph">NetApp Virtual Desktop Service は既存のホストプールをインポートできるので、最初は VDS を使用してホストプールを導入しなかった場合でも、 VDS を利用してインプレースアップグレードを実行できます。</block>
   <block id="3f1c80cc6dd134b4494c50673ad245d1" category="admonition">この処理は確立されたメンテナンス期間に実行することを推奨します。メンテナンス期間の間は、エンドユーザがログインしないように指示され（または VM がユーザ接続を許可しないように設定されている）、この処理を実行するとエンドユーザデスクトップにアクセスできなくなります。</block>
-  <block id="b7d7d6510062e208f7c5c8e8390cf5f4" category="doc">CWMS 5.1 マイナーリリース： 2018 年 10 月 18 日（木</block>
   <block id="7fff39c69ffed509befc703a10849155" category="paragraph">Command Center は、展開内の CWMGR1 プラットフォームサーバ上で実行される実行可能ファイルです。CWMGR1 VM に接続し、その VM 上でローカルに実行することによってアクセスします。</block>
   <block id="e446863d235a9e2417e5f5023e30dab0" category="section-title">コマンドセンターを実行しています</block>
   <block id="4397d7e6a3f72ecfbfa6253e0c017843" category="list-title">Command Center アプリケーションを実行するには、次の手順に従います。</block>
@@ -4735,4 +4730,5 @@
   <block id="4e917b35b838b3848cee837317813f4c" category="doc">VDS V6 リリース： 2022 年 1 月 20 日木曜日</block>
   <block id="bd2897c731517d781c517e8a96ea7911" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 次の場合： 2022 年 1 月 20 日（木）午後 10 時 ~ 午後 11 時（東部標準時）： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="e6b63d30bde9b8adedb3ce2ec1e54cb2" category="list-text">Azure コスト試算ツール（ ACE ）を使用したリンクリダイレクト問題のバグ修正</block>
+  <block id="db08c00bb57132c028bffad5152677a4" category="doc">DNS Forwards for Azure では、 O365 ID を使用して SSO を追加します</block>
 </blocks>

@@ -4,7 +4,7 @@ permalink: Unlisted.Whats_with_all_these_emails.html
 summary: これらのメールの内容は何ですか？ 
 keywords:  
 ---
-= これらのすべての電子メールにはどのようなものがありますか？
+= これらのメールの内容は何ですか？
 
 
 
