@@ -4731,4 +4731,7 @@
   <block id="bd2897c731517d781c517e8a96ea7911" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 次の場合： 2022 年 1 月 20 日（木）午後 10 時 ~ 午後 11 時（東部標準時）： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="e6b63d30bde9b8adedb3ce2ec1e54cb2" category="list-text">Azure コスト試算ツール（ ACE ）を使用したリンクリダイレクト問題のバグ修正</block>
   <block id="db08c00bb57132c028bffad5152677a4" category="doc">DNS Forwards for Azure では、 O365 ID を使用して SSO を追加します</block>
+  <block id="8a92fe96e3b6ce1519fb08d694c4177c" category="doc">VDS V6 リリース： 2022 年 2 月 3 日木曜日</block>
+  <block id="9e331e61b4691f5e61f2e99dcb3dff3b" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 木曜日 2 月 3 日午後 10 時 ~ 午後 11 時（ Eastern _Impact ）： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="365a3b510bb41f1a84144bc4291a3f7b" category="list-text">VDM のプロファイルローミング検索機能の強化</block>
 </blocks>
