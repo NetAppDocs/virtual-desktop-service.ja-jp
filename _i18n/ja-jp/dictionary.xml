@@ -4734,4 +4734,8 @@
   <block id="8a92fe96e3b6ce1519fb08d694c4177c" category="doc">VDS V6 リリース： 2022 年 2 月 3 日木曜日</block>
   <block id="9e331e61b4691f5e61f2e99dcb3dff3b" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 木曜日 2 月 3 日午後 10 時 ~ 午後 11 時（ Eastern _Impact ）： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="365a3b510bb41f1a84144bc4291a3f7b" category="list-text">VDM のプロファイルローミング検索機能の強化</block>
+  <block id="86157e22d534bd0182643b0a06605565" category="doc">VDS V6 リリース： 2022 年 2 月 17 日（木</block>
+  <block id="a30deb188ffb2252655d9d92edfca79e" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 木曜日 2 月 17 日午後 10 時 ~ 午後 11 時に 2022 東部 _ 影響： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
+  <block id="7cf4dc0da4aaa884f4ffeff1d15fce34" category="list-text">アプリケーションインスタンスが導入され、同じソフトウェアの異なるバージョンやエディションの管理が改善されました</block>
+  <block id="8a8fa72e6038a0fab54f22ca58c27de2" category="list-text">さまざまな予防的セキュリティ強化機能とバグ修正</block>
 </blocks>
