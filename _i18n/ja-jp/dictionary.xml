@@ -93,7 +93,6 @@
   <block id="a52ac08ae4d07f05a995fa807fe68756" category="paragraph"><block ref="a52ac08ae4d07f05a995fa807fe68756" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f7cd53d88d604de6f5f913c26420bd4d" category="list-text">目的の「送信元」アドレス（有効である必要があります）</block>
   <block id="714c982f3a51e3b0e556412e1f6e897d" category="list-text">設定を適用するクライアント（またはすべて）</block>
-  <block id="f23c22d118174cbb45febe6e23021749" category="paragraph">サポートケースのオープンは、 VDSsupport@netapp.com まで E メールで行うことができます</block>
   <block id="9fc3b6578e202985e3091b3313385ef1" category="paragraph">受信した後 'VDS サポートは SMTP サービスでアドレスを検証し ' この設定を有効にします送信元アドレスドメインのパブリック DNS レコードを更新して、電子メールの配信可能性を最大限に高めることができるのが理想的です。</block>
   <block id="6f30b85bb1a4277a75da7a383c5118f7" category="section-title">パスワードの複雑さ</block>
   <block id="cc7b7104ec932b941820f8f4f84c583e" category="paragraph">VDS では、パスワードの複雑さを強制するように設定できます。この設定は、クラウドワークスペース設定セクションのワークスペース詳細ページにあります。</block>
@@ -150,7 +149,6 @@
   <block id="09aec712e8c7dc0f067aa78021250718" category="list-text"><block ref="09aec712e8c7dc0f067aa78021250718" category="inline-link-macro-rx"></block></block>
   <block id="6c0305575fb55798e7104b46cc095d14" category="summary">AVD から VDS を削除するためのステップバイステップガイド</block>
   <block id="026762681803b0b54c05c75c5d569298" category="doc">AVD イヤダウンガイド</block>
-  <block id="0be4b6e6da48ad5cabf39106a217d56a" category="paragraph">この記事では、 AVD エンドユーザのアクセスを維持しながら VDS と NetApp コントロールを削除する方法について説明します。今後の管理には、 Azure / Windows の標準管理ツールを使用します。このプロセスが完了したら、ネットアップがバックエンドシステムと請求システムをクリーンアップできるように、 VDSsupport@netapp.com に問い合わせることを推奨します。</block>
   <block id="27e9db240004b05007ee4eeefd910984" category="section-title">初期状態</block>
   <block id="33c7300390dcfab4d74d3a725d17fbd4" category="list-text">AVD の導入</block>
   <block id="2970bf7ec93a730b8e0fe2ef1e42725f" category="list-text">TDS1 は FS Logix FileShare です</block>
@@ -2209,7 +2207,6 @@
   <block id="846cfd57afaf8469152ebdd6a21cbe89" category="paragraph">単一のポータルでビジネスの柔軟性を最大限に高め、テクノロジスタックのすべてのレイヤを制御できます。</block>
   <block id="71ad52d349f6fc3c22edb56da50b7300" category="paragraph">詳細はこちら。<block ref="fe0b001fc1844a11f38bc5eb2c9398f3" category="inline-link-rx"></block></block>
   <block id="a29672185d73dcf6d2ddc1aef91bb364" category="section-title">サポートの利用</block>
-  <block id="8b5916065a046e9dcfc0a86ec2effceb" category="paragraph">E メールサポート： VDSsupport@netapp.com</block>
   <block id="88cc9e245d04dc16592a51f8acaca39e" category="paragraph">電話サポート :844.645.6789</block>
   <block id="f1f12b2afaf19ca6628af96787f70622" category="inline-link-macro">VDS サポートポータル</block>
   <block id="c0c6ed3b421e3e68c5af66c287e10eab" category="paragraph"><block ref="c0c6ed3b421e3e68c5af66c287e10eab" category="inline-link-macro-rx"></block></block>
@@ -4738,4 +4735,7 @@
   <block id="a30deb188ffb2252655d9d92edfca79e" category="paragraph">_ コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 木曜日 2 月 17 日午後 10 時 ~ 午後 11 時に 2022 東部 _ 影響： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="7cf4dc0da4aaa884f4ffeff1d15fce34" category="list-text">アプリケーションインスタンスが導入され、同じソフトウェアの異なるバージョンやエディションの管理が改善されました</block>
   <block id="8a8fa72e6038a0fab54f22ca58c27de2" category="list-text">さまざまな予防的セキュリティ強化機能とバグ修正</block>
+  <block id="0fc8d44a910622a70a5db1690b734048" category="paragraph">E メールサポート： support@spotpc.netapp.com</block>
+  <block id="0e759b5faf907f44ba11f26893de416a" category="paragraph">サポートケースのオープンは、 support@spotpc.netapp.com まで E メールで行うことができます</block>
+  <block id="d2778cf2b9c1fbc4daf229157e9e211c" category="paragraph">この記事では、 AVD エンドユーザのアクセスを維持しながら VDS と NetApp コントロールを削除する方法について説明します。今後の管理には、 Azure / Windows の標準管理ツールを使用します。このプロセスが完了したら、ネットアップがバックエンドシステムと請求システムをクリーンアップできるように、 support@spotpc.netapp.com に問い合わせることを推奨します。</block>
 </blocks>

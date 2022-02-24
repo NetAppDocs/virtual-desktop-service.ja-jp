@@ -45,7 +45,7 @@ keywords:
 
 == サポートの利用
 
-E メールサポート： VDSsupport@netapp.com
+E メールサポート： support@spotpc.netapp.com
 
 電話サポート :844.645.6789
 
