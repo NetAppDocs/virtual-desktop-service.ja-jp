@@ -9,7 +9,7 @@ Provisioning Collections （コレクションのプロビジョニング）は�
 
 .Provisioning Collection ワークフローの概要は、次のとおりです。
 . 一時的な VM （例 「 CWT1 」）は、既存のイメージ（ストックイメージまたは以前に保存した Provisioning Collection ）に基づいて構築されます。
-. VDS 管理者は、を使用して、要件に合わせて一時 VM をカスタマイズします link:Management.Scripted_Events.scripted_events.html["スクリプト化されたイベント"]、  および / またはサードパーティの管理ツール。
+. VDS 管理者は、を使用して、要件に合わせて一時 VM をカスタマイズします link:Management.Scripted_Events.scripted_events.html["スクリプト化されたイベント"]、 link:#customizing-the-temporary-vm["サーバに接続します"] および / またはサードパーティの管理ツール。
 . カスタマイズが完了したら 'VDS 管理者は *Validation* をクリックし ' イメージの確定を自動化し 'Sysprep を実行し ' 一時的な VM を削除し 'VDS 全体でイメージを展開できるようにする検証プロセスを開始します
 
 

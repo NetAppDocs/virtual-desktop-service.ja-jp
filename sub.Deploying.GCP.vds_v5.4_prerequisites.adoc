@@ -190,9 +190,9 @@ VDS では、ユーザープロファイル、個人フォルダ、および企�
 GCP プロジェクトの VDS コンポーネントは、 VDS Web アプリケーションや VDS API エンドポイントなど、 Azure でホストされる VDS グローバルコントロールプレーンコンポーネントと通信します。アクセスするには、次のベース URI アドレスを、ポート 443 で双方向アクセスのためにセーフリストに登録する必要があります。
 
 link:api.cloudworkspace.com[""]
-
-
-
+link:autoprodb.database.windows.net[""]
+link:vdctoolsapi.trafficmanager.net[""]
+link:cjbootstrap3.cjautomate.net[""]
 
 アクセス制御デバイスが IP アドレスによるセーフリストのみを許可する場合、次の IP アドレスリストはセーフリストに登録する必要があります。VDS では冗長パブリック IP アドレスを持つロードバランサが使用されるため、このリストは時間の経過とともに変更される可能性があります。
 

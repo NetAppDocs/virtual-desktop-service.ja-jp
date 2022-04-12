@@ -354,7 +354,7 @@ _ コンポーネント： _5.3 Cloud Workspace Management Suite_ 日付： 2020
 
 === HTML5 ログインエクスペリエンス
 
-* の機能強化をホストするバックグラウンド処理 https://login.cloudworkspace.com[] および。注：カスタムブランドの HTML5 ログインポータルには影響はありません。
+* の機能強化をホストするバックグラウンド処理 https://login.cloudworkspace.com[] および https://login.cloudjumper.com[]。注：カスタムブランドの HTML5 ログインポータルには影響はありません。
 * セルフサービスパスワードリセットが表示されなかったシナリオの一部に対するバグ修正
 
 
@@ -631,7 +631,7 @@ _ コンポーネント： _5.3 Cloud Workspace Management Suite_When ： _ Thur
 
 === Cloud Workspace Management Suite の略
 
-* 古いをリダイレクトします https://iit.hostwindow.net[] 近代的なホテル
+* 古いをリダイレクトします https://iit.hostwindow.net[] 近代的なホテル https://manage.cloudworkspace.com[]
 * IE 11 経由でログインしている CWMS 管理者のサブセットに関するバグ修正
 * API ユーザを削除すると、そのユーザはバックグラウンドで正しく削除されますが、 CWMS では削除済みと表示されていなかったビジュアル問題を修正します
 * サブスクリプションをクリアするプロセスを合理化して ' 新しい / テスト環境を再プロビジョニングできます
