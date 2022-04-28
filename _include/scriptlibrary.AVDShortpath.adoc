@@ -1,4 +1,5 @@
 = AVD Shortpath を有効にします
+:allow-uri-read: 
 
 
 

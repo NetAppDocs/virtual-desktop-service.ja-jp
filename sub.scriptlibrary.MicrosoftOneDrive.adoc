@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Microsoft OneDrive
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Microsoft OneDrive
+:allow-uri-read: 
 
 
 

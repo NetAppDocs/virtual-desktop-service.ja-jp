@@ -5,6 +5,7 @@ summary: NetApp TV のビデオコンテンツ
 keywords:  
 ---
 = VDS コンテンツを NetApp TV に表示
+:allow-uri-read: 
 
 
 

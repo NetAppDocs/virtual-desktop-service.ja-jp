@@ -5,6 +5,7 @@ summary: これらのメールの内容は何ですか？
 keywords:  
 ---
 = これらのメールの内容は何ですか？
+:allow-uri-read: 
 
 
 

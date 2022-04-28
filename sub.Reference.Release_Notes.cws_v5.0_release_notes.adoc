@@ -5,6 +5,7 @@ summary: ネットアップ VDS リリースノート v5.0
 keywords:  
 ---
 = CWS – v5.0 リリースノート
+:allow-uri-read: 
 
 
 

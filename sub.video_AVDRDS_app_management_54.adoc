@@ -5,6 +5,7 @@ summary: NetApp VDS v5.4 で AVD と RDS のアプリケーション管理を自
 keywords:  
 ---
 = NetApp VDS v5.4 で AVD と RDS のアプリケーション管理を自動化
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: ユーザー壁紙を有効にする方法
 keywords:  
 ---
 = ユーザセッションのデスクトップ壁紙を有効にします
+:allow-uri-read: 
 
 
 

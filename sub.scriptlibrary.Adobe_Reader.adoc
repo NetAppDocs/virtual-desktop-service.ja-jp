@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Adobe Reader DC
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Adobe Reader DC
+:allow-uri-read: 
 
 
 

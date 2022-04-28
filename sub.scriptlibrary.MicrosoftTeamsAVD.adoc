@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - AVD の Microsoft チーム
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - AVD の Microsoft チーム
+:allow-uri-read: 
 
 
 

@@ -1,4 +1,5 @@
 = Google Chrome の概要
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: バックアップ設定
 keywords:  
 ---
 = バックアップスケジュールを設定します
+:allow-uri-read: 
 
 
 

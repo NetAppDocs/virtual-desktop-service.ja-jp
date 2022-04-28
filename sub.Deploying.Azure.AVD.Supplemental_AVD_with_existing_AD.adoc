@@ -5,6 +5,7 @@ summary: 既存の AD 環境向けに VDS を Azure に導入するための詳�
 keywords:  
 ---
 = AVD 展開ガイド - 既存の AD 補足
+:allow-uri-read: 
 
 
 

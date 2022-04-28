@@ -5,6 +5,7 @@ summary: データ権限の管理
 keywords:  
 ---
 = データ権限の管理
+:allow-uri-read: 
 
 
 

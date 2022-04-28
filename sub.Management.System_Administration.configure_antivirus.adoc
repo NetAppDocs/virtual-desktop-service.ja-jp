@@ -5,6 +5,7 @@ summary: ウィルス対策に関する考慮事項
 keywords:  
 ---
 = 監視とアンチウイルスを適用します
+:allow-uri-read: 
 
 
 

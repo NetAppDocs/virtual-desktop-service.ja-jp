@@ -1,4 +1,5 @@
 = RDS セッションホストの更新プロセス
+:allow-uri-read: 
 
 
 

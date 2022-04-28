@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Google Chrome
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Google Chrome
+:allow-uri-read: 
 
 
 

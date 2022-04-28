@@ -5,6 +5,7 @@ summary: AZ で VDS クレデンシャルにアクセスする
 keywords:  
 ---
 = Azure Key Vault で VDS クレデンシャルにアクセスする
+:allow-uri-read: 
 
 
 

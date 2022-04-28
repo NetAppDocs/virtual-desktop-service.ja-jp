@@ -5,6 +5,7 @@ summary: ディスクサイズの自動拡張機能
 keywords:  
 ---
 = ディスク容量の自動拡張機能
+:allow-uri-read: 
 
 
 

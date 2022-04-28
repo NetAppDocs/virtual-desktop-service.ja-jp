@@ -5,6 +5,7 @@ summary: VDS 5.4 で Azure のリソース消費を最適化
 keywords:  
 ---
 = VDS 5.4 で Azure リソース消費を最適化します
+:allow-uri-read: 
 
 
 

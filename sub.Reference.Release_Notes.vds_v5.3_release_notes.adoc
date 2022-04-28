@@ -5,6 +5,7 @@ summary: ネットアップ VDS リリースノート v5.3
 keywords:  
 ---
 = Virtual Desktop Service –バージョン 5.3
+:allow-uri-read: 
 
 
 

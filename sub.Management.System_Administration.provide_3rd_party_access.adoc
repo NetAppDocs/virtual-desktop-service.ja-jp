@@ -5,6 +5,7 @@ summary: サードパーティのアクセスガイド
 keywords:  
 ---
 = 第三者への一時的なアクセスの提供
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: VDS コマンドセンター機能「 Gallery へのテンプレート�
 keywords:  
 ---
 = コマンドセンターコマンド：テンプレートを Gallery にコピー
+:allow-uri-read: 
 
 
 

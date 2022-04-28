@@ -4,6 +4,7 @@ permalink: Deploying.Azure.AVD.vds_v5.4_prerequisites.html
 summary: AVD および VDS の前提条件 
 ---
 = AVD および VDS v5.4 の前提条件
+:allow-uri-read: 
 
 
 

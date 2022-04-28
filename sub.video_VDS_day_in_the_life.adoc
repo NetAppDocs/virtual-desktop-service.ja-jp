@@ -5,6 +5,7 @@ summary: RDS と AVD の日々の管理に NetApp VDS v5.4 を使用
 keywords:  
 ---
 = RDS と AVD の日々の管理に NetApp VDS v5.4 を使用
+:allow-uri-read: 
 
 
 

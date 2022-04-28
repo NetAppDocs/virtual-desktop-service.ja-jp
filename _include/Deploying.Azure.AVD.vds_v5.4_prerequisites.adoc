@@ -1,4 +1,5 @@
 = AVD および VDS の要件と注意事項
+:allow-uri-read: 
 
 
 

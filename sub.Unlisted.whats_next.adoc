@@ -5,6 +5,7 @@ summary: 次の手順
 keywords:  
 ---
 = おめでとうございます。新しい VDS 環境の導入を開始しました。
+:allow-uri-read: 
 
 
 

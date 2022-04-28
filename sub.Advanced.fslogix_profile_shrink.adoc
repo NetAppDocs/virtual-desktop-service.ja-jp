@@ -5,6 +5,7 @@ summary: FSLogix プロファイル縮小機能の概要
 keywords:  
 ---
 = FSLogix プロファイルの縮小
+:allow-uri-read: 
 
 
 

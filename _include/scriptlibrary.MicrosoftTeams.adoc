@@ -1,4 +1,5 @@
 = Microsoft チームの概要
+:allow-uri-read: 
 
 
 

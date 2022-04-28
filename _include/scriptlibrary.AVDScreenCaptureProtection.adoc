@@ -1,4 +1,5 @@
 = AVD 画面キャプチャ保護の概要
+:allow-uri-read: 
 
 
 

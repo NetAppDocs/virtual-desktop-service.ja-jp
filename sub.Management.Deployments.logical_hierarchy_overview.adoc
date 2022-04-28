@@ -5,6 +5,7 @@ summary: スクリプトの文書作成 - AMD Radeon Instinct ドライバ
 keywords:  
 ---
 = VDS 論理階層の概要
+:allow-uri-read: 
 
 
 

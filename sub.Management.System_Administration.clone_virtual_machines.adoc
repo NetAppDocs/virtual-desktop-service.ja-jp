@@ -5,6 +5,7 @@ summary: VM のクローニング
 keywords:  
 ---
 = 仮想マシンのクローニング
+:allow-uri-read: 
 
 
 

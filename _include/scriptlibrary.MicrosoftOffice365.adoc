@@ -1,4 +1,5 @@
 = Microsoft Office 365 の概要
+:allow-uri-read: 
 
 
 

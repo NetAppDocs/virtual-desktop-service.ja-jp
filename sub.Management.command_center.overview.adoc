@@ -5,6 +5,7 @@ summary: VDS コマンドセンターの概要
 keywords:  
 ---
 = コマンドセンターコマンド：概要
+:allow-uri-read: 
 
 
 

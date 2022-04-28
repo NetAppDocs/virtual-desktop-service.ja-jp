@@ -5,6 +5,7 @@ summary: Virtual Desktop Service のドキュメントポータルへようこ�
 keywords:  
 ---
 = Virtual Desktop Service のマニュアル
+:allow-uri-read: 
 
 
 

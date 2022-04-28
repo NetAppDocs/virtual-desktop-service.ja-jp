@@ -5,6 +5,7 @@ summary: VDS を Azure に導入する手順を追ったガイドです
 keywords:  
 ---
 = AVD 導入ガイド
+:allow-uri-read: 
 
 
 

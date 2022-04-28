@@ -5,6 +5,7 @@ summary: Azure vCPU コアクォータのトラブルシューティング手順
 keywords:  
 ---
 = Azure vCPU コアクォータ
+:allow-uri-read: 
 
 
 

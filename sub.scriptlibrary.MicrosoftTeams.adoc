@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Microsoft チーム
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Microsoft Teams
+:allow-uri-read: 
 
 
 

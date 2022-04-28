@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Microsoft Office
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Microsoft Office 365
+:allow-uri-read: 
 
 
 

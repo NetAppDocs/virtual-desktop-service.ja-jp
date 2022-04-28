@@ -1,4 +1,5 @@
 = Microsoft Edge Chromium の最適化
+:allow-uri-read: 
 
 
 

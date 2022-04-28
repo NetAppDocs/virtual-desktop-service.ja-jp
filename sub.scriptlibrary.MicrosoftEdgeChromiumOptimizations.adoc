@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Microsoft Edge Chromium Optimizatio
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Microsoft Edge Chromium Optimizations
+:allow-uri-read: 
 
 
 

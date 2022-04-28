@@ -5,6 +5,7 @@ summary: AVD を v1 から v2 に更新するためのガイド
 keywords:  
 ---
 = AVD ホストプールを v1 （ 2019 年秋）から v2 （ 2020 年春）に更新
+:allow-uri-read: 
 
 
 

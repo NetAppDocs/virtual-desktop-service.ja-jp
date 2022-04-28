@@ -5,6 +5,7 @@ summary: AADDS NDS および SSO のトラブルシューティング手順ガ�
 keywords:  
 ---
 = DNS Forwards for Azure では、 O365 ID を使用して SSO を追加します
+:allow-uri-read: 
 
 
 

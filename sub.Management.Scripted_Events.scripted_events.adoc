@@ -5,6 +5,7 @@ summary: スクリプト化されたイベント
 keywords:  
 ---
 = スクリプト化されたイベント
+:allow-uri-read: 
 
 
 

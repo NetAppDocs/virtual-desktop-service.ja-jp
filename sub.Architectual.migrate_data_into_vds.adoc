@@ -5,6 +5,7 @@ summary: データ移行時の考慮事項の概要
 keywords:  
 ---
 = データ移行に関する考慮事項
+:allow-uri-read: 
 
 
 

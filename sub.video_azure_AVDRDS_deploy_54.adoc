@@ -5,6 +5,7 @@ summary: NetApp VDS v5.4 で、 AVD または RDS を Azure に導入します
 keywords:  
 ---
 = NetApp VDS v5.4 で、 AVD または RDS を Azure に導入します
+:allow-uri-read: 
 
 
 

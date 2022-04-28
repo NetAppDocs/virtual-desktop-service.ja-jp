@@ -1,4 +1,5 @@
 = Microsoft Teams for AVD の概要
+:allow-uri-read: 
 
 
 

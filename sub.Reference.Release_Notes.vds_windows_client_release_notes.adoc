@@ -5,6 +5,7 @@ summary: ネットアップ VDS リリースノート Windows クライアント
 keywords:  
 ---
 = VDS Client for Windows リリースノート
+:allow-uri-read: 
 
 
 

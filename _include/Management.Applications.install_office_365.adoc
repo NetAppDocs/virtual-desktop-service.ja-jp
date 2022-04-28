@@ -1,4 +1,5 @@
 = 手動手順の概要
+:allow-uri-read: 
 
 
 

@@ -4,6 +4,7 @@ permalink: Deploying.GCP.RDS.deploying_rds_in_gcp.html
 summary: RDS を GCP に導入するためのステップバイステップガイドです 
 ---
 = Google Cloud （ GCP ）向け RDS 導入ガイド
+:allow-uri-read: 
 
 
 

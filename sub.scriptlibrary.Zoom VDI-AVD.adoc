@@ -5,6 +5,7 @@ summary: スクリプトドキュメント - Zoom VDI AVD
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - Zoom VDI AVD
+:allow-uri-read: 
 
 
 

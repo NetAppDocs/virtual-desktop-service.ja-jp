@@ -1,4 +1,5 @@
 = VDI/AVD の概要を拡大します
+:allow-uri-read: 
 
 
 

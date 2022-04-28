@@ -5,6 +5,7 @@ summary: エンドユーザアクセス
 keywords:  
 ---
 = エンドユーザーの要件
+:allow-uri-read: 
 
 
 

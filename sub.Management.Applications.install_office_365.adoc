@@ -5,6 +5,7 @@ summary: Office 365 インストールガイド
 keywords:  
 ---
 = Microsoft Office 365 をインストールします
+:allow-uri-read: 
 
 
 

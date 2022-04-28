@@ -1,4 +1,5 @@
 = テンプレートを Gallery Overview にコピーします
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: AVD から VDS を削除するためのステップバイステップ�
 keywords:  
 ---
 = AVD イヤダウンガイド
+:allow-uri-read: 
 
 
 

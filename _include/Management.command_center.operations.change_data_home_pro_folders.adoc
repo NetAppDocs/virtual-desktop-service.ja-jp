@@ -1,4 +1,5 @@
 = 「データ /Pro/Home フォルダの概要」を変更します
+:allow-uri-read: 
 
 
 

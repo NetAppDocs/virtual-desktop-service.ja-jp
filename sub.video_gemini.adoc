@@ -5,6 +5,7 @@ summary: ネットアップ VDS Gemini デモ
 keywords:  
 ---
 = ネットアップ VDS Gemini デモ
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: スクリプトの文書作成 - AMD Radeon Instinct ドライバ
 keywords:  
 ---
 = スクリプト化されたイベントドキュメント - AMD Radeon Instinct ドライバ
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: Azure Marketplace から VDS を購入するための詳細な手順に
 keywords:  
 ---
 = Azure Marketplace のステップ
+:allow-uri-read: 
 
 
 VDS チームは、 2021 年 1 月 15 日金曜日までに Azure Marketplace を介してサービスが提供されることを報告することを期待しています。この新しいマーケットプレイス機能は、ネットアップと Microsoft の共通のお客様として、以下のようなメリットをもたらします。

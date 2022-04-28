@@ -1,4 +1,5 @@
 = 現象
+:allow-uri-read: 
 
 
 

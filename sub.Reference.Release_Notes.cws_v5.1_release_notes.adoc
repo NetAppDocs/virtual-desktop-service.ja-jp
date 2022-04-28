@@ -5,6 +5,7 @@ summary: ネットアップ VDS リリースノート v5.1
 keywords:  
 ---
 = Cloud Workspace Suite –バージョン 5.1
+:allow-uri-read: 
 
 
 

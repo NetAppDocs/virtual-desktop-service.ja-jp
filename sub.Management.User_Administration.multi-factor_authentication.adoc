@@ -5,6 +5,7 @@ summary: 多要素認証（ MFA ）の設定
 keywords:  
 ---
 = 多要素認証（ MFA ）
+:allow-uri-read: 
 
 
 

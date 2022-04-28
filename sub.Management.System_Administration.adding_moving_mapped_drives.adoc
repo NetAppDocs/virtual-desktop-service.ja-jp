@@ -5,6 +5,7 @@ summary: マッピングされたドライブの追加と移動
 keywords:  
 ---
 = マッピングされたドライブの追加と移動
+:allow-uri-read: 
 
 
 

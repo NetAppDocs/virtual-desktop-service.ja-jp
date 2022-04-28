@@ -1,4 +1,5 @@
 = Privileged Account Management （ PAM ）
+:allow-uri-read: 
 
 
 
