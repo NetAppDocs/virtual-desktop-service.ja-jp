@@ -50,7 +50,7 @@ E メールサポート： support@spotpc.netapp.com
 
 電話サポート :844.645.6789
 
-link:https://cloudjumper.zendesk.com["VDS サポートポータル"]
+link:https://support.spot.io["VDS サポートポータル"]
 
 通常のサポート営業時間：月曜日から金曜日、午前 7 時から午後 7 時まで中央時間。
 
