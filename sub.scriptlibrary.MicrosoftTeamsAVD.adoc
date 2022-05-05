@@ -47,7 +47,7 @@ WARNING: この Microsoft チームは、 AVD 環境への導入用に特別に�
 
 === [ アクティビティの追加 ] ダイアログウィンドウのスクリーンショット
 
-image::scriptlibrary.activity.InstallMicrosoftTeamsAVD.png[scriptlibrary.activity.InstallMicrosoftTeamsAVD]
+image::scriptlibrary.script.InstallMicrosoftTeamsAVD.png[scriptlibrary.script.InstallMicrosoftTeamsAVD]
 
 
 

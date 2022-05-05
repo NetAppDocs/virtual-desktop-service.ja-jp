@@ -398,22 +398,14 @@
   <block id="c90a7d1e1da84682e02f4747838b15ae" category="section-title">デスクトップアクセスの提供</block>
   <block id="1973c675e440465f67198c5c6a06af65" category="list-title">VDS のユーザーに対してデスクトップリソースを有効にするには：</block>
   <block id="4976a77bf3f5152bc054082a6f0307ae" category="list-text">ワークスペース &gt; AVD &gt; ホストプール &gt; アプリケーショングループページに移動し、「デスクトップ」リソースのアプリケーショングループをクリックします。</block>
-  <block id="3a9159413b8c5248957238ae412ac8d3" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー 349fe</block>
   <block id="71480c203ed7b59af7a7e9e6318c3c98" category="list-text">アプリケーショングループ内に移動したら、 [ 編集 ] をクリックします</block>
-  <block id="e55b52acdc0847fa119a08a20ec465ee" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー 3bcfc</block>
   <block id="b7f126ce5e82a2008a4e482580ea8ae0" category="list-text">編集ダイアログでは、ユーザーまたはグループごとにこのアプリケーショングループにユーザーを追加または削除できます。</block>
-  <block id="8dd96d112e4daa5e5cbdd2e088cc1538" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー 07ff0</block>
   <block id="0aeea781bb4573e7a7b80d9e0959a102" category="section-title">RemoteApp Access を提供しています</block>
   <block id="5433662a54506604d2c01b4c71d4e834" category="section-title">新しいアプリケーショングループを作成します</block>
   <block id="f5a55acd43f8d93045189303323088e0" category="list-text">[ ワークスペース ] &gt; [AVD] &gt; [ ホストプール ] &gt; [ アプリケーショングループ ] ページに移動し、 [+] [ アプリケーショングループの追加 ] ボタンをクリックします</block>
-  <block id="4827d1cb4a1c718653466145675decb0" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー d33da</block>
   <block id="f3d6d092150d8d04d31f44e77e0ac3a7" category="list-text">このアプリグループの名前、ワークスペース、フレンドリ名を入力します。割り当てるユーザーまたはグループを選択し、 _Save_( 保存 ) をクリックします</block>
-  <block id="973b2fc8ea2aeaa2d778153f723b7ec4" category="image-alt">management.Applications.AVD アプリケーションエンタイトルメントワークフロー 242eb</block>
   <block id="fe21569904a64074304530d0d7b3834f" category="section-title">アプリケーションをアプリケーショングループに追加します</block>
   <block id="474fdb99403b967e01f54886073db222" category="list-text">ワークスペース &gt; AVD &gt; ホストプール &gt; アプリケーショングループページに移動し、「 RemoteApp 」リソースのアプリケーショングループをクリックします。</block>
-  <block id="aa48cfc5de9c883c19cf67592140446a" category="image-alt">管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 3dcde</block>
-  <block id="6c3e4645a69cdcb7d8eabf8fd67340f7" category="image-alt">管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 27a41</block>
-  <block id="6c7c9b816af581d8b27f9aa09850ca3f" category="image-alt">管理アプリケーション .AVD アプリケーションエンタイトルメントワークフロー 1e9f2</block>
   <block id="2c986f5e26a059d90f20656e8c46ba09" category="list-text">このアプリケーショングループのユーザーが RemoteApp リソースとしてアクセスできるアプリケーションを検索して選択します。</block>
   <block id="3a9c20318a590aab6689c74493fa46ed" category="summary">AVD および VDS の前提条件</block>
   <block id="ffcad0c1020b989c0a62eade42890a56" category="doc">AVD および VDS v6.0 の前提条件</block>
@@ -3382,7 +3374,6 @@
   <block id="9ffb722e3fe3e0ace3a210d617242557" category="inline-link-macro">別の Microsoft Teams スクリプト</block>
   <block id="a78af9cb5044239f2c73e401d610d15f" category="admonition">この Microsoft チームは、 AVD 環境への導入用に特別に構成されており、 Azure の AVD に固有のカスタマイズとコンポーネントが含まれています。 <block ref="437c7738f20c22773a5ae4970a143474" category="inline-link-macro-rx"></block> RDS 展開用に用意されています。</block>
   <block id="99ac46c040fc2191fa765181ab6d5aac" category="paragraph">このアプリケーションのデフォルトのショートカットパスは以下のとおりですショートカットは '\\shortcut\Microsoft Teams AVD.lnk' です</block>
-  <block id="edac1fb47b396115723f32b843b89a55" category="image-alt">scriptlibrary.activity.InstallMicrosoftTeamsAVD</block>
   <block id="be50f46ed7a6154338fa8575af41e85b" category="summary">スクリプトドキュメント - Microsoft Edge Chromium Optimizations</block>
   <block id="d62994dc13f2447f5c4436a74a9a6dae" category="doc">スクリプト化されたイベントドキュメント - Microsoft Edge Chromium Optimizations</block>
   <block id="64bf57ef1eb695ae728c9a143c30fb5d" category="section-title">Microsoft Edge Chromium の最適化</block>
@@ -4749,4 +4740,13 @@
   <block id="48ec1b6ca4060e9afc6dbe33558f4bcb" category="doc">VDS V6 リリース： Thurs 、 4 月2022 年 2 月 28 日</block>
   <block id="e4d6f09426e41b980d4a3f3266790d19" category="paragraph">コンポーネント： _ 仮想デスクトップサービス v6_ 次の場合： _ 木曜日 4 月 28 日午後 10 時 ~ 午後 11 時に 2022 年に Eastern _Impact ： _ エンドユーザ向けのデスクトップおよびアプリケーションサービスへのアクセスは中断されません。仮想デスクトップサービスへのアクセスは引き続き可能です。</block>
   <block id="89409045b0da12074a8c0b7efe465d1b" category="paragraph"><block ref="89409045b0da12074a8c0b7efe465d1b" category="inline-link-macro-rx"></block></block>
+  <block id="d75afdafc6f7225842e083ec218d848b" category="image-alt">management.Applications.AVDアプリケーションエンタイトルメントワークフロー349fe</block>
+  <block id="7b719da5fae273115c3fe35eb79582f1" category="image-alt">management.Applications.AVDアプリケーションエンタイトルメントワークフロー3bcfc</block>
+  <block id="f592ebe1f3f1646e8f20b2c2fa1dbd61" category="image-alt">management.Applications.AVDアプリケーションエンタイトルメントワークフロー07ff0</block>
+  <block id="249122c2d8a6270528965d090670bb01" category="image-alt">management.Applications.AVDアプリケーションエンタイトルメントワークフローd33da</block>
+  <block id="bee50d9bdee1e6b1f7e8ee84532418c2" category="image-alt">management.Applications.AVDアプリケーションエンタイトルメントワークフロー242eb</block>
+  <block id="ad0c47a5f55e9205bdf8bf8b85043167" category="image-alt">管理アプリケーション.AVDアプリケーションエンタイトルメントワークフロー3dcde</block>
+  <block id="a7dab824482b734079866a316af7ae4a" category="image-alt">管理アプリケーション.AVDアプリケーションエンタイトルメントワークフロー27a41</block>
+  <block id="b6c688be79377537acc1844f52e4ad41" category="image-alt">管理アプリケーション.AVDアプリケーションエンタイトルメントワークフロー1e9f2</block>
+  <block id="e943abf86369cd490191063c26874ded" category="image-alt">scriptlibrary.script.InstallMicrosoftTeamsAVD</block>
 </blocks>
