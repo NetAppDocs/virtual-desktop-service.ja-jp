@@ -24,7 +24,7 @@ Provisioning Collections （コレクションのプロビジョニング）は�
 
 === ビデオデモ - VDI セッションホスト用の VM イメージの管理
 
-video::rRDPnDzVBTw[youtube, ]
+video::rRDPnDzVBTw[youtube]
 
 
 === Provisioning Collection タイプ

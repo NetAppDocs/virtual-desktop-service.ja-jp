@@ -46,5 +46,5 @@ image:upgrade1.png[""]
 
 === ビデオデモ
 
-video::e4T_Ze6IlMo[youtube, ]
+video::e4T_Ze6IlMo[youtube]
 その他の質問がある場合は、サービス担当者にお問い合わせください。

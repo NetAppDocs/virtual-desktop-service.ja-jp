@@ -10,7 +10,7 @@ VDS チームは、 2021 年 1 月 15 日金曜日までに Azure Marketplace �
 
 
 
-=== ライセンス数に関する FAQ ：
+== ライセンス数に関する FAQ ：
 
 * Azure Marketplace ではライセンス数を指定する必要があります。つまり、 Azure Marketplace で購入したライセンス数よりも多くのユーザの仮想デスクトップを有効にすることはできません。
 +
@@ -26,7 +26,7 @@ VDS チームは、 2021 年 1 月 15 日金曜日までに Azure Marketplace �
 
 
 
-== 概要
+== ワークフロー
 
 . Azure Marketplace を検索します
 
